@@ -2,7 +2,7 @@ import { Link } from "react-router";
 import { motion } from "motion/react";
 import {
   Home as HomeIcon, Building2, ShieldCheck, CalendarCheck,
-  Hotel, KeyRound, HardHat, Sparkles, Moon, UtensilsCrossed, Layers,
+  Hotel, KeyRound, HardHat, Sparkles, Moon, UtensilsCrossed, Layers, Gem,
   ArrowRight, Phone,
 } from "lucide-react";
 import { services } from "../data/services";
@@ -10,17 +10,17 @@ import { AnimatedSection, StaggerContainer, StaggerItem } from "../components/An
 
 const iconMap: Record<string, React.ElementType> = {
   Home: HomeIcon, Building2, ShieldCheck, CalendarCheck, Hotel,
-  KeyRound, HardHat, Sparkles, Moon, UtensilsCrossed, Layers,
+  KeyRound, HardHat, Sparkles, Moon, UtensilsCrossed, Layers, Gem,
 };
 
 export function Services() {
   return (
     <div className="relative bg-white">
       {/* Hero */}
-      <section className="relative py-24 md:py-36 bg-[#0B1929] overflow-hidden">
+      <section className="relative py-24 md:py-36 bg-[#0A0A0A] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1765371512336-99c2b1c6975f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080')] bg-cover bg-center opacity-8" style={{ opacity: 0.08 }} />
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full bg-[#0FBAC9]/8 blur-[80px]" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full bg-[#C4973E]/8 blur-[80px]" />
           <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-transparent via-[#C4973E] to-transparent" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
@@ -32,9 +32,9 @@ export function Services() {
             className="flex items-center gap-2 text-[12px] mb-8"
             style={{ fontFamily: "Inter, sans-serif" }}
           >
-            <Link to="/" className="text-white/35 hover:text-[#0FBAC9] transition-colors">Home</Link>
+            <Link to="/" className="text-white/35 hover:text-[#C4973E] transition-colors">Home</Link>
             <span className="text-white/20">/</span>
-            <span className="text-[#0FBAC9]">Services</span>
+            <span className="text-[#C4973E]">Services</span>
           </motion.div>
 
           <motion.div
@@ -42,15 +42,15 @@ export function Services() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#0FBAC9]/30 bg-[#0FBAC9]/10 mb-5">
-              <Sparkles className="w-3 h-3 text-[#0FBAC9]" />
-              <span className="text-[#0FBAC9] text-[11px] uppercase tracking-widest" style={{ fontFamily: "Inter, sans-serif", fontWeight: 600 }}>Premium Cleaning</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#C4973E]/30 bg-[#C4973E]/10 mb-5">
+              <Sparkles className="w-3 h-3 text-[#C4973E]" />
+              <span className="text-[#C4973E] text-[11px] uppercase tracking-widest" style={{ fontFamily: "Inter, sans-serif", fontWeight: 600 }}>Premium Cleaning</span>
             </div>
             <h1 className="text-white mb-4" style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(2.2rem, 5vw, 3.8rem)", fontWeight: 700, letterSpacing: "-0.02em" }}>
               Our Services
             </h1>
             <p className="text-white/45 max-w-xl text-[15px] leading-relaxed" style={{ fontFamily: "Inter, sans-serif" }}>
-              Eleven specialized services covering every cleaning need, from residential homes to commercial facilities.
+              Twelve specialized services covering every cleaning need, from residential homes to commercial facilities.
             </p>
           </motion.div>
         </div>
@@ -66,7 +66,7 @@ export function Services() {
                 <StaggerItem key={service.id}>
                   <Link
                     to={`/services/${service.id}`}
-                    className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-[#0FBAC9]/25 hover:shadow-2xl hover:shadow-[#0FBAC9]/8 transition-all duration-400 block"
+                    className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-[#C4973E]/25 hover:shadow-2xl hover:shadow-[#C4973E]/8 transition-all duration-400 block"
                   >
                     <motion.div whileHover={{ scale: 1.015 }} transition={{ duration: 0.3 }}>
                       {/* Image */}
@@ -76,10 +76,10 @@ export function Services() {
                           alt={service.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         />
-                        <div className="absolute inset-0 bg-gradient-to-t from-[#0B1929]/85 via-[#0B1929]/25 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/85 via-[#0A0A0A]/25 to-transparent" />
                         {/* Icon badge */}
                         <div className="absolute top-4 right-4">
-                          <div className="w-9 h-9 rounded-xl bg-[#0FBAC9] flex items-center justify-center shadow-lg shadow-[#0FBAC9]/40">
+                          <div className="w-9 h-9 rounded-xl bg-[#C4973E] flex items-center justify-center shadow-lg shadow-[#C4973E]/40">
                             {Icon && <Icon className="w-4 h-4 text-white" />}
                           </div>
                         </div>
@@ -93,10 +93,10 @@ export function Services() {
 
                       {/* Body */}
                       <div className="p-5">
-                        <p className="text-[#0B1929]/55 text-[13px] leading-relaxed" style={{ fontFamily: "Inter, sans-serif" }}>
+                        <p className="text-[#0A0A0A]/55 text-[13px] leading-relaxed" style={{ fontFamily: "Inter, sans-serif" }}>
                           {service.shortDescription}
                         </p>
-                        <div className="flex items-center gap-1 mt-4 text-[#0FBAC9] text-[12px] opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all duration-300">
+                        <div className="flex items-center gap-1 mt-4 text-[#C4973E] text-[12px] opacity-0 group-hover:opacity-100 -translate-x-1 group-hover:translate-x-0 transition-all duration-300">
                           <span style={{ fontFamily: "Inter, sans-serif", fontWeight: 500 }}>View Details</span>
                           <ArrowRight className="w-3.5 h-3.5" />
                         </div>
@@ -111,9 +111,9 @@ export function Services() {
       </section>
 
       {/* CTA Banner */}
-      <section className="py-20 bg-[#0B1929] relative overflow-hidden">
+      <section className="py-20 bg-[#0A0A0A] relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] rounded-full bg-[#0FBAC9]/8 blur-[60px]" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] rounded-full bg-[#C4973E]/8 blur-[60px]" />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-10 text-center">
           <AnimatedSection>
@@ -126,7 +126,7 @@ export function Services() {
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 to="/quote"
-                className="group flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-[#0FBAC9] to-[#0CA3B1] hover:from-[#12CAD9] hover:to-[#0EADBB] text-white rounded-xl transition-all duration-300 shadow-lg shadow-[#0FBAC9]/30 hover:-translate-y-0.5"
+                className="group flex items-center gap-2 px-7 py-3.5 bg-gradient-to-r from-[#C4973E] to-[#A67C2E] hover:from-[#D4A843] hover:to-[#B8892F] text-white rounded-xl transition-all duration-300 shadow-lg shadow-[#C4973E]/30 hover:-translate-y-0.5"
                 style={{ fontFamily: "Poppins, sans-serif", fontWeight: 600 }}
               >
                 Request a Free Quote
@@ -137,7 +137,7 @@ export function Services() {
                 className="flex items-center gap-2 px-7 py-3.5 bg-white/8 hover:bg-white/14 text-white border border-white/15 rounded-xl transition-all duration-300"
                 style={{ fontFamily: "Inter, sans-serif", fontWeight: 500 }}
               >
-                <Phone className="w-4 h-4 text-[#0FBAC9]" />
+                <Phone className="w-4 h-4 text-[#C4973E]" />
                 (561) 385-1564
               </a>
             </div>

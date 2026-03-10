@@ -23,7 +23,7 @@ interface QuoteFormData {
 
 const selectStyle: React.CSSProperties = {
   appearance: "none",
-  backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230B1929' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")`,
+  backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230A0A0A' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")`,
   backgroundRepeat: "no-repeat",
   backgroundPosition: "right 1rem center",
 };
@@ -55,14 +55,14 @@ export function Quote() {
   };
 
   const inputClass =
-    "w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-[#0B1929] placeholder-gray-400/70 focus:outline-none focus:border-[#0FBAC9] focus:ring-2 focus:ring-[#0FBAC9]/15 transition-all duration-200 text-[14px]";
+    "w-full px-4 py-3 rounded-xl border border-gray-200 bg-white text-[#0A0A0A] placeholder-gray-400/70 focus:outline-none focus:border-[#C4973E] focus:ring-2 focus:ring-[#C4973E]/15 transition-all duration-200 text-[14px]";
 
   return (
     <div className="relative bg-[#F4F7FA]">
       {/* Hero */}
-      <section className="relative py-24 md:py-36 bg-[#0B1929] overflow-hidden">
+      <section className="relative py-24 md:py-36 bg-[#0A0A0A] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full bg-[#0FBAC9]/8 blur-[80px]" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full bg-[#C4973E]/8 blur-[80px]" />
           <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-transparent via-[#C4973E] to-transparent" />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-10">
@@ -73,18 +73,18 @@ export function Quote() {
             className="flex items-center gap-2 text-[12px] mb-8"
             style={{ fontFamily: "Inter, sans-serif" }}
           >
-            <Link to="/" className="text-white/35 hover:text-[#0FBAC9] transition-colors">Home</Link>
+            <Link to="/" className="text-white/35 hover:text-[#C4973E] transition-colors">Home</Link>
             <span className="text-white/20">/</span>
-            <span className="text-[#0FBAC9]">Request a Quote</span>
+            <span className="text-[#C4973E]">Request a Quote</span>
           </motion.div>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#0FBAC9]/30 bg-[#0FBAC9]/10 mb-5">
-              <Sparkles className="w-3 h-3 text-[#0FBAC9]" />
-              <span className="text-[#0FBAC9] text-[11px] uppercase tracking-widest" style={{ fontFamily: "Inter, sans-serif", fontWeight: 600 }}>Free, No Obligation</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-[#C4973E]/30 bg-[#C4973E]/10 mb-5">
+              <Sparkles className="w-3 h-3 text-[#C4973E]" />
+              <span className="text-[#C4973E] text-[11px] uppercase tracking-widest" style={{ fontFamily: "Inter, sans-serif", fontWeight: 600 }}>Free, No Obligation</span>
             </div>
             <h1 className="text-white mb-4" style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(2.2rem, 5vw, 3.8rem)", fontWeight: 700, letterSpacing: "-0.02em" }}>
               Request a Free Quote
@@ -108,24 +108,24 @@ export function Quote() {
                 transition={{ duration: 0.5 }}
                 className="max-w-lg mx-auto text-center py-16"
               >
-                <div className="w-20 h-20 rounded-full bg-[#0FBAC9]/15 border border-[#0FBAC9]/30 flex items-center justify-center mx-auto mb-6">
-                  <CheckCircle2 className="w-9 h-9 text-[#0FBAC9]" />
+                <div className="w-20 h-20 rounded-full bg-[#C4973E]/15 border border-[#C4973E]/30 flex items-center justify-center mx-auto mb-6">
+                  <CheckCircle2 className="w-9 h-9 text-[#C4973E]" />
                 </div>
-                <h2 className="text-[#0B1929] mb-3" style={{ fontFamily: "Poppins, sans-serif", fontSize: "1.8rem", fontWeight: 700 }}>
+                <h2 className="text-[#0A0A0A] mb-3" style={{ fontFamily: "Poppins, sans-serif", fontSize: "1.8rem", fontWeight: 700 }}>
                   Request Received!
                 </h2>
-                <p className="text-[#0B1929]/55 mb-8 leading-relaxed text-[15px]" style={{ fontFamily: "Inter, sans-serif" }}>
+                <p className="text-[#0A0A0A]/55 mb-8 leading-relaxed text-[15px]" style={{ fontFamily: "Inter, sans-serif" }}>
                   Thank you for reaching out. We'll review your details and send a personalized proposal within 24 hours.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8">
-                  <a href="tel:+15613851564" className="flex items-center justify-center gap-2 px-6 py-3 bg-[#0B1929] text-white rounded-xl text-[14px]" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 600 }}>
-                    <Phone className="w-4 h-4 text-[#0FBAC9]" /> (561) 385-1564
+                  <a href="tel:+15613851564" className="flex items-center justify-center gap-2 px-6 py-3 bg-[#0A0A0A] text-white rounded-xl text-[14px]" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 600 }}>
+                    <Phone className="w-4 h-4 text-[#C4973E]" /> (561) 385-1564
                   </a>
-                  <a href="mailto:andres@apentllc.com" className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-[#0FBAC9] to-[#0CA3B1] text-white rounded-xl text-[14px]" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 600 }}>
+                  <a href="mailto:andres@apentllc.com" className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-[#C4973E] to-[#A67C2E] text-white rounded-xl text-[14px]" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 600 }}>
                     <Mail className="w-4 h-4" /> Email Us
                   </a>
                 </div>
-                <Link to="/" className="text-[#0FBAC9] text-[13px] flex items-center justify-center gap-1" style={{ fontFamily: "Inter, sans-serif" }}>
+                <Link to="/" className="text-[#C4973E] text-[13px] flex items-center justify-center gap-1" style={{ fontFamily: "Inter, sans-serif" }}>
                   Return to Home <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </motion.div>
@@ -144,28 +144,28 @@ export function Quote() {
                     <AnimatedSection>
                       <div className="bg-white rounded-2xl p-7 border border-gray-100 shadow-sm">
                         <div className="flex items-center gap-3 mb-6">
-                          <div className="w-8 h-8 rounded-lg bg-[#0B1929] flex items-center justify-center">
-                            <span className="text-[#0FBAC9] text-[12px]" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700 }}>01</span>
+                          <div className="w-8 h-8 rounded-lg bg-[#0A0A0A] flex items-center justify-center">
+                            <span className="text-[#C4973E] text-[12px]" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700 }}>01</span>
                           </div>
-                          <h3 className="text-[#0B1929]" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "1rem" }}>Personal Information</h3>
+                          <h3 className="text-[#0A0A0A]" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "1rem" }}>Personal Information</h3>
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div>
-                            <label className="block text-[#0B1929]/70 text-[13px] mb-1.5" style={{ fontFamily: "Inter, sans-serif", fontWeight: 500 }}>
+                            <label className="block text-[#0A0A0A]/70 text-[13px] mb-1.5" style={{ fontFamily: "Inter, sans-serif", fontWeight: 500 }}>
                               First Name <span className="text-red-400">*</span>
                             </label>
                             <input {...register("firstName", { required: "Required" })} placeholder="John" className={inputClass} />
                             {errors.firstName && <p className="text-red-400 text-[12px] mt-1">{errors.firstName.message}</p>}
                           </div>
                           <div>
-                            <label className="block text-[#0B1929]/70 text-[13px] mb-1.5" style={{ fontFamily: "Inter, sans-serif", fontWeight: 500 }}>
+                            <label className="block text-[#0A0A0A]/70 text-[13px] mb-1.5" style={{ fontFamily: "Inter, sans-serif", fontWeight: 500 }}>
                               Last Name <span className="text-red-400">*</span>
                             </label>
                             <input {...register("lastName", { required: "Required" })} placeholder="Smith" className={inputClass} />
                             {errors.lastName && <p className="text-red-400 text-[12px] mt-1">{errors.lastName.message}</p>}
                           </div>
                           <div>
-                            <label className="block text-[#0B1929]/70 text-[13px] mb-1.5" style={{ fontFamily: "Inter, sans-serif", fontWeight: 500 }}>
+                            <label className="block text-[#0A0A0A]/70 text-[13px] mb-1.5" style={{ fontFamily: "Inter, sans-serif", fontWeight: 500 }}>
                               Email Address <span className="text-red-400">*</span>
                             </label>
                             <input
@@ -178,7 +178,7 @@ export function Quote() {
                             {errors.email && <p className="text-red-400 text-[12px] mt-1">{errors.email.message}</p>}
                           </div>
                           <div>
-                            <label className="block text-[#0B1929]/70 text-[13px] mb-1.5" style={{ fontFamily: "Inter, sans-serif", fontWeight: 500 }}>
+                            <label className="block text-[#0A0A0A]/70 text-[13px] mb-1.5" style={{ fontFamily: "Inter, sans-serif", fontWeight: 500 }}>
                               Phone Number <span className="text-red-400">*</span>
                             </label>
                             <input {...register("phone", { required: "Required" })} type="tel" placeholder="(561) 000-0000" className={inputClass} />
@@ -192,14 +192,14 @@ export function Quote() {
                     <AnimatedSection delay={0.1}>
                       <div className="bg-white rounded-2xl p-7 border border-gray-100 shadow-sm">
                         <div className="flex items-center gap-3 mb-6">
-                          <div className="w-8 h-8 rounded-lg bg-[#0B1929] flex items-center justify-center">
-                            <span className="text-[#0FBAC9] text-[12px]" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700 }}>02</span>
+                          <div className="w-8 h-8 rounded-lg bg-[#0A0A0A] flex items-center justify-center">
+                            <span className="text-[#C4973E] text-[12px]" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700 }}>02</span>
                           </div>
-                          <h3 className="text-[#0B1929]" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "1rem" }}>Service Details</h3>
+                          <h3 className="text-[#0A0A0A]" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "1rem" }}>Service Details</h3>
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                           <div className="sm:col-span-2">
-                            <label className="block text-[#0B1929]/70 text-[13px] mb-1.5" style={{ fontFamily: "Inter, sans-serif", fontWeight: 500 }}>
+                            <label className="block text-[#0A0A0A]/70 text-[13px] mb-1.5" style={{ fontFamily: "Inter, sans-serif", fontWeight: 500 }}>
                               Service Type <span className="text-red-400">*</span>
                             </label>
                             <select {...register("service", { required: "Please select a service" })} className={inputClass} style={selectStyle}>
@@ -212,7 +212,7 @@ export function Quote() {
                             {errors.service && <p className="text-red-400 text-[12px] mt-1">{errors.service.message}</p>}
                           </div>
                           <div>
-                            <label className="block text-[#0B1929]/70 text-[13px] mb-1.5" style={{ fontFamily: "Inter, sans-serif", fontWeight: 500 }}>Property Type</label>
+                            <label className="block text-[#0A0A0A]/70 text-[13px] mb-1.5" style={{ fontFamily: "Inter, sans-serif", fontWeight: 500 }}>Property Type</label>
                             <select {...register("propertyType")} className={inputClass} style={selectStyle}>
                               <option value="">Select property type...</option>
                               <option value="Residential Home">Residential Home</option>
@@ -227,7 +227,7 @@ export function Quote() {
                             </select>
                           </div>
                           <div>
-                            <label className="block text-[#0B1929]/70 text-[13px] mb-1.5" style={{ fontFamily: "Inter, sans-serif", fontWeight: 500 }}>Approx. Size (sq ft)</label>
+                            <label className="block text-[#0A0A0A]/70 text-[13px] mb-1.5" style={{ fontFamily: "Inter, sans-serif", fontWeight: 500 }}>Approx. Size (sq ft)</label>
                             <select {...register("squareFootage")} className={inputClass} style={selectStyle}>
                               <option value="">Select size...</option>
                               <option value="Under 1,000">Under 1,000</option>
@@ -238,7 +238,7 @@ export function Quote() {
                             </select>
                           </div>
                           <div>
-                            <label className="block text-[#0B1929]/70 text-[13px] mb-1.5" style={{ fontFamily: "Inter, sans-serif", fontWeight: 500 }}>Cleaning Frequency</label>
+                            <label className="block text-[#0A0A0A]/70 text-[13px] mb-1.5" style={{ fontFamily: "Inter, sans-serif", fontWeight: 500 }}>Cleaning Frequency</label>
                             <select {...register("frequency")} className={inputClass} style={selectStyle}>
                               <option value="">Select frequency...</option>
                               <option value="One-time">One-time</option>
@@ -249,7 +249,7 @@ export function Quote() {
                             </select>
                           </div>
                           <div>
-                            <label className="block text-[#0B1929]/70 text-[13px] mb-1.5" style={{ fontFamily: "Inter, sans-serif", fontWeight: 500 }}>Preferred Start Date</label>
+                            <label className="block text-[#0A0A0A]/70 text-[13px] mb-1.5" style={{ fontFamily: "Inter, sans-serif", fontWeight: 500 }}>Preferred Start Date</label>
                             <input {...register("preferredDate")} type="date" className={inputClass} />
                           </div>
                         </div>
@@ -260,10 +260,10 @@ export function Quote() {
                     <AnimatedSection delay={0.2}>
                       <div className="bg-white rounded-2xl p-7 border border-gray-100 shadow-sm">
                         <div className="flex items-center gap-3 mb-6">
-                          <div className="w-8 h-8 rounded-lg bg-[#0B1929] flex items-center justify-center">
-                            <span className="text-[#0FBAC9] text-[12px]" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700 }}>03</span>
+                          <div className="w-8 h-8 rounded-lg bg-[#0A0A0A] flex items-center justify-center">
+                            <span className="text-[#C4973E] text-[12px]" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700 }}>03</span>
                           </div>
-                          <h3 className="text-[#0B1929]" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "1rem" }}>Additional Notes</h3>
+                          <h3 className="text-[#0A0A0A]" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "1rem" }}>Additional Notes</h3>
                         </div>
                         <textarea
                           {...register("message")}
@@ -281,7 +281,7 @@ export function Quote() {
                         disabled={isSubmitting}
                         whileHover={{ y: -2, scale: 1.005 }}
                         whileTap={{ scale: 0.995 }}
-                        className="w-full py-4 bg-gradient-to-r from-[#0FBAC9] to-[#0CA3B1] disabled:opacity-70 text-white rounded-xl flex items-center justify-center gap-3 shadow-xl shadow-[#0FBAC9]/30 hover:shadow-[#0FBAC9]/50 transition-all duration-300"
+                        className="w-full py-4 bg-gradient-to-r from-[#C4973E] to-[#A67C2E] disabled:opacity-70 text-white rounded-xl flex items-center justify-center gap-3 shadow-xl shadow-[#C4973E]/30 hover:shadow-[#C4973E]/50 transition-all duration-300"
                         style={{ fontFamily: "Poppins, sans-serif", fontWeight: 600, fontSize: "1rem" }}
                       >
                         {isSubmitting ? (
@@ -304,7 +304,7 @@ export function Quote() {
                           </>
                         )}
                       </motion.button>
-                      <p className="text-center text-[#0B1929]/30 text-[12px] mt-3" style={{ fontFamily: "Inter, sans-serif" }}>
+                      <p className="text-center text-[#0A0A0A]/30 text-[12px] mt-3" style={{ fontFamily: "Inter, sans-serif" }}>
                         We'll respond within 24 hours. No spam, ever.
                       </p>
                     </AnimatedSection>
@@ -315,27 +315,27 @@ export function Quote() {
                 <div className="flex flex-col gap-5">
                   {/* Contact card */}
                   <AnimatedSection direction="right">
-                    <div className="bg-[#0B1929] rounded-2xl p-6 relative overflow-hidden">
-                      <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#0FBAC9]/10 blur-3xl pointer-events-none" />
+                    <div className="bg-[#0A0A0A] rounded-2xl p-6 relative overflow-hidden">
+                      <div className="absolute top-0 right-0 w-40 h-40 rounded-full bg-[#C4973E]/10 blur-3xl pointer-events-none" />
                       <div className="relative z-10">
                         <p className="text-white mb-5" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "1rem" }}>Get in Touch</p>
                         <div className="flex flex-col gap-4">
                           <a href="tel:+15613851564" className="flex items-center gap-3 group">
-                            <div className="w-9 h-9 rounded-xl bg-[#0FBAC9]/15 border border-[#0FBAC9]/20 flex items-center justify-center shrink-0">
-                              <Phone className="w-4 h-4 text-[#0FBAC9]" />
+                            <div className="w-9 h-9 rounded-xl bg-[#C4973E]/15 border border-[#C4973E]/20 flex items-center justify-center shrink-0">
+                              <Phone className="w-4 h-4 text-[#C4973E]" />
                             </div>
                             <div>
                               <p className="text-[10px] text-white/30 uppercase tracking-wide" style={{ fontFamily: "Inter, sans-serif" }}>Call us</p>
-                              <p className="text-white/75 text-[13px] group-hover:text-[#0FBAC9] transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>(561) 385-1564</p>
+                              <p className="text-white/75 text-[13px] group-hover:text-[#C4973E] transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>(561) 385-1564</p>
                             </div>
                           </a>
                           <a href="mailto:andres@apentllc.com" className="flex items-center gap-3 group">
-                            <div className="w-9 h-9 rounded-xl bg-[#0FBAC9]/15 border border-[#0FBAC9]/20 flex items-center justify-center shrink-0">
-                              <Mail className="w-4 h-4 text-[#0FBAC9]" />
+                            <div className="w-9 h-9 rounded-xl bg-[#C4973E]/15 border border-[#C4973E]/20 flex items-center justify-center shrink-0">
+                              <Mail className="w-4 h-4 text-[#C4973E]" />
                             </div>
                             <div>
                               <p className="text-[10px] text-white/30 uppercase tracking-wide" style={{ fontFamily: "Inter, sans-serif" }}>Email us</p>
-                              <p className="text-white/75 text-[13px] group-hover:text-[#0FBAC9] transition-colors break-all" style={{ fontFamily: "Inter, sans-serif" }}>andres@apentllc.com</p>
+                              <p className="text-white/75 text-[13px] group-hover:text-[#C4973E] transition-colors break-all" style={{ fontFamily: "Inter, sans-serif" }}>andres@apentllc.com</p>
                             </div>
                           </a>
                         </div>
@@ -346,23 +346,23 @@ export function Quote() {
                   {/* Why us */}
                   <AnimatedSection direction="right" delay={0.1}>
                     <div className="bg-white rounded-2xl p-6 border border-gray-100">
-                      <p className="text-[#0B1929] mb-5" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "1rem" }}>Why Choose Us?</p>
+                      <p className="text-[#0A0A0A] mb-5" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "1rem" }}>Why Choose Us?</p>
                       <div className="flex flex-col gap-3.5">
                         {whyPoints.map((item) => (
                           <div key={item.text} className="flex items-center gap-3">
-                            <div className="w-7 h-7 rounded-lg bg-[#0FBAC9]/10 flex items-center justify-center shrink-0">
-                              <item.icon className="w-3.5 h-3.5 text-[#0FBAC9]" />
+                            <div className="w-7 h-7 rounded-lg bg-[#C4973E]/10 flex items-center justify-center shrink-0">
+                              <item.icon className="w-3.5 h-3.5 text-[#C4973E]" />
                             </div>
-                            <span className="text-[#0B1929]/65 text-[13px]" style={{ fontFamily: "Inter, sans-serif" }}>{item.text}</span>
+                            <span className="text-[#0A0A0A]/65 text-[13px]" style={{ fontFamily: "Inter, sans-serif" }}>{item.text}</span>
                           </div>
                         ))}
                         <div className="flex items-center gap-3 mt-1">
-                          <CheckCircle2 className="w-4 h-4 text-[#0FBAC9] shrink-0" />
-                          <span className="text-[#0B1929]/65 text-[13px]" style={{ fontFamily: "Inter, sans-serif" }}>Free, no-obligation quote</span>
+                          <CheckCircle2 className="w-4 h-4 text-[#C4973E] shrink-0" />
+                          <span className="text-[#0A0A0A]/65 text-[13px]" style={{ fontFamily: "Inter, sans-serif" }}>Free, no-obligation quote</span>
                         </div>
                         <div className="flex items-center gap-3">
-                          <CheckCircle2 className="w-4 h-4 text-[#0FBAC9] shrink-0" />
-                          <span className="text-[#0B1929]/65 text-[13px]" style={{ fontFamily: "Inter, sans-serif" }}>Response within 24 hours</span>
+                          <CheckCircle2 className="w-4 h-4 text-[#C4973E] shrink-0" />
+                          <span className="text-[#0A0A0A]/65 text-[13px]" style={{ fontFamily: "Inter, sans-serif" }}>Response within 24 hours</span>
                         </div>
                       </div>
                     </div>
@@ -371,13 +371,13 @@ export function Quote() {
                   {/* Services */}
                   <AnimatedSection direction="right" delay={0.2}>
                     <div className="bg-white rounded-2xl p-6 border border-gray-100">
-                      <p className="text-[#0B1929] mb-4" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "1rem" }}>Our Services</p>
+                      <p className="text-[#0A0A0A] mb-4" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 700, fontSize: "1rem" }}>Our Services</p>
                       <div className="flex flex-col gap-1.5">
                         {services.map((s) => (
                           <Link
                             key={s.id}
                             to={`/services/${s.id}`}
-                            className="flex items-center gap-2 text-[#0B1929]/50 hover:text-[#0FBAC9] transition-colors text-[12px] py-0.5"
+                            className="flex items-center gap-2 text-[#0A0A0A]/50 hover:text-[#C4973E] transition-colors text-[12px] py-0.5"
                             style={{ fontFamily: "Inter, sans-serif" }}
                           >
                             <span className="w-1 h-1 rounded-full bg-current shrink-0" />

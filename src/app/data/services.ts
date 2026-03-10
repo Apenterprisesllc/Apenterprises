@@ -10,22 +10,22 @@ export interface Service {
 
 export const services: Service[] = [
   {
-    id: "residential-cleaning",
-    title: "Residential Cleaning",
+    id: "post-construction-cleaning",
+    title: "Post-Construction Cleaning",
     shortDescription:
-      "Enjoy peace of mind with customized residential cleaning services with safe and environmentally friendly products.",
+      "Removing debris, deep cleaning and sanitizing newly constructed spaces.",
     fullDescription:
-      "Our residential cleaning service is tailored to meet the unique needs of your home. We use safe, eco-friendly products that are tough on dirt but gentle on your family and pets. Whether you need a one-time deep clean or regular maintenance, our professional team delivers consistent, high-quality results every visit.",
+      "After the builders leave, we take over. Our post-construction cleaning service removes all debris, dust, and residues left from construction or renovation work. We perform a thorough deep clean and sanitization of the newly constructed or renovated space, making it move-in ready and safe.",
     features: [
-      "Customized cleaning plans",
-      "Eco-friendly, non-toxic products",
-      "Trained and background-checked staff",
-      "Flexible scheduling options",
-      "Kitchen and bathroom deep clean",
-      "Dusting, vacuuming, and mopping",
+      "Debris and waste removal",
+      "Construction dust elimination",
+      "Window and glass cleaning",
+      "Floor polishing and finishing",
+      "Paint overspray removal",
+      "Final deep clean and sanitization",
     ],
-    image: "https://images.unsplash.com/photo-1758273238415-01ec03d9ef27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXNpZGVudGlhbCUyMGhvbWUlMjBjbGVhbmluZyUyMHNlcnZpY2V8ZW58MXx8fHwxNzczMTY2NzI2fDA&ixlib=rb-4.1.0&q=80&w=1080",
-    icon: "Home",
+    image: "https://images.unsplash.com/photo-1765160602655-59d646d1146b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjBzaXRlJTIwY2xlYW51cCUyMHdvcmtlcnN8ZW58MXx8fHwxNzczMTY2NzMxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    icon: "HardHat",
   },
   {
     id: "commercial-cleaning",
@@ -44,6 +44,96 @@ export const services: Service[] = [
     ],
     image: "https://images.unsplash.com/photo-1581374820583-317d45555a82?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21tZXJjaWFsJTIwb2ZmaWNlJTIwY2xlYW5pbmclMjBwcm9mZXNzaW9uYWx8ZW58MXx8fHwxNzczMDc3MzIyfDA&ixlib=rb-4.1.0&q=80&w=1080",
     icon: "Building2",
+  },
+  {
+    id: "after-hours-office-cleaning",
+    title: "After Hours Office Cleaning",
+    shortDescription:
+      "Professional cleaning services outside business hours to avoid interruptions.",
+    fullDescription:
+      "Keep your business running smoothly without the disruption of daytime cleaning. Our after-hours office cleaning service ensures your workspace is spotless and ready for the next business day. We work around your schedule, providing reliable, consistent cleaning that never interferes with your operations.",
+    features: [
+      "Evening and weekend availability",
+      "Zero disruption to operations",
+      "Desk and workstation sanitization",
+      "Common area and restroom cleaning",
+      "Trash removal and recycling",
+      "Reliable recurring scheduling",
+    ],
+    image: "https://images.unsplash.com/photo-1627098241506-344dea0aa27b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvZmZpY2UlMjBjbGVhbmluZyUyMG5pZ2h0JTIwamFuaXRvciUyMHByb2Zlc3Npb25hbHxlbnwxfHx8fDE3NzMxNjY3MzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    icon: "Moon",
+  },
+  {
+    id: "epoxy-floor-services",
+    title: "Epoxy Floor Services",
+    shortDescription:
+      "Professional epoxy floor installation and finishing for durable and modern surfaces.",
+    fullDescription:
+      "Transform your floors with our professional epoxy coating services. Epoxy floors are durable, easy to clean, and give any space a sleek, modern look. Whether for a garage, warehouse, showroom, or commercial kitchen, our skilled team delivers flawless application with long-lasting results.",
+    features: [
+      "Garage and warehouse floors",
+      "Commercial showroom finishing",
+      "Custom color and pattern options",
+      "High-durability coating",
+      "Slip-resistant finishes available",
+      "Quick cure and minimal downtime",
+    ],
+    image: "https://images.unsplash.com/photo-1771531072574-af6ed6b954c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlcG94eSUyMGZsb29yJTIwc2hpbnklMjBpbmR1c3RyaWFsJTIwbW9kZXJufGVufDF8fHx8MTc3MzE2NjczNXww&ixlib=rb-4.1.0&q=80&w=1080",
+    icon: "Layers",
+  },
+  {
+    id: "marble-polishing",
+    title: "Marble Polishing",
+    shortDescription:
+      "Professional marble polishing, restoration and maintenance to bring back the natural shine of your stone surfaces.",
+    fullDescription:
+      "Restore the elegance of your marble surfaces with our professional polishing and restoration services. Over time, marble loses its luster due to foot traffic, spills, and everyday wear. Our skilled technicians use diamond abrasive technology and specialized compounds to remove scratches, stains, and etching, bringing your marble back to its original brilliance. We serve residential and commercial properties throughout South Florida.",
+    features: [
+      "Diamond abrasive polishing",
+      "Scratch and stain removal",
+      "Marble floor restoration",
+      "Countertop and vanity polishing",
+      "Sealing and protective coating",
+      "Ongoing maintenance programs",
+    ],
+    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    icon: "Gem",
+  },
+  {
+    id: "residential-cleaning",
+    title: "Residential Cleaning",
+    shortDescription:
+      "Enjoy peace of mind with customized residential cleaning services with safe and environmentally friendly products.",
+    fullDescription:
+      "Our residential cleaning service is tailored to meet the unique needs of your home. We use safe, eco-friendly products that are tough on dirt but gentle on your family and pets. Whether you need a one-time deep clean or regular maintenance, our professional team delivers consistent, high-quality results every visit.",
+    features: [
+      "Customized cleaning plans",
+      "Eco-friendly, non-toxic products",
+      "Trained and background-checked staff",
+      "Flexible scheduling options",
+      "Kitchen and bathroom deep clean",
+      "Dusting, vacuuming, and mopping",
+    ],
+    image: "https://images.unsplash.com/photo-1758273238415-01ec03d9ef27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXNpZGVudGlhbCUyMGhvbWUlMjBjbGVhbmluZyUyMHNlcnZpY2V8ZW58MXx8fHwxNzczMTY2NzI2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    icon: "Home",
+  },
+  {
+    id: "deep-cleaning",
+    title: "Deep Cleaning",
+    shortDescription:
+      "Comprehensive deep cleaning services for residential and commercial properties.",
+    fullDescription:
+      "When a standard clean isn't enough, our deep cleaning service goes beyond the surface. We target every nook and cranny, from behind appliances to grout lines, delivering a thorough, comprehensive clean that restores your space to a pristine condition. Perfect for seasonal cleaning or preparing a property for sale or move-in.",
+    features: [
+      "Behind-appliance cleaning",
+      "Grout and tile scrubbing",
+      "Interior oven and fridge cleaning",
+      "Baseboard and vent cleaning",
+      "Ceiling fan and light fixture dusting",
+      "Full bathroom and kitchen restoration",
+    ],
+    image: "https://images.unsplash.com/photo-1669101602108-fa5ba89507ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZWVwJTIwY2xlYW5pbmclMjBzY3J1YmJpbmclMjBmbG9vciUyMHByb2Zlc3Npb25hbHxlbnwxfHx8fDE3NzMxNjY3MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    icon: "Sparkles",
   },
   {
     id: "disinfecting-services",
@@ -117,60 +207,6 @@ export const services: Service[] = [
     icon: "KeyRound",
   },
   {
-    id: "post-construction-cleaning",
-    title: "Post-Construction Cleaning",
-    shortDescription:
-      "Removing debris, deep cleaning and sanitizing newly constructed spaces.",
-    fullDescription:
-      "After the builders leave, we take over. Our post-construction cleaning service removes all debris, dust, and residues left from construction or renovation work. We perform a thorough deep clean and sanitization of the newly constructed or renovated space, making it move-in ready and safe.",
-    features: [
-      "Debris and waste removal",
-      "Construction dust elimination",
-      "Window and glass cleaning",
-      "Floor polishing and finishing",
-      "Paint overspray removal",
-      "Final deep clean and sanitization",
-    ],
-    image: "https://images.unsplash.com/photo-1765160602655-59d646d1146b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjBzaXRlJTIwY2xlYW51cCUyMHdvcmtlcnN8ZW58MXx8fHwxNzczMTY2NzMxfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    icon: "HardHat",
-  },
-  {
-    id: "deep-cleaning",
-    title: "Deep Cleaning",
-    shortDescription:
-      "Comprehensive deep cleaning services for residential and commercial properties.",
-    fullDescription:
-      "When a standard clean isn't enough, our deep cleaning service goes beyond the surface. We target every nook and cranny, from behind appliances to grout lines, delivering a thorough, comprehensive clean that restores your space to a pristine condition. Perfect for seasonal cleaning or preparing a property for sale or move-in.",
-    features: [
-      "Behind-appliance cleaning",
-      "Grout and tile scrubbing",
-      "Interior oven and fridge cleaning",
-      "Baseboard and vent cleaning",
-      "Ceiling fan and light fixture dusting",
-      "Full bathroom and kitchen restoration",
-    ],
-    image: "https://images.unsplash.com/photo-1669101602108-fa5ba89507ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZWVwJTIwY2xlYW5pbmclMjBzY3J1YmJpbmclMjBmbG9vciUyMHByb2Zlc3Npb25hbHxlbnwxfHx8fDE3NzMxNjY3MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    icon: "Sparkles",
-  },
-  {
-    id: "after-hours-office-cleaning",
-    title: "After Hours Office Cleaning",
-    shortDescription:
-      "Professional cleaning services outside business hours to avoid interruptions.",
-    fullDescription:
-      "Keep your business running smoothly without the disruption of daytime cleaning. Our after-hours office cleaning service ensures your workspace is spotless and ready for the next business day. We work around your schedule, providing reliable, consistent cleaning that never interferes with your operations.",
-    features: [
-      "Evening and weekend availability",
-      "Zero disruption to operations",
-      "Desk and workstation sanitization",
-      "Common area and restroom cleaning",
-      "Trash removal and recycling",
-      "Reliable recurring scheduling",
-    ],
-    image: "https://images.unsplash.com/photo-1627098241506-344dea0aa27b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvZmZpY2UlMjBjbGVhbmluZyUyMG5pZ2h0JTIwamFuaXRvciUyMHByb2Zlc3Npb25hbHxlbnwxfHx8fDE3NzMxNjY3MzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    icon: "Moon",
-  },
-  {
     id: "after-hours-restaurant-cleaning",
     title: "After Hours Restaurant Cleaning",
     shortDescription:
@@ -187,23 +223,5 @@ export const services: Service[] = [
     ],
     image: "https://images.unsplash.com/photo-1765966871032-7fe67d208761?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwa2l0Y2hlbiUyMGNsZWFuaW5nJTIwbmlnaHR8ZW58MXx8fHwxNzczMTY2NzMyfDA&ixlib=rb-4.1.0&q=80&w=1080",
     icon: "UtensilsCrossed",
-  },
-  {
-    id: "epoxy-floor-services",
-    title: "Epoxy Floor Services",
-    shortDescription:
-      "Professional epoxy floor installation and finishing for durable and modern surfaces.",
-    fullDescription:
-      "Transform your floors with our professional epoxy coating services. Epoxy floors are durable, easy to clean, and give any space a sleek, modern look. Whether for a garage, warehouse, showroom, or commercial kitchen, our skilled team delivers flawless application with long-lasting results.",
-    features: [
-      "Garage and warehouse floors",
-      "Commercial showroom finishing",
-      "Custom color and pattern options",
-      "High-durability coating",
-      "Slip-resistant finishes available",
-      "Quick cure and minimal downtime",
-    ],
-    image: "https://images.unsplash.com/photo-1771531072574-af6ed6b954c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlcG94eSUyMGZsb29yJTIwc2hpbnklMjBpbmR1c3RyaWFsJTIwbW9kZXJufGVufDF8fHx8MTc3MzE2NjczNXww&ixlib=rb-4.1.0&q=80&w=1080",
-    icon: "Layers",
   },
 ];

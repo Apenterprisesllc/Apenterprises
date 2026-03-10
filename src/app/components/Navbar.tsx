@@ -34,7 +34,7 @@ export function Navbar() {
       transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-[#0B1929]/97 backdrop-blur-xl shadow-[0_4px_40px_rgba(0,0,0,0.35)] border-b border-white/5"
+          ? "bg-[#0A0A0A]/97 backdrop-blur-xl shadow-[0_4px_40px_rgba(0,0,0,0.35)] border-b border-white/5"
           : "bg-transparent"
       }`}
     >
@@ -55,7 +55,7 @@ export function Navbar() {
               to="/"
               className={`px-4 py-2 rounded-lg text-[13px] transition-all duration-200 ${
                 isActive("/") && location.pathname === "/"
-                  ? "text-[#0FBAC9] bg-[#0FBAC9]/10"
+                  ? "text-[#C4973E] bg-[#C4973E]/10"
                   : "text-white/70 hover:text-white hover:bg-white/8"
               }`}
               style={{ fontFamily: "Inter, sans-serif" }}
@@ -72,7 +72,7 @@ export function Navbar() {
               <button
                 className={`flex items-center gap-1 px-4 py-2 rounded-lg text-[13px] transition-all duration-200 ${
                   isActive("/services")
-                    ? "text-[#0FBAC9] bg-[#0FBAC9]/10"
+                    ? "text-[#C4973E] bg-[#C4973E]/10"
                     : "text-white/70 hover:text-white hover:bg-white/8"
                 }`}
                 style={{ fontFamily: "Inter, sans-serif" }}
@@ -88,12 +88,12 @@ export function Navbar() {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 8, scale: 0.97 }}
                     transition={{ duration: 0.2, ease: "easeOut" }}
-                    className="absolute top-full left-0 mt-2 w-72 bg-[#0D1F33] border border-white/10 rounded-2xl shadow-2xl shadow-black/50 overflow-hidden"
+                    className="absolute top-full left-0 mt-2 w-72 bg-[#141414] border border-white/10 rounded-2xl shadow-2xl shadow-black/50 overflow-hidden"
                   >
                     <div className="p-2">
                       <Link
                         to="/services"
-                        className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-[#0FBAC9] hover:bg-white/8 transition-colors mb-1 border-b border-white/8 pb-3 mb-2"
+                        className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-[#C4973E] hover:bg-white/8 transition-colors mb-1 border-b border-white/8 pb-3 mb-2"
                         style={{ fontFamily: "Inter, sans-serif", fontSize: "13px", fontWeight: 500 }}
                       >
                         All Services →
@@ -118,7 +118,7 @@ export function Navbar() {
               to="/quote"
               className={`px-4 py-2 rounded-lg text-[13px] transition-all duration-200 ${
                 isActive("/quote")
-                  ? "text-[#0FBAC9] bg-[#0FBAC9]/10"
+                  ? "text-[#C4973E] bg-[#C4973E]/10"
                   : "text-white/70 hover:text-white hover:bg-white/8"
               }`}
               style={{ fontFamily: "Inter, sans-serif" }}
@@ -134,12 +134,12 @@ export function Navbar() {
               className="flex items-center gap-2 text-white/60 hover:text-white text-[13px] transition-colors"
               style={{ fontFamily: "Inter, sans-serif" }}
             >
-              <Phone className="w-3.5 h-3.5 text-[#0FBAC9]" />
+              <Phone className="w-3.5 h-3.5 text-[#C4973E]" />
               (561) 385-1564
             </a>
             <Link
               to="/quote"
-              className="ml-1 px-5 py-2.5 bg-gradient-to-r from-[#0FBAC9] to-[#0CA3B1] hover:from-[#0EADB9] hover:to-[#0991A0] text-white text-[13px] rounded-xl transition-all duration-300 shadow-lg shadow-[#0FBAC9]/25 hover:shadow-[#0FBAC9]/40 hover:-translate-y-px"
+              className="ml-1 px-5 py-2.5 bg-gradient-to-r from-[#C4973E] to-[#A67C2E] hover:from-[#B8892F] hover:to-[#8B6914] text-white text-[13px] rounded-xl transition-all duration-300 shadow-lg shadow-[#C4973E]/25 hover:shadow-[#C4973E]/40 hover:-translate-y-px"
               style={{ fontFamily: "Poppins, sans-serif", fontWeight: 600 }}
             >
               Free Quote
@@ -174,7 +174,7 @@ export function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="lg:hidden overflow-hidden bg-[#0B1929]/98 backdrop-blur-xl border-t border-white/8"
+            className="lg:hidden overflow-hidden bg-[#0A0A0A]/98 backdrop-blur-xl border-t border-white/8"
           >
             <div className="px-6 py-5 flex flex-col gap-1">
               <Link to="/" className="px-3 py-2.5 text-white/80 text-sm rounded-lg hover:bg-white/8 hover:text-white transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>Home</Link>
@@ -186,9 +186,9 @@ export function Navbar() {
               ))}
               <div className="h-px bg-white/10 my-2" />
               <a href="tel:+15613851564" className="flex items-center gap-2 px-3 py-2.5 text-white/70 text-sm">
-                <Phone className="w-4 h-4 text-[#0FBAC9]" /> (561) 385-1564
+                <Phone className="w-4 h-4 text-[#C4973E]" /> (561) 385-1564
               </a>
-              <Link to="/quote" className="mt-1 px-4 py-3 bg-gradient-to-r from-[#0FBAC9] to-[#0CA3B1] text-white text-sm rounded-xl text-center" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 600 }}>
+              <Link to="/quote" className="mt-1 px-4 py-3 bg-gradient-to-r from-[#C4973E] to-[#A67C2E] text-white text-sm rounded-xl text-center" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 600 }}>
                 Get a Free Quote
               </Link>
             </div>
