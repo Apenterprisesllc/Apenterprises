@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { services } from "../data/services";
-import logoImg from "figma:asset/ff09f92f07bd4aa3a72ff5dad81cbf4cb16ea8e0.png";
+import logoImg from "@/assets/ff09f92f07bd4aa3a72ff5dad81cbf4cb16ea8e0.png";
 
 export function Footer() {
   const col1 = services.slice(0, 6);

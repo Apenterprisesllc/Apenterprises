@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { services } from "../data/services";
-import logoImg from "figma:asset/ff09f92f07bd4aa3a72ff5dad81cbf4cb16ea8e0.png";
+import logoImg from "@/assets/ff09f92f07bd4aa3a72ff5dad81cbf4cb16ea8e0.png";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
