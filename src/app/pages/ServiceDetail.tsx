@@ -1,9 +1,10 @@
 import { useParams, Link } from "react-router";
 import { motion } from "motion/react";
+import { useState, useRef } from "react";
 import {
   Home as HomeIcon, Building2, ShieldCheck, CalendarCheck,
   Hotel, KeyRound, HardHat, Sparkles, Moon, UtensilsCrossed, Layers, Gem,
-  ArrowRight, CheckCircle2, Phone, Mail, ArrowLeft,
+  ArrowRight, CheckCircle2, Phone, Mail, ArrowLeft, Play,
 } from "lucide-react";
 import { services } from "../data/services";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "../components/AnimatedSection";
@@ -31,6 +32,8 @@ export function ServiceDetail() {
 
   const Icon = iconMap[service.icon];
   const related = services.filter((_, i) => i !== currentIndex).slice(0, 3);
+  const [videoPlaying, setVideoPlaying] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   return (
     <div className="relative bg-white">
@@ -40,6 +43,7 @@ export function ServiceDetail() {
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
+          loading="lazy"
           src={service.image}
           alt={service.title}
           className="absolute inset-0 w-full h-full object-cover"
@@ -199,6 +203,65 @@ export function ServiceDetail() {
                   </Link>
                 </div>
               </AnimatedSection>
+
+              {/* Video */}
+              {service.video && (
+                <AnimatedSection direction="right" delay={0.08}>
+                  <div className="bg-[#0A0A0A] rounded-2xl overflow-hidden border border-white/5 shadow-xl">
+                    <div className="px-4 pt-4 pb-2.5 flex items-center justify-between">
+                      <div className="flex items-center gap-2">
+                        <div className="w-6 h-6 rounded-md bg-[#C4973E]/15 flex items-center justify-center">
+                          <Play className="w-3 h-3 text-[#C4973E]" />
+                        </div>
+                        <p className="text-white/80 text-[13px]" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 600 }}>
+                          See Our Work
+                        </p>
+                      </div>
+                      <span className="text-white/20 text-[10px] uppercase tracking-widest" style={{ fontFamily: "Inter, sans-serif" }}>Video</span>
+                    </div>
+                    <div className="px-2.5 pb-2.5">
+                      <div className="relative rounded-xl overflow-hidden bg-black" style={{ aspectRatio: "9 / 16" }}>
+                        {!videoPlaying ? (
+                          <button
+                            onClick={() => {
+                              setVideoPlaying(true);
+                              setTimeout(() => videoRef.current?.play(), 50);
+                            }}
+                            className="block w-full h-full relative group cursor-pointer"
+                          >
+                            <img
+                              src={service.image}
+                              alt={`${service.title} preview`}
+                              className="absolute inset-0 w-full h-full object-cover"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A]/70 via-[#0A0A0A]/20 to-[#0A0A0A]/30 group-hover:from-[#0A0A0A]/50 group-hover:via-transparent group-hover:to-[#0A0A0A]/10 transition-all duration-500" />
+                            <div className="absolute inset-0 flex items-center justify-center">
+                              <div className="w-14 h-14 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-2xl group-hover:scale-110 group-hover:bg-white transition-all duration-300">
+                                <Play className="w-6 h-6 text-[#0A0A0A] ml-0.5" />
+                              </div>
+                            </div>
+                            <div className="absolute bottom-4 left-4 right-4">
+                              <p className="text-white/90 text-[12px] font-medium" style={{ fontFamily: "Inter, sans-serif" }}>
+                                Tap to play
+                              </p>
+                            </div>
+                          </button>
+                        ) : (
+                          <video
+                            ref={videoRef}
+                            controls
+                            preload="none"
+                            poster={service.image}
+                            className="absolute inset-0 w-full h-full object-contain"
+                          >
+                            <source src={service.video} type="video/mp4" />
+                          </video>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                </AnimatedSection>
+              )}
 
               {/* Related services */}
               <AnimatedSection direction="right" delay={0.15}>

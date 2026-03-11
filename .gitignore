@@ -3,3 +3,6 @@ dist
 .env
 .env.*
 *.local
+
+# Large video files (too big for git, deploy separately)
+public/media/videos/

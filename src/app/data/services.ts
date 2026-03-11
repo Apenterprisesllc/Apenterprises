@@ -6,6 +6,7 @@ export interface Service {
   features: string[];
   image: string;
   icon: string;
+  video?: string;
 }
 
 export const services: Service[] = [
@@ -24,8 +25,9 @@ export const services: Service[] = [
       "Paint overspray removal",
       "Final deep clean and sanitization",
     ],
-    image: "https://images.unsplash.com/photo-1765160602655-59d646d1146b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb25zdHJ1Y3Rpb24lMjBzaXRlJTIwY2xlYW51cCUyMHdvcmtlcnN8ZW58MXx8fHwxNzczMTY2NzMxfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/media/photos/post-construction-cleaning.webp",
     icon: "HardHat",
+    video: "/media/videos/post-construction-cleaning.mp4",
   },
   {
     id: "commercial-cleaning",
@@ -42,8 +44,9 @@ export const services: Service[] = [
       "Break room and kitchen cleaning",
       "Window and surface cleaning",
     ],
-    image: "https://images.unsplash.com/photo-1581374820583-317d45555a82?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb21tZXJjaWFsJTIwb2ZmaWNlJTIwY2xlYW5pbmclMjBwcm9mZXNzaW9uYWx8ZW58MXx8fHwxNzczMDc3MzIyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/media/photos/commercial-cleaning.webp",
     icon: "Building2",
+    video: "/media/videos/commercial-cleaning.mp4",
   },
   {
     id: "after-hours-office-cleaning",
@@ -60,8 +63,9 @@ export const services: Service[] = [
       "Trash removal and recycling",
       "Reliable recurring scheduling",
     ],
-    image: "https://images.unsplash.com/photo-1627098241506-344dea0aa27b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxvZmZpY2UlMjBjbGVhbmluZyUyMG5pZ2h0JTIwamFuaXRvciUyMHByb2Zlc3Npb25hbHxlbnwxfHx8fDE3NzMxNjY3MzV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/media/photos/after-hours-office-cleaning.webp",
     icon: "Moon",
+    video: "/media/videos/after-hours-office-cleaning.mp4",
   },
   {
     id: "epoxy-floor-services",
@@ -78,8 +82,9 @@ export const services: Service[] = [
       "Slip-resistant finishes available",
       "Quick cure and minimal downtime",
     ],
-    image: "https://images.unsplash.com/photo-1771531072574-af6ed6b954c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlcG94eSUyMGZsb29yJTIwc2hpbnklMjBpbmR1c3RyaWFsJTIwbW9kZXJufGVufDF8fHx8MTc3MzE2NjczNXww&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/media/photos/epoxy-floor-services.webp",
     icon: "Layers",
+    video: "/media/videos/epoxy-floor-services.mp4",
   },
   {
     id: "marble-polishing",
@@ -96,7 +101,7 @@ export const services: Service[] = [
       "Sealing and protective coating",
       "Ongoing maintenance programs",
     ],
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080",
+    image: "/media/photos/marble-polishing.webp",
     icon: "Gem",
   },
   {
@@ -114,8 +119,9 @@ export const services: Service[] = [
       "Kitchen and bathroom deep clean",
       "Dusting, vacuuming, and mopping",
     ],
-    image: "https://images.unsplash.com/photo-1758273238415-01ec03d9ef27?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXNpZGVudGlhbCUyMGhvbWUlMjBjbGVhbmluZyUyMHNlcnZpY2V8ZW58MXx8fHwxNzczMTY2NzI2fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/media/photos/residential-cleaning.webp",
     icon: "Home",
+    video: "/media/videos/residential-cleaning.mp4",
   },
   {
     id: "deep-cleaning",
@@ -132,8 +138,9 @@ export const services: Service[] = [
       "Ceiling fan and light fixture dusting",
       "Full bathroom and kitchen restoration",
     ],
-    image: "https://images.unsplash.com/photo-1669101602108-fa5ba89507ee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkZWVwJTIwY2xlYW5pbmclMjBzY3J1YmJpbmclMjBmbG9vciUyMHByb2Zlc3Npb25hbHxlbnwxfHx8fDE3NzMxNjY3MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/media/photos/deep-cleaning.webp",
     icon: "Sparkles",
+    video: "/media/videos/deep-cleaning.mp4",
   },
   {
     id: "disinfecting-services",
@@ -150,8 +157,9 @@ export const services: Service[] = [
       "Certificate of service provided",
       "Safe for children and pets after dry",
     ],
-    image: "https://images.unsplash.com/photo-1747659629851-a92bd71149f6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkaXNpbmZlY3RpbmclMjBjbGVhbmluZyUyMHNwcmF5JTIwcHJvZmVzc2lvbmFsfGVufDF8fHx8MTc3MzE2NjczMHww&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/media/photos/disinfecting-services.webp",
     icon: "ShieldCheck",
+    video: "/media/videos/disinfecting-services.mp4",
   },
   {
     id: "events-cleaning",
@@ -168,8 +176,9 @@ export const services: Service[] = [
       "Trash and recycling management",
       "Rapid-response cleaning crews",
     ],
-    image: "https://images.unsplash.com/photo-1768508951405-10e83c4a2872?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxldmVudCUyMGhhbGwlMjBiYW5xdWV0JTIwY2xlYW5pbmclMjBzZXR1cHxlbnwxfHx8fDE3NzMxNjY3MzB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/media/photos/events-cleaning.webp",
     icon: "CalendarCheck",
+    video: "/media/videos/events-cleaning.mp4",
   },
   {
     id: "housekeeping",
@@ -186,8 +195,9 @@ export const services: Service[] = [
       "Amenity restocking",
       "Flexible scheduling for check-ins",
     ],
-    image: "https://images.unsplash.com/photo-1743410975074-4be327c0ae63?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxob3RlbCUyMGhvdXNla2VlcGluZyUyMGx1eHVyeSUyMHJvb218ZW58MXx8fHwxNzczMTY2NzI3fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/media/photos/housekeeping.webp",
     icon: "Hotel",
+    video: "/media/videos/housekeeping.mp4",
   },
   {
     id: "real-estate-cleaning",
@@ -203,8 +213,9 @@ export const services: Service[] = [
       "Kitchen and bath detailing",
       "Window and surface polishing",
     ],
-    image: "https://images.unsplash.com/photo-1771862860842-226dbd625fd3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZWFsJTIwZXN0YXRlJTIwaG9tZSUyMHN0YWdpbmclMjBjbGVhbiUyMGludGVyaW9yfGVufDF8fHx8MTc3MzE2NjczMXww&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/media/photos/real-estate-cleaning.webp",
     icon: "KeyRound",
+    video: "/media/videos/real-estate-cleaning.mp4",
   },
   {
     id: "after-hours-restaurant-cleaning",
@@ -221,7 +232,7 @@ export const services: Service[] = [
       "Floor scrubbing and sanitization",
       "Waste management and recycling",
     ],
-    image: "https://images.unsplash.com/photo-1765966871032-7fe67d208761?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxyZXN0YXVyYW50JTIwa2l0Y2hlbiUyMGNsZWFuaW5nJTIwbmlnaHR8ZW58MXx8fHwxNzczMTY2NzMyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    image: "/media/photos/after-hours-restaurant-cleaning.webp",
     icon: "UtensilsCrossed",
   },
 ];
