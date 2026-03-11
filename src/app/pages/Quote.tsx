@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useSearchParams, Link } from "react-router";
 import { useForm } from "react-hook-form";
 import { motion, AnimatePresence } from "motion/react";
+import { toast } from "sonner";
 import {
   CheckCircle2, Phone, Mail, Send, Sparkles, ArrowRight, Leaf, Users, Clock, Award,
 } from "lucide-react";
@@ -49,9 +50,17 @@ export function Quote() {
   }, [preSelectedService, setValue]);
 
   const onSubmit = async (data: QuoteFormData) => {
-    await new Promise((res) => setTimeout(res, 1500));
-    console.log("Quote submitted:", data);
-    setSubmitted(true);
+    try {
+      const res = await fetch("/api/send-quote", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error("Failed to send");
+      setSubmitted(true);
+    } catch {
+      toast.error("Something went wrong. Please try again or call us directly at (561) 385-1564.");
+    }
   };
 
   const inputClass =

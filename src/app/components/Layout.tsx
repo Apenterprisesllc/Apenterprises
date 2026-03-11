@@ -1,6 +1,7 @@
 import { Outlet, useLocation } from "react-router";
 import { useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { Toaster } from "sonner";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
 
@@ -27,6 +28,7 @@ export function Layout() {
         </motion.main>
       </AnimatePresence>
       <Footer />
+      <Toaster position="top-center" richColors />
     </div>
   );
 }
