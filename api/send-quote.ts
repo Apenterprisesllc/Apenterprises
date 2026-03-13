@@ -16,7 +16,7 @@ interface QuoteBody {
   message?: string;
 }
 
-function escapeHtml(str: string): string {
+function esc(str: string): string {
   return str
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
@@ -24,195 +24,197 @@ function escapeHtml(str: string): string {
     .replace(/"/g, "&quot;");
 }
 
-function buildEmailHtml(data: QuoteBody): string {
+/* ───────────────────────── Internal notification email ───────────────────────── */
+function buildInternalHtml(data: QuoteBody): string {
   const now = new Date();
-  const date = now.toLocaleDateString("en-US", {
-    weekday: "long",
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
-  const time = now.toLocaleTimeString("en-US", {
-    hour: "numeric",
-    minute: "2-digit",
-    hour12: true,
-  });
+  const date = now.toLocaleDateString("en-US", { weekday: "long", year: "numeric", month: "long", day: "numeric" });
+  const time = now.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", hour12: true });
+
+  const detailRow = (label: string, value: string, highlight = false) =>
+    `<tr>
+      <td style="padding:10px 16px;color:#8A8A8A;font-size:13px;width:150px;vertical-align:top;border-bottom:1px solid #F5F5F5;">${label}</td>
+      <td style="padding:10px 16px;color:#1A1A1A;font-size:14px;font-weight:${highlight ? "600" : "500"};border-bottom:1px solid #F5F5F5;">${value}</td>
+    </tr>`;
 
   const optionalRows: string[] = [];
-
-  if (data.propertyType) {
-    optionalRows.push(
-      `<tr>
-        <td style="padding:8px 0;color:#6B7280;font-size:13px;width:140px;vertical-align:top;">Property Type</td>
-        <td style="padding:8px 0;color:#0A0A0A;font-size:14px;font-weight:500;">${escapeHtml(data.propertyType)}</td>
-      </tr>`
-    );
-  }
-  if (data.squareFootage) {
-    optionalRows.push(
-      `<tr>
-        <td style="padding:8px 0;color:#6B7280;font-size:13px;width:140px;vertical-align:top;">Approx. Size</td>
-        <td style="padding:8px 0;color:#0A0A0A;font-size:14px;font-weight:500;">${escapeHtml(data.squareFootage)}</td>
-      </tr>`
-    );
-  }
-  if (data.frequency) {
-    optionalRows.push(
-      `<tr>
-        <td style="padding:8px 0;color:#6B7280;font-size:13px;width:140px;vertical-align:top;">Frequency</td>
-        <td style="padding:8px 0;color:#0A0A0A;font-size:14px;font-weight:500;">${escapeHtml(data.frequency)}</td>
-      </tr>`
-    );
-  }
-  if (data.preferredDate) {
-    optionalRows.push(
-      `<tr>
-        <td style="padding:8px 0;color:#6B7280;font-size:13px;width:140px;vertical-align:top;">Preferred Date</td>
-        <td style="padding:8px 0;color:#0A0A0A;font-size:14px;font-weight:500;">${escapeHtml(data.preferredDate)}</td>
-      </tr>`
-    );
-  }
+  if (data.propertyType) optionalRows.push(detailRow("Property Type", esc(data.propertyType)));
+  if (data.squareFootage) optionalRows.push(detailRow("Approx. Size", esc(data.squareFootage)));
+  if (data.frequency) optionalRows.push(detailRow("Frequency", esc(data.frequency)));
+  if (data.preferredDate) optionalRows.push(detailRow("Preferred Date", esc(data.preferredDate)));
 
   return `<!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"></head>
-<body style="margin:0;padding:0;background-color:#F4F7FA;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;">
-  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#F4F7FA;">
-    <tr>
-      <td align="center" style="padding:40px 16px;">
-        <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;">
+<body style="margin:0;padding:0;background-color:#0A0A0A;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#0A0A0A;">
+    <tr><td align="center" style="padding:48px 16px;">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;">
 
-          <!-- Gold Top Bar -->
-          <tr>
-            <td style="height:4px;background:linear-gradient(90deg,#C4973E,#A67C2E);border-radius:8px 8px 0 0;"></td>
-          </tr>
+        <!-- Decorative gold line -->
+        <tr><td style="height:3px;background:linear-gradient(90deg,#C4973E 0%,#D4AF5A 50%,#C4973E 100%);border-radius:12px 12px 0 0;"></td></tr>
 
-          <!-- Header -->
-          <tr>
-            <td style="background-color:#0A0A0A;padding:32px 36px;">
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-                <tr>
-                  <td>
-                    <h1 style="margin:0 0 4px;font-size:20px;font-weight:700;color:#FFFFFF;letter-spacing:-0.02em;">AP ENTERPRISES</h1>
-                    <p style="margin:0 0 2px;font-size:14px;color:#C4973E;font-weight:600;">New Quote Request</p>
-                    <p style="margin:0;font-size:12px;color:rgba(255,255,255,0.4);">Received ${escapeHtml(date)} at ${escapeHtml(time)}</p>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
+        <!-- Header -->
+        <tr><td style="background-color:#111111;padding:36px 40px 28px;border-bottom:1px solid #1E1E1E;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+            <tr>
+              <td>
+                <p style="margin:0 0 2px;font-size:11px;font-weight:700;color:#C4973E;text-transform:uppercase;letter-spacing:0.15em;">AP Enterprises</p>
+                <h1 style="margin:0;font-size:22px;font-weight:700;color:#FFFFFF;letter-spacing:-0.02em;">New Quote Request</h1>
+              </td>
+              <td align="right" style="vertical-align:top;">
+                <p style="margin:0;font-size:11px;color:#555555;line-height:1.5;">${esc(date)}<br/>${esc(time)}</p>
+              </td>
+            </tr>
+          </table>
+        </td></tr>
 
-          <!-- Body -->
-          <tr>
-            <td style="background-color:#FFFFFF;padding:32px 36px;">
+        <!-- Client info section -->
+        <tr><td style="background-color:#111111;padding:28px 40px 8px;">
+          <p style="margin:0 0 16px;font-size:10px;font-weight:700;color:#C4973E;text-transform:uppercase;letter-spacing:0.15em;">Client Information</p>
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#0A0A0A;border-radius:10px;border:1px solid #1E1E1E;">
+            ${detailRow("Name", `${esc(data.firstName)} ${esc(data.lastName)}`, true)}
+            ${detailRow("Email", `<a href="mailto:${esc(data.email)}" style="color:#C4973E;text-decoration:none;">${esc(data.email)}</a>`)}
+            ${detailRow("Phone", `<a href="tel:${esc(data.phone)}" style="color:#C4973E;text-decoration:none;">${esc(data.phone)}</a>`)}
+          </table>
+        </td></tr>
 
-              <!-- Contact Information -->
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:28px;">
-                <tr>
-                  <td style="padding-bottom:14px;border-bottom:1px solid #F0F0F0;">
-                    <p style="margin:0;font-size:11px;font-weight:700;color:#C4973E;text-transform:uppercase;letter-spacing:0.08em;">Contact Information</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td style="padding-top:14px;">
-                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-                      <tr>
-                        <td style="padding:8px 0;color:#6B7280;font-size:13px;width:140px;vertical-align:top;">Name</td>
-                        <td style="padding:8px 0;color:#0A0A0A;font-size:14px;font-weight:500;">${escapeHtml(data.firstName)} ${escapeHtml(data.lastName)}</td>
-                      </tr>
-                      <tr>
-                        <td style="padding:8px 0;color:#6B7280;font-size:13px;width:140px;vertical-align:top;">Email</td>
-                        <td style="padding:8px 0;color:#0A0A0A;font-size:14px;font-weight:500;">
-                          <a href="mailto:${escapeHtml(data.email)}" style="color:#C4973E;text-decoration:none;">${escapeHtml(data.email)}</a>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td style="padding:8px 0;color:#6B7280;font-size:13px;width:140px;vertical-align:top;">Phone</td>
-                        <td style="padding:8px 0;color:#0A0A0A;font-size:14px;font-weight:500;">
-                          <a href="tel:${escapeHtml(data.phone)}" style="color:#C4973E;text-decoration:none;">${escapeHtml(data.phone)}</a>
-                        </td>
-                      </tr>
-                    </table>
-                  </td>
-                </tr>
-              </table>
+        <!-- Service details section -->
+        <tr><td style="background-color:#111111;padding:24px 40px 8px;">
+          <p style="margin:0 0 16px;font-size:10px;font-weight:700;color:#C4973E;text-transform:uppercase;letter-spacing:0.15em;">Service Details</p>
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#0A0A0A;border-radius:10px;border:1px solid #1E1E1E;">
+            ${detailRow("Service Requested", esc(data.service), true)}
+            ${optionalRows.join("\n")}
+          </table>
+        </td></tr>
 
-              <!-- Service Details -->
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:28px;">
-                <tr>
-                  <td style="padding-bottom:14px;border-bottom:1px solid #F0F0F0;">
-                    <p style="margin:0;font-size:11px;font-weight:700;color:#C4973E;text-transform:uppercase;letter-spacing:0.08em;">Service Details</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td style="padding-top:14px;">
-                    <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-                      <tr>
-                        <td style="padding:8px 0;color:#6B7280;font-size:13px;width:140px;vertical-align:top;">Service</td>
-                        <td style="padding:8px 0;color:#0A0A0A;font-size:14px;font-weight:600;">${escapeHtml(data.service)}</td>
-                      </tr>
-                      ${optionalRows.join("\n")}
-                    </table>
-                  </td>
-                </tr>
-              </table>
+        ${data.message ? `
+        <!-- Notes section -->
+        <tr><td style="background-color:#111111;padding:24px 40px 8px;">
+          <p style="margin:0 0 16px;font-size:10px;font-weight:700;color:#C4973E;text-transform:uppercase;letter-spacing:0.15em;">Additional Notes</p>
+          <div style="background-color:#0A0A0A;border-radius:10px;border:1px solid #1E1E1E;padding:16px 20px;">
+            <p style="margin:0;font-size:14px;color:#CCCCCC;line-height:1.7;font-style:italic;">"${esc(data.message)}"</p>
+          </div>
+        </td></tr>` : ""}
 
-              ${
-                data.message
-                  ? `<!-- Additional Notes -->
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:28px;">
-                <tr>
-                  <td style="padding-bottom:14px;border-bottom:1px solid #F0F0F0;">
-                    <p style="margin:0;font-size:11px;font-weight:700;color:#C4973E;text-transform:uppercase;letter-spacing:0.08em;">Additional Notes</p>
-                  </td>
-                </tr>
-                <tr>
-                  <td style="padding-top:14px;">
-                    <p style="margin:0;font-size:14px;color:#374151;line-height:1.6;background-color:#F9FAFB;padding:16px;border-radius:8px;border:1px solid #F0F0F0;">${escapeHtml(data.message)}</p>
-                  </td>
-                </tr>
-              </table>`
-                  : ""
-              }
+        <!-- Action button -->
+        <tr><td style="background-color:#111111;padding:28px 40px 36px;" align="center">
+          <a href="mailto:${esc(data.email)}?subject=Re: Your Quote Request – ${esc(data.service)}&body=Hi ${esc(data.firstName)},%0D%0A%0D%0AThank you for your interest in our ${esc(data.service)} service.%0D%0A%0D%0A"
+            style="display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#C4973E,#A67C2E);color:#FFFFFF;font-size:14px;font-weight:600;text-decoration:none;border-radius:8px;letter-spacing:0.02em;">
+            Reply to ${esc(data.firstName)}
+          </a>
+        </td></tr>
 
-              <!-- Reply Button -->
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-                <tr>
-                  <td align="center" style="padding-top:8px;">
-                    <a href="mailto:${escapeHtml(data.email)}?subject=Re: Quote Request – ${escapeHtml(data.service)}&body=Hi ${escapeHtml(data.firstName)},%0D%0A%0D%0AThank you for your interest in our ${escapeHtml(data.service)} service.%0D%0A%0D%0A"
-                      style="display:inline-block;padding:14px 32px;background-color:#0A0A0A;color:#FFFFFF;font-size:14px;font-weight:600;text-decoration:none;border-radius:8px;">
-                      Reply to ${escapeHtml(data.firstName)}
-                    </a>
-                  </td>
-                </tr>
-              </table>
+        <!-- Footer -->
+        <tr><td style="background-color:#0A0A0A;padding:24px 40px;border-top:1px solid #1E1E1E;border-radius:0 0 12px 12px;" align="center">
+          <p style="margin:0 0 4px;font-size:12px;font-weight:600;color:#555555;">AP Enterprises LLC</p>
+          <p style="margin:0;font-size:11px;color:#3A3A3A;">South Florida's Premium Cleaning Service &nbsp;·&nbsp; (561) 385-1564</p>
+        </td></tr>
 
-            </td>
-          </tr>
-
-          <!-- Footer -->
-          <tr>
-            <td style="background-color:#F9FAFB;padding:24px 36px;border-top:1px solid #F0F0F0;border-radius:0 0 8px 8px;">
-              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
-                <tr>
-                  <td align="center">
-                    <p style="margin:0 0 4px;font-size:13px;font-weight:600;color:#0A0A0A;">AP Enterprises LLC</p>
-                    <p style="margin:0 0 2px;font-size:12px;color:#9CA3AF;">South Florida's Premium Cleaning Service</p>
-                    <p style="margin:0;font-size:12px;color:#9CA3AF;">(561) 385-1564 &nbsp;&middot;&nbsp; apentllc.com</p>
-                  </td>
-                </tr>
-              </table>
-            </td>
-          </tr>
-
-        </table>
-      </td>
-    </tr>
+      </table>
+    </td></tr>
   </table>
 </body>
 </html>`;
 }
 
+/* ───────────────────────── Client confirmation email ───────────────────────── */
+function buildClientHtml(data: QuoteBody): string {
+  const serviceRows: string[] = [];
+  serviceRows.push(`<tr>
+    <td style="padding:10px 20px;color:#8A8A8A;font-size:13px;width:140px;vertical-align:top;border-bottom:1px solid #F0F0F0;">Service</td>
+    <td style="padding:10px 20px;color:#1A1A1A;font-size:14px;font-weight:600;border-bottom:1px solid #F0F0F0;">${esc(data.service)}</td>
+  </tr>`);
+  if (data.propertyType) serviceRows.push(`<tr>
+    <td style="padding:10px 20px;color:#8A8A8A;font-size:13px;width:140px;vertical-align:top;border-bottom:1px solid #F0F0F0;">Property Type</td>
+    <td style="padding:10px 20px;color:#1A1A1A;font-size:14px;font-weight:500;border-bottom:1px solid #F0F0F0;">${esc(data.propertyType)}</td>
+  </tr>`);
+  if (data.frequency) serviceRows.push(`<tr>
+    <td style="padding:10px 20px;color:#8A8A8A;font-size:13px;width:140px;vertical-align:top;border-bottom:1px solid #F0F0F0;">Frequency</td>
+    <td style="padding:10px 20px;color:#1A1A1A;font-size:14px;font-weight:500;border-bottom:1px solid #F0F0F0;">${esc(data.frequency)}</td>
+  </tr>`);
+  if (data.preferredDate) serviceRows.push(`<tr>
+    <td style="padding:10px 20px;color:#8A8A8A;font-size:13px;width:140px;vertical-align:top;">Preferred Date</td>
+    <td style="padding:10px 20px;color:#1A1A1A;font-size:14px;font-weight:500;">${esc(data.preferredDate)}</td>
+  </tr>`);
+
+  return `<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0"></head>
+<body style="margin:0;padding:0;background-color:#F7F7F7;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#F7F7F7;">
+    <tr><td align="center" style="padding:48px 16px;">
+      <table role="presentation" width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;">
+
+        <!-- Gold accent -->
+        <tr><td style="height:3px;background:linear-gradient(90deg,#C4973E 0%,#D4AF5A 50%,#C4973E 100%);border-radius:12px 12px 0 0;"></td></tr>
+
+        <!-- Header -->
+        <tr><td style="background-color:#0A0A0A;padding:40px 40px 36px;" align="center">
+          <p style="margin:0 0 6px;font-size:11px;font-weight:700;color:#C4973E;text-transform:uppercase;letter-spacing:0.2em;">AP Enterprises</p>
+          <h1 style="margin:0 0 8px;font-size:24px;font-weight:700;color:#FFFFFF;letter-spacing:-0.02em;">Thank You, ${esc(data.firstName)}!</h1>
+          <p style="margin:0;font-size:14px;color:rgba(255,255,255,0.5);line-height:1.5;">We've received your quote request and will be in touch shortly.</p>
+        </td></tr>
+
+        <!-- Body -->
+        <tr><td style="background-color:#FFFFFF;padding:36px 40px;">
+
+          <!-- Message -->
+          <p style="margin:0 0 24px;font-size:15px;color:#333333;line-height:1.7;">
+            Thank you for choosing AP Enterprises for your <strong style="color:#1A1A1A;">${esc(data.service)}</strong> needs. Our team is currently reviewing your request and will prepare a personalized quote tailored to your requirements.
+          </p>
+
+          <!-- What to expect -->
+          <div style="background-color:#FAFAFA;border-radius:10px;border:1px solid #EEEEEE;padding:24px 24px 16px;margin-bottom:28px;">
+            <p style="margin:0 0 16px;font-size:10px;font-weight:700;color:#C4973E;text-transform:uppercase;letter-spacing:0.15em;">What Happens Next</p>
+            <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+              <tr>
+                <td style="padding:0 0 12px;font-size:14px;color:#555555;line-height:1.6;">
+                  <strong style="color:#C4973E;">1.</strong>&nbsp;&nbsp;Our team reviews your request within 24 hours<br/>
+                  <strong style="color:#C4973E;">2.</strong>&nbsp;&nbsp;We prepare a detailed, no-obligation quote<br/>
+                  <strong style="color:#C4973E;">3.</strong>&nbsp;&nbsp;A specialist contacts you to finalize the details
+                </td>
+              </tr>
+            </table>
+          </div>
+
+          <!-- Request summary -->
+          <p style="margin:0 0 16px;font-size:10px;font-weight:700;color:#C4973E;text-transform:uppercase;letter-spacing:0.15em;">Your Request Summary</p>
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#FAFAFA;border-radius:10px;border:1px solid #EEEEEE;margin-bottom:28px;">
+            ${serviceRows.join("\n")}
+          </table>
+
+          <!-- CTA -->
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+            <tr><td align="center" style="padding:4px 0 0;">
+              <p style="margin:0 0 16px;font-size:14px;color:#777777;">Need immediate assistance?</p>
+              <a href="tel:+15613851564"
+                style="display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#C4973E,#A67C2E);color:#FFFFFF;font-size:14px;font-weight:600;text-decoration:none;border-radius:8px;letter-spacing:0.02em;">
+                Call (561) 385-1564
+              </a>
+            </td></tr>
+          </table>
+
+        </td></tr>
+
+        <!-- Footer -->
+        <tr><td style="background-color:#0A0A0A;padding:28px 40px;border-radius:0 0 12px 12px;" align="center">
+          <p style="margin:0 0 4px;font-size:13px;font-weight:600;color:#FFFFFF;">AP Enterprises LLC</p>
+          <p style="margin:0 0 12px;font-size:12px;color:#555555;">South Florida's Premium Cleaning Service</p>
+          <p style="margin:0;font-size:11px;color:#3A3A3A;">
+            <a href="tel:+15613851564" style="color:#C4973E;text-decoration:none;">(561) 385-1564</a>
+            &nbsp;&nbsp;·&nbsp;&nbsp;
+            <a href="mailto:andres@apentllc.com" style="color:#C4973E;text-decoration:none;">andres@apentllc.com</a>
+          </p>
+        </td></tr>
+
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>`;
+}
+
+/* ───────────────────────── API Handler ───────────────────────── */
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
@@ -220,7 +222,6 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   const body = req.body as Partial<QuoteBody>;
 
-  // Server-side validation
   if (!body.firstName || !body.lastName || !body.email || !body.phone || !body.service) {
     return res.status(400).json({ error: "Missing required fields" });
   }
@@ -239,17 +240,31 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   };
 
   try {
-    const { error } = await resend.emails.send({
-      from: "AP Enterprises <quotes@apentllc.com>",
-      to: "apenterprisesllc.web@gmail.com",
-      replyTo: data.email,
-      subject: `New Quote Request – ${data.service} | ${data.firstName} ${data.lastName}`,
-      html: buildEmailHtml(data),
-    });
+    // Send internal notification + client confirmation in parallel
+    const [internal, confirmation] = await Promise.all([
+      resend.emails.send({
+        from: "AP Enterprises <quotes@apentllc.com>",
+        to: "apenterprisesllc.web@gmail.com",
+        replyTo: data.email,
+        subject: `New Quote Request – ${data.service} | ${data.firstName} ${data.lastName}`,
+        html: buildInternalHtml(data),
+      }),
+      resend.emails.send({
+        from: "AP Enterprises <quotes@apentllc.com>",
+        to: data.email,
+        subject: `Thank you for your request – AP Enterprises`,
+        html: buildClientHtml(data),
+      }),
+    ]);
 
-    if (error) {
-      console.error("Resend error:", error);
+    if (internal.error) {
+      console.error("Resend internal error:", internal.error);
       return res.status(500).json({ error: "Failed to send email" });
+    }
+
+    if (confirmation.error) {
+      console.error("Resend confirmation error:", confirmation.error);
+      // Don't fail the request if only the confirmation fails
     }
 
     return res.status(200).json({ success: true });
