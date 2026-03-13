@@ -41,8 +41,8 @@ function buildInternalHtml(data: QuoteBody): string {
 
   const detailRow = (label: string, value: string, highlight = false) =>
     `<tr>
-      <td style="padding:10px 16px;color:#8A8A8A;font-size:13px;width:150px;vertical-align:top;border-bottom:1px solid #F5F5F5;">${label}</td>
-      <td style="padding:10px 16px;color:#1A1A1A;font-size:14px;font-weight:${highlight ? "600" : "500"};border-bottom:1px solid #F5F5F5;">${value}</td>
+      <td style="padding:10px 16px;color:#999999;font-size:13px;width:150px;vertical-align:top;border-bottom:1px solid #2A2A2A;">${label}</td>
+      <td style="padding:10px 16px;color:${highlight ? "#FFFFFF" : "#E0E0E0"};font-size:14px;font-weight:${highlight ? "600" : "500"};border-bottom:1px solid #2A2A2A;">${value}</td>
     </tr>`;
 
   const optionalRows: string[] = [];
@@ -62,16 +62,20 @@ function buildInternalHtml(data: QuoteBody): string {
         <!-- Decorative gold line -->
         <tr><td style="height:3px;background:linear-gradient(90deg,#C4973E 0%,#D4AF5A 50%,#C4973E 100%);border-radius:12px 12px 0 0;"></td></tr>
 
+        <!-- Logo -->
+        <tr><td style="background-color:#111111;padding:28px 40px 0;" align="center">
+          <img src="https://apenterprises-xi.vercel.app/favicon.png" alt="AP Enterprises" width="120" style="display:block;width:120px;height:auto;" />
+        </td></tr>
+
         <!-- Header -->
-        <tr><td style="background-color:#111111;padding:36px 40px 28px;border-bottom:1px solid #1E1E1E;">
+        <tr><td style="background-color:#111111;padding:20px 40px 28px;border-bottom:1px solid #1E1E1E;">
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
             <tr>
               <td>
-                <p style="margin:0 0 2px;font-size:11px;font-weight:700;color:#C4973E;text-transform:uppercase;letter-spacing:0.15em;">AP Enterprises</p>
                 <h1 style="margin:0;font-size:22px;font-weight:700;color:#FFFFFF;letter-spacing:-0.02em;">New Quote Request</h1>
               </td>
               <td align="right" style="vertical-align:top;">
-                <p style="margin:0;font-size:11px;color:#555555;line-height:1.5;">${esc(date)}<br/>${esc(time)}</p>
+                <p style="margin:0;font-size:11px;color:#777777;line-height:1.5;">${esc(date)}<br/>${esc(time)}</p>
               </td>
             </tr>
           </table>
