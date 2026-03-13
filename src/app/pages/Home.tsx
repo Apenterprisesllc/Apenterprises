@@ -514,12 +514,12 @@ export function Home() {
             {/* Single contact row */}
             <div className="flex justify-center">
               <a
-                href="mailto:andres@apentllc.com"
+                href="mailto:apenterprisesllc.web@gmail.com"
                 className="flex items-center gap-2 text-white/35 hover:text-[#C4973E] transition-colors text-[13px]"
                 style={{ fontFamily: "Inter, sans-serif" }}
               >
                 <Mail className="w-4 h-4" />
-                andres@apentllc.com
+                apenterprisesllc.web@gmail.com
               </a>
             </div>
           </AnimatedSection>

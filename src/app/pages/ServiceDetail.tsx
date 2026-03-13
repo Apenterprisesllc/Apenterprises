@@ -237,13 +237,13 @@ export function ServiceDetail() {
                         <p className="text-[#0A0A0A]/80 text-[13px] group-hover:text-[#C4973E] transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>(561) 385-1564</p>
                       </div>
                     </a>
-                    <a href="mailto:andres@apentllc.com" className="flex items-center gap-3 group">
+                    <a href="mailto:apenterprisesllc.web@gmail.com" className="flex items-center gap-3 group">
                       <div className="w-9 h-9 rounded-xl bg-[#0A0A0A] flex items-center justify-center shrink-0">
                         <Mail className="w-4 h-4 text-[#C4973E]" />
                       </div>
                       <div>
                         <p className="text-[10px] text-[#0A0A0A]/35 uppercase tracking-wide" style={{ fontFamily: "Inter, sans-serif" }}>Email</p>
-                        <p className="text-[#0A0A0A]/80 text-[13px] group-hover:text-[#C4973E] transition-colors break-all" style={{ fontFamily: "Inter, sans-serif" }}>andres@apentllc.com</p>
+                        <p className="text-[#0A0A0A]/80 text-[13px] group-hover:text-[#C4973E] transition-colors break-all" style={{ fontFamily: "Inter, sans-serif" }}>apenterprisesllc.web@gmail.com</p>
                       </div>
                     </a>
                   </div>

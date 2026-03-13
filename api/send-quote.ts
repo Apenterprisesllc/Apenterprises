@@ -216,7 +216,7 @@ function buildClientHtml(data: QuoteBody): string {
           <p style="margin:0;font-size:11px;color:#3A3A3A;">
             <a href="tel:+15613851564" style="color:#C4973E;text-decoration:none;">(561) 385-1564</a>
             &nbsp;&nbsp;·&nbsp;&nbsp;
-            <a href="mailto:andres@apentllc.com" style="color:#C4973E;text-decoration:none;">andres@apentllc.com</a>
+            <a href="mailto:apenterprisesllc.web@gmail.com" style="color:#C4973E;text-decoration:none;">apenterprisesllc.web@gmail.com</a>
           </p>
         </td></tr>
 
@@ -271,17 +271,16 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       return res.status(500).json({ error: "Failed to send email" });
     }
 
-    // Client confirmation – only if a custom domain is configured
-    if (sender !== "AP Enterprises <onboarding@resend.dev>") {
-      const confirmation = await client.emails.send({
-        from: sender,
-        to: data.email,
-        subject: `Thank you for your request – AP Enterprises`,
-        html: buildClientHtml(data),
-      });
-      if (confirmation.error) {
-        console.error("Resend confirmation error:", confirmation.error);
-      }
+    // Client confirmation email
+    const confirmation = await client.emails.send({
+      from: sender,
+      to: data.email,
+      subject: `Thank you for your request – AP Enterprises`,
+      html: buildClientHtml(data),
+    });
+    if (confirmation.error) {
+      console.error("Resend confirmation error:", confirmation.error);
+      // Don't fail the request if only the confirmation fails
     }
 
     return res.status(200).json({ success: true });

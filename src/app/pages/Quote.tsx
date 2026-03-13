@@ -130,7 +130,7 @@ export function Quote() {
                   <a href="tel:+15613851564" className="flex items-center justify-center gap-2 px-6 py-3 bg-[#0A0A0A] text-white rounded-xl text-[14px]" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 600 }}>
                     <Phone className="w-4 h-4 text-[#C4973E]" /> (561) 385-1564
                   </a>
-                  <a href="mailto:andres@apentllc.com" className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-[#C4973E] to-[#A67C2E] text-white rounded-xl text-[14px]" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 600 }}>
+                  <a href="mailto:apenterprisesllc.web@gmail.com" className="flex items-center justify-center gap-2 px-6 py-3 bg-gradient-to-r from-[#C4973E] to-[#A67C2E] text-white rounded-xl text-[14px]" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 600 }}>
                     <Mail className="w-4 h-4" /> Email Us
                   </a>
                 </div>
@@ -338,13 +338,13 @@ export function Quote() {
                               <p className="text-white/75 text-[13px] group-hover:text-[#C4973E] transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>(561) 385-1564</p>
                             </div>
                           </a>
-                          <a href="mailto:andres@apentllc.com" className="flex items-center gap-3 group">
+                          <a href="mailto:apenterprisesllc.web@gmail.com" className="flex items-center gap-3 group">
                             <div className="w-9 h-9 rounded-xl bg-[#C4973E]/15 border border-[#C4973E]/20 flex items-center justify-center shrink-0">
                               <Mail className="w-4 h-4 text-[#C4973E]" />
                             </div>
                             <div>
                               <p className="text-[10px] text-white/30 uppercase tracking-wide" style={{ fontFamily: "Inter, sans-serif" }}>Email us</p>
-                              <p className="text-white/75 text-[13px] group-hover:text-[#C4973E] transition-colors break-all" style={{ fontFamily: "Inter, sans-serif" }}>andres@apentllc.com</p>
+                              <p className="text-white/75 text-[13px] group-hover:text-[#C4973E] transition-colors break-all" style={{ fontFamily: "Inter, sans-serif" }}>apenterprisesllc.web@gmail.com</p>
                             </div>
                           </a>
                         </div>
