@@ -350,9 +350,10 @@ export function ServiceDetail() {
                                   </button>
                                   <button
                                     onClick={() => {
+                                      const t = videoRef.current?.currentTime || 0;
                                       if (videoRef.current) videoRef.current.pause();
                                       setVideoOpen(true);
-                                      setTimeout(() => modalVideoRef.current?.play(), 100);
+                                      setTimeout(() => { if (modalVideoRef.current) { modalVideoRef.current.currentTime = t; modalVideoRef.current.play(); } }, 100);
                                     }}
                                     className="text-white/40 hover:text-[#C4973E] transition-colors"
                                     title="Expand"
