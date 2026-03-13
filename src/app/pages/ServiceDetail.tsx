@@ -67,7 +67,9 @@ export function ServiceDetail() {
   };
 
   const closeVideo = useCallback(() => {
+    const t = modalVideoRef.current?.currentTime || 0;
     if (modalVideoRef.current) modalVideoRef.current.pause();
+    if (videoRef.current) videoRef.current.currentTime = t;
     setVideoOpen(false);
     setModalPlaying(false);
   }, []);
