@@ -1,7 +1,16 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+let resend: Resend | null = null;
+
+function getResend(): Resend {
+  if (!resend) {
+    const key = (process.env.RESEND_API_KEY || "").trim();
+    if (!key) throw new Error("RESEND_API_KEY is not configured");
+    resend = new Resend(key);
+  }
+  return resend;
+}
 
 interface QuoteBody {
   firstName: string;
@@ -239,32 +248,36 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     message: body.message || undefined,
   };
 
+  const sender = process.env.EMAIL_FROM || "AP Enterprises <onboarding@resend.dev>";
+
   try {
-    // Send internal notification + client confirmation in parallel
-    const [internal, confirmation] = await Promise.all([
-      resend.emails.send({
-        from: "AP Enterprises <quotes@apentllc.com>",
-        to: "apenterprisesllc.web@gmail.com",
-        replyTo: data.email,
-        subject: `New Quote Request – ${data.service} | ${data.firstName} ${data.lastName}`,
-        html: buildInternalHtml(data),
-      }),
-      resend.emails.send({
-        from: "AP Enterprises <quotes@apentllc.com>",
-        to: data.email,
-        subject: `Thank you for your request – AP Enterprises`,
-        html: buildClientHtml(data),
-      }),
-    ]);
+    const client = getResend();
+
+    // Send internal notification
+    const internal = await client.emails.send({
+      from: sender,
+      to: "apenterprisesllc.web@gmail.com",
+      replyTo: data.email,
+      subject: `New Quote Request – ${data.service} | ${data.firstName} ${data.lastName}`,
+      html: buildInternalHtml(data),
+    });
 
     if (internal.error) {
       console.error("Resend internal error:", internal.error);
       return res.status(500).json({ error: "Failed to send email" });
     }
 
-    if (confirmation.error) {
-      console.error("Resend confirmation error:", confirmation.error);
-      // Don't fail the request if only the confirmation fails
+    // Client confirmation – only if a custom domain is configured
+    if (sender !== "AP Enterprises <onboarding@resend.dev>") {
+      const confirmation = await client.emails.send({
+        from: sender,
+        to: data.email,
+        subject: `Thank you for your request – AP Enterprises`,
+        html: buildClientHtml(data),
+      });
+      if (confirmation.error) {
+        console.error("Resend confirmation error:", confirmation.error);
+      }
     }
 
     return res.status(200).json({ success: true });
