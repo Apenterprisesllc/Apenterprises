@@ -1,10 +1,10 @@
 import { useParams, Link } from "react-router";
-import { motion } from "motion/react";
-import { useState, useRef } from "react";
+import { motion, AnimatePresence } from "motion/react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import {
   Home as HomeIcon, Building2, ShieldCheck, CalendarCheck,
   Hotel, KeyRound, HardHat, Sparkles, Moon, UtensilsCrossed, Layers, Gem,
-  ArrowRight, CheckCircle2, Phone, Mail, ArrowLeft, Play,
+  ArrowRight, CheckCircle2, Phone, Mail, ArrowLeft, Play, X, Maximize2,
 } from "lucide-react";
 import { services } from "../data/services";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "../components/AnimatedSection";
@@ -33,7 +33,30 @@ export function ServiceDetail() {
   const Icon = iconMap[service.icon];
   const related = services.filter((_, i) => i !== currentIndex).slice(0, 3);
   const [videoPlaying, setVideoPlaying] = useState(false);
+  const [videoOpen, setVideoOpen] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const modalVideoRef = useRef<HTMLVideoElement>(null);
+
+  const closeVideo = useCallback(() => {
+    if (modalVideoRef.current) {
+      modalVideoRef.current.pause();
+    }
+    setVideoOpen(false);
+  }, []);
+
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && videoOpen) closeVideo();
+    };
+    if (videoOpen) {
+      document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", handleKey);
+    }
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", handleKey);
+    };
+  }, [videoOpen, closeVideo]);
 
   return (
     <div className="relative bg-white">
@@ -217,7 +240,18 @@ export function ServiceDetail() {
                           See Our Work
                         </p>
                       </div>
-                      <span className="text-white/20 text-[10px] uppercase tracking-widest" style={{ fontFamily: "Inter, sans-serif" }}>Video</span>
+                      <button
+                        onClick={() => {
+                          if (videoRef.current) videoRef.current.pause();
+                          setVideoOpen(true);
+                          setTimeout(() => modalVideoRef.current?.play(), 100);
+                        }}
+                        className="flex items-center gap-1.5 text-white/30 hover:text-[#C4973E] text-[10px] uppercase tracking-widest transition-colors"
+                        style={{ fontFamily: "Inter, sans-serif" }}
+                        title="Fullscreen"
+                      >
+                        <Maximize2 className="w-3.5 h-3.5" />
+                      </button>
                     </div>
                     <div className="px-2.5 pb-2.5">
                       <div className="relative rounded-xl overflow-hidden bg-black" style={{ aspectRatio: "9 / 16" }}>
@@ -250,6 +284,7 @@ export function ServiceDetail() {
                           <video
                             ref={videoRef}
                             controls
+                            playsInline
                             preload="none"
                             poster={service.image}
                             className="absolute inset-0 w-full h-full object-contain"
@@ -262,6 +297,78 @@ export function ServiceDetail() {
                   </div>
                 </AnimatedSection>
               )}
+
+              {/* Video Lightbox Modal */}
+              <AnimatePresence>
+                {videoOpen && service.video && (
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.3 }}
+                    className="fixed inset-0 z-[9999] flex items-center justify-center p-4 md:p-8"
+                    onClick={closeVideo}
+                  >
+                    {/* Backdrop */}
+                    <div className="absolute inset-0 bg-black/90 backdrop-blur-md" />
+
+                    {/* Close button */}
+                    <motion.button
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.8 }}
+                      transition={{ delay: 0.15 }}
+                      onClick={closeVideo}
+                      className="absolute top-4 right-4 md:top-6 md:right-6 z-10 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 flex items-center justify-center transition-colors"
+                    >
+                      <X className="w-5 h-5 text-white" />
+                    </motion.button>
+
+                    {/* Service title */}
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0 }}
+                      transition={{ delay: 0.1 }}
+                      className="absolute top-5 left-5 md:top-7 md:left-8 z-10 flex items-center gap-3"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-[#C4973E]/20 flex items-center justify-center">
+                        <Play className="w-3.5 h-3.5 text-[#C4973E]" />
+                      </div>
+                      <div>
+                        <p className="text-white/90 text-[14px]" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 600 }}>
+                          {service.title}
+                        </p>
+                        <p className="text-white/30 text-[11px]" style={{ fontFamily: "Inter, sans-serif" }}>
+                          AP Enterprises
+                        </p>
+                      </div>
+                    </motion.div>
+
+                    {/* Video container */}
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.95 }}
+                      transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
+                      className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/50 border border-white/5"
+                      style={{ maxHeight: "85vh" }}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <video
+                        ref={modalVideoRef}
+                        controls
+                        playsInline
+                        preload="none"
+                        poster={service.image}
+                        className="block max-h-[85vh] w-auto mx-auto bg-black"
+                      >
+                        <source src={service.video} type="video/mp4" />
+                      </video>
+                    </motion.div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
 
               {/* Related services */}
               <AnimatedSection direction="right" delay={0.15}>
