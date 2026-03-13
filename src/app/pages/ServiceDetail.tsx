@@ -306,65 +306,67 @@ export function ServiceDetail() {
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
                     transition={{ duration: 0.3 }}
-                    className="fixed inset-0 z-[9999] flex items-center justify-center p-4 md:p-8"
+                    className="fixed inset-0 z-[9999] flex items-center justify-center"
                     onClick={closeVideo}
                   >
                     {/* Backdrop */}
-                    <div className="absolute inset-0 bg-black/90 backdrop-blur-md" />
+                    <div className="absolute inset-0 bg-black/95 backdrop-blur-xl" />
 
-                    {/* Close button */}
-                    <motion.button
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.8 }}
-                      transition={{ delay: 0.15 }}
-                      onClick={closeVideo}
-                      className="absolute top-4 right-4 md:top-6 md:right-6 z-10 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 border border-white/10 flex items-center justify-center transition-colors"
-                    >
-                      <X className="w-5 h-5 text-white" />
-                    </motion.button>
+                    {/* Ambient glow */}
+                    <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#C4973E]/5 blur-[120px]" />
+                    </div>
 
-                    {/* Service title */}
+                    {/* Top bar */}
                     <motion.div
-                      initial={{ opacity: 0, y: -10 }}
+                      initial={{ opacity: 0, y: -20 }}
                       animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ delay: 0.1 }}
-                      className="absolute top-5 left-5 md:top-7 md:left-8 z-10 flex items-center gap-3"
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ delay: 0.1, duration: 0.3 }}
+                      className="absolute top-0 left-0 right-0 z-10 flex items-center justify-between px-5 py-4 md:px-8 md:py-5"
                     >
-                      <div className="w-8 h-8 rounded-lg bg-[#C4973E]/20 flex items-center justify-center">
-                        <Play className="w-3.5 h-3.5 text-[#C4973E]" />
+                      <div className="flex items-center gap-3">
+                        <div className="w-9 h-9 rounded-xl bg-[#C4973E]/15 border border-[#C4973E]/20 flex items-center justify-center">
+                          <Play className="w-4 h-4 text-[#C4973E]" />
+                        </div>
+                        <div>
+                          <p className="text-white text-[14px] leading-tight" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 600 }}>
+                            {service.title}
+                          </p>
+                          <p className="text-white/25 text-[11px]" style={{ fontFamily: "Inter, sans-serif" }}>
+                            AP Enterprises
+                          </p>
+                        </div>
                       </div>
-                      <div>
-                        <p className="text-white/90 text-[14px]" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 600 }}>
-                          {service.title}
-                        </p>
-                        <p className="text-white/30 text-[11px]" style={{ fontFamily: "Inter, sans-serif" }}>
-                          AP Enterprises
-                        </p>
-                      </div>
+                      <button
+                        onClick={closeVideo}
+                        className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 flex items-center justify-center transition-all duration-200"
+                      >
+                        <X className="w-5 h-5 text-white/70" />
+                      </button>
                     </motion.div>
 
                     {/* Video container */}
                     <motion.div
-                      initial={{ opacity: 0, scale: 0.9 }}
+                      initial={{ opacity: 0, scale: 0.92 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      exit={{ opacity: 0, scale: 0.95 }}
-                      transition={{ duration: 0.35, ease: [0.25, 0.46, 0.45, 0.94] }}
-                      className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/50 border border-white/5"
-                      style={{ maxHeight: "85vh" }}
+                      exit={{ opacity: 0, scale: 0.96 }}
+                      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                      className="relative flex items-center justify-center w-full h-full pt-16 pb-6 px-4 md:px-12 md:pt-20 md:pb-8"
                       onClick={(e) => e.stopPropagation()}
                     >
-                      <video
-                        ref={modalVideoRef}
-                        controls
-                        playsInline
-                        preload="none"
-                        poster={service.image}
-                        className="block max-h-[85vh] w-auto mx-auto bg-black"
-                      >
-                        <source src={service.video} type="video/mp4" />
-                      </video>
+                      <div className="relative rounded-2xl overflow-hidden shadow-[0_0_80px_rgba(196,151,62,0.08)] border border-white/[0.06] max-h-full">
+                        <video
+                          ref={modalVideoRef}
+                          controls
+                          playsInline
+                          preload="none"
+                          poster={service.image}
+                          className="block max-h-[calc(100vh-7rem)] md:max-h-[calc(100vh-8rem)] w-auto rounded-2xl"
+                        >
+                          <source src={service.video} type="video/mp4" />
+                        </video>
+                      </div>
                     </motion.div>
                   </motion.div>
                 )}
