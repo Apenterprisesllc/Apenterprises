@@ -301,7 +301,7 @@ export function ServiceDetail() {
                               playsInline
                               preload="none"
                               poster={service.image}
-                              className="absolute inset-0 w-full h-full object-contain"
+                              className="absolute inset-0 w-full h-full object-contain cursor-pointer"
                               onClick={() => toggle(videoRef)}
                               onPlay={() => setVideoPlaying(true)}
                               onPause={() => setVideoPlaying(false)}
@@ -318,7 +318,7 @@ export function ServiceDetail() {
 
                             {/* Play/Pause center overlay */}
                             {!videoPlaying && (
-                              <button onClick={() => toggle(videoRef)} className="absolute inset-0 flex items-center justify-center bg-black/20">
+                              <button onClick={() => toggle(videoRef)} className="absolute inset-0 flex items-center justify-center bg-black/20 cursor-pointer">
                                 <div className="w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-xl">
                                   <Play className="w-5 h-5 text-[#0A0A0A] ml-0.5" />
                                 </div>
@@ -336,7 +336,7 @@ export function ServiceDetail() {
                               {/* Buttons row */}
                               <div className="flex items-center justify-between">
                                 <div className="flex items-center gap-2">
-                                  <button onClick={() => toggle(videoRef)} className="text-white/80 hover:text-white transition-colors">
+                                  <button onClick={() => toggle(videoRef)} className="text-white/80 hover:text-white transition-colors cursor-pointer">
                                     {videoPlaying ? <Pause className="w-3.5 h-3.5" /> : <Play className="w-3.5 h-3.5" />}
                                   </button>
                                   <span className="text-white/40 text-[10px] tabular-nums" style={{ fontFamily: "Inter, sans-serif" }}>
@@ -346,7 +346,7 @@ export function ServiceDetail() {
                                 <div className="flex items-center gap-2">
                                   <button
                                     onClick={() => { const m = !videoMuted; setVideoMuted(m); if (videoRef.current) videoRef.current.muted = m; }}
-                                    className="text-white/40 hover:text-white transition-colors"
+                                    className="text-white/40 hover:text-white transition-colors cursor-pointer"
                                   >
                                     {videoMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5" />}
                                   </button>
@@ -357,7 +357,7 @@ export function ServiceDetail() {
                                       setVideoOpen(true);
                                       setTimeout(() => { if (modalVideoRef.current) { modalVideoRef.current.currentTime = t; modalVideoRef.current.play(); } }, 100);
                                     }}
-                                    className="text-white/40 hover:text-[#C4973E] transition-colors"
+                                    className="text-white/40 hover:text-[#C4973E] transition-colors cursor-pointer"
                                     title="Expand"
                                   >
                                     <Maximize2 className="w-3.5 h-3.5" />
@@ -418,7 +418,7 @@ export function ServiceDetail() {
                       </div>
                       <button
                         onClick={closeVideo}
-                        className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 flex items-center justify-center transition-all duration-200"
+                        className="w-10 h-10 rounded-full bg-white/5 hover:bg-white/15 border border-white/10 flex items-center justify-center transition-all duration-200 cursor-pointer"
                       >
                         <X className="w-5 h-5 text-white/70" />
                       </button>
@@ -439,7 +439,7 @@ export function ServiceDetail() {
                           playsInline
                           preload="none"
                           poster={service.image}
-                          className="block max-h-[85vh] w-auto"
+                          className="block max-h-[85vh] w-auto cursor-pointer"
                           onClick={() => toggle(modalVideoRef)}
                           onPlay={() => setModalPlaying(true)}
                           onPause={() => setModalPlaying(false)}
@@ -456,7 +456,7 @@ export function ServiceDetail() {
 
                         {/* Center play button when paused */}
                         {!modalPlaying && (
-                          <button onClick={() => toggle(modalVideoRef)} className="absolute inset-0 flex items-center justify-center bg-black/20 transition-all">
+                          <button onClick={() => toggle(modalVideoRef)} className="absolute inset-0 flex items-center justify-center bg-black/20 transition-all cursor-pointer">
                             <div className="w-16 h-16 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-2xl hover:scale-110 transition-transform">
                               <Play className="w-7 h-7 text-[#0A0A0A] ml-0.5" />
                             </div>
@@ -474,7 +474,7 @@ export function ServiceDetail() {
                           {/* Buttons row */}
                           <div className="flex items-center justify-between">
                             <div className="flex items-center gap-3">
-                              <button onClick={() => toggle(modalVideoRef)} className="text-white/90 hover:text-white transition-colors">
+                              <button onClick={() => toggle(modalVideoRef)} className="text-white/90 hover:text-white transition-colors cursor-pointer">
                                 {modalPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5" />}
                               </button>
                               <span className="text-white/40 text-[12px] tabular-nums" style={{ fontFamily: "Inter, sans-serif" }}>
@@ -483,7 +483,7 @@ export function ServiceDetail() {
                             </div>
                             <button
                               onClick={() => { const m = !modalMuted; setModalMuted(m); if (modalVideoRef.current) modalVideoRef.current.muted = m; }}
-                              className="text-white/40 hover:text-white transition-colors"
+                              className="text-white/40 hover:text-white transition-colors cursor-pointer"
                             >
                               {modalMuted ? <VolumeX className="w-5 h-5" /> : <Volume2 className="w-5 h-5" />}
                             </button>
