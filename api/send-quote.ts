@@ -1,5 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { Resend } from "resend";
+import { randomUUID } from "node:crypto";
 
 let resend: Resend | null = null;
 
@@ -229,14 +230,16 @@ function buildClientHtml(data: QuoteBody): string {
 
 /* ───────────────────────── API Handler ───────────────────────── */
 export default async function handler(req: VercelRequest, res: VercelResponse) {
+  const requestId = randomUUID();
+
   if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
+    return res.status(405).json({ error: "Method not allowed", requestId });
   }
 
   const body = req.body as Partial<QuoteBody>;
 
   if (!body.firstName || !body.lastName || !body.email || !body.phone || !body.service) {
-    return res.status(400).json({ error: "Missing required fields" });
+    return res.status(400).json({ error: "Missing required fields", requestId });
   }
 
   const data: QuoteBody = {
@@ -268,7 +271,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     if (internal.error) {
       console.error("Resend internal error:", internal.error);
-      return res.status(500).json({ error: "Failed to send email" });
+      return res.status(500).json({ error: "Failed to send email", requestId });
     }
 
     // Client confirmation email
@@ -283,9 +286,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
       // Don't fail the request if only the confirmation fails
     }
 
-    return res.status(200).json({ success: true });
+    return res.status(200).json({ success: true, requestId, messageId: internal.data?.id });
   } catch (err) {
-    console.error("Server error:", err);
-    return res.status(500).json({ error: "Internal server error" });
+    console.error("Server error:", requestId, err);
+    return res.status(500).json({ error: "Internal server error", requestId });
   }
 }

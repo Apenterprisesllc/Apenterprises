@@ -3,7 +3,8 @@ import { Link, useLocation } from "react-router";
 import { motion, AnimatePresence } from "motion/react";
 import { Menu, X, Phone, ChevronDown } from "lucide-react";
 import { services } from "../data/services";
-import logoImg from "@/assets/ff09f92f07bd4aa3a72ff5dad81cbf4cb16ea8e0.png";
+import logoImg from "@/assets/logo.webp";
+import { prefetchRouteModule } from "../routeModules";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,6 +26,27 @@ export function Navbar() {
   const isActive = (href: string) => {
     if (href === "/") return location.pathname === "/";
     return location.pathname.startsWith(href);
+  };
+
+  const prefetchByPath = (path: string) => {
+    if (path === "/") {
+      void prefetchRouteModule("home");
+      return;
+    }
+
+    if (path.startsWith("/services/")) {
+      void prefetchRouteModule("serviceDetail");
+      return;
+    }
+
+    if (path.startsWith("/services")) {
+      void prefetchRouteModule("services");
+      return;
+    }
+
+    if (path.startsWith("/quote")) {
+      void prefetchRouteModule("quote");
+    }
   };
 
   return (
@@ -53,6 +75,9 @@ export function Navbar() {
           <div className="hidden lg:flex items-center gap-1">
             <Link
               to="/"
+              onMouseEnter={() => prefetchByPath("/")}
+              onFocus={() => prefetchByPath("/")}
+              onTouchStart={() => prefetchByPath("/")}
               className={`px-4 py-2 rounded-lg text-[13px] transition-all duration-200 ${
                 isActive("/") && location.pathname === "/"
                   ? "text-[#C4973E] bg-[#C4973E]/10"
@@ -70,6 +95,8 @@ export function Navbar() {
               onMouseLeave={() => setServicesOpen(false)}
             >
               <button
+                onMouseEnter={() => prefetchByPath("/services")}
+                onFocus={() => prefetchByPath("/services")}
                 className={`flex items-center gap-1 px-4 py-2 rounded-lg text-[13px] transition-all duration-200 ${
                   isActive("/services")
                     ? "text-[#C4973E] bg-[#C4973E]/10"
@@ -93,6 +120,8 @@ export function Navbar() {
                     <div className="p-2">
                       <Link
                         to="/services"
+                        onMouseEnter={() => prefetchByPath("/services")}
+                        onFocus={() => prefetchByPath("/services")}
                         className="flex items-center gap-3 px-3 py-2.5 rounded-xl text-[#C4973E] hover:bg-white/8 transition-colors mb-1 border-b border-white/8 pb-3 mb-2"
                         style={{ fontFamily: "Inter, sans-serif", fontSize: "13px", fontWeight: 500 }}
                       >
@@ -102,6 +131,8 @@ export function Navbar() {
                         <Link
                           key={s.id}
                           to={`/services/${s.id}`}
+                          onMouseEnter={() => prefetchByPath(`/services/${s.id}`)}
+                          onFocus={() => prefetchByPath(`/services/${s.id}`)}
                           className="flex items-center gap-2 px-3 py-2 rounded-xl text-white/65 hover:text-white hover:bg-white/8 transition-colors text-[12px]"
                           style={{ fontFamily: "Inter, sans-serif" }}
                         >
@@ -116,6 +147,9 @@ export function Navbar() {
 
             <Link
               to="/quote"
+              onMouseEnter={() => prefetchByPath("/quote")}
+              onFocus={() => prefetchByPath("/quote")}
+              onTouchStart={() => prefetchByPath("/quote")}
               className={`px-4 py-2 rounded-lg text-[13px] transition-all duration-200 ${
                 isActive("/quote")
                   ? "text-[#C4973E] bg-[#C4973E]/10"
@@ -139,6 +173,9 @@ export function Navbar() {
             </a>
             <Link
               to="/quote"
+              onMouseEnter={() => prefetchByPath("/quote")}
+              onFocus={() => prefetchByPath("/quote")}
+              onTouchStart={() => prefetchByPath("/quote")}
               className="ml-1 px-5 py-2.5 bg-gradient-to-r from-[#C4973E] to-[#A67C2E] hover:from-[#B8892F] hover:to-[#8B6914] text-white text-[13px] rounded-xl transition-all duration-300 shadow-lg shadow-[#C4973E]/25 hover:shadow-[#C4973E]/40 hover:-translate-y-px"
               style={{ fontFamily: "Poppins, sans-serif", fontWeight: 600 }}
             >
@@ -177,10 +214,10 @@ export function Navbar() {
             className="lg:hidden overflow-hidden bg-[#0A0A0A]/98 backdrop-blur-xl border-t border-white/8"
           >
             <div className="px-6 py-5 flex flex-col gap-1">
-              <Link to="/" className="px-3 py-2.5 text-white/80 text-sm rounded-lg hover:bg-white/8 hover:text-white transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>Home</Link>
-              <Link to="/services" className="px-3 py-2.5 text-white/80 text-sm rounded-lg hover:bg-white/8 hover:text-white transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>All Services</Link>
+              <Link to="/" onTouchStart={() => prefetchByPath("/")} className="px-3 py-2.5 text-white/80 text-sm rounded-lg hover:bg-white/8 hover:text-white transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>Home</Link>
+              <Link to="/services" onTouchStart={() => prefetchByPath("/services")} className="px-3 py-2.5 text-white/80 text-sm rounded-lg hover:bg-white/8 hover:text-white transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>All Services</Link>
               {services.map((s) => (
-                <Link key={s.id} to={`/services/${s.id}`} className="px-3 py-2 pl-6 text-white/50 text-xs rounded-lg hover:bg-white/8 hover:text-white/80 transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
+                <Link key={s.id} to={`/services/${s.id}`} onTouchStart={() => prefetchByPath(`/services/${s.id}`)} className="px-3 py-2 pl-6 text-white/50 text-xs rounded-lg hover:bg-white/8 hover:text-white/80 transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
                   {s.title}
                 </Link>
               ))}
@@ -188,7 +225,7 @@ export function Navbar() {
               <a href="tel:+15613851564" className="flex items-center gap-2 px-3 py-2.5 text-white/70 text-sm">
                 <Phone className="w-4 h-4 text-[#C4973E]" /> (561) 385-1564
               </a>
-              <Link to="/quote" className="mt-1 px-4 py-3 bg-gradient-to-r from-[#C4973E] to-[#A67C2E] text-white text-sm rounded-xl text-center" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 600 }}>
+              <Link to="/quote" onTouchStart={() => prefetchByPath("/quote")} className="mt-1 px-4 py-3 bg-gradient-to-r from-[#C4973E] to-[#A67C2E] text-white text-sm rounded-xl text-center" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 600 }}>
                 Get a Free Quote
               </Link>
             </div>

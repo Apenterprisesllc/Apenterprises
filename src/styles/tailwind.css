@@ -1,4 +1,15 @@
 @import 'tailwindcss' source(none);
-@source '../**/*.{js,ts,jsx,tsx}';
+@source '../main.tsx';
+@source '../app/App.tsx';
+@source '../app/routes.tsx';
+@source '../app/data/**/*.{ts,tsx}';
+@source '../app/pages/**/*.{ts,tsx}';
+@source '../app/components/AnimatedSection.tsx';
+@source '../app/components/Footer.tsx';
+@source '../app/components/Layout.tsx';
+@source '../app/components/Navbar.tsx';
+@source '../app/components/ServiceVideoExperience.tsx';
+@source '../app/components/figma/**/*.{ts,tsx}';
 
 @import 'tw-animate-css';
+

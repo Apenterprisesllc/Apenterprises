@@ -5,7 +5,14 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "dev": "vite"
+    "dev": "vite",
+    "preview": "vite preview",
+    "media:build": "node scripts/optimize-media.mjs && node scripts/generate-video-variants.mjs",
+    "media:variants": "node scripts/generate-video-variants.mjs",
+    "media:landscape": "node scripts/build-service-landscape-images.cjs",
+    "perf:budget": "node scripts/check-performance-budgets.mjs",
+    "perf:lighthouse": "npx @lhci/cli autorun --config=.lighthouserc.json",
+    "perf:ci": "npm run build && npm run perf:budget"
   },
   "dependencies": {
     "@emotion/react": "11.14.0",

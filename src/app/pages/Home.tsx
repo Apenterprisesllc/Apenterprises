@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, type ElementType } from "react";
 import { Link } from "react-router";
 import { motion, useScroll, useTransform } from "motion/react";
 import {
@@ -26,8 +26,9 @@ import {
 } from "lucide-react";
 import { services } from "../data/services";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "../components/AnimatedSection";
+import { mediaUrl } from "../data/mediaManifest";
 
-const iconMap: Record<string, React.ElementType> = {
+const iconMap: Record<string, ElementType> = {
   Home: HomeIcon, Building2, ShieldCheck, CalendarCheck, Hotel,
   KeyRound, HardHat, Sparkles, Moon, UtensilsCrossed, Layers, Gem,
 };
@@ -62,6 +63,7 @@ export function Home() {
   const { scrollYProgress } = useScroll({ target: heroRef, offset: ["start start", "end start"] });
   const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
+  const heroImage = mediaUrl("/media/photos/hero.webp");
 
   return (
     <div className="relative bg-white overflow-x-hidden">
@@ -69,13 +71,18 @@ export function Home() {
       {/* ── HERO ─────────────────────────────────────── */}
       <section ref={heroRef} className="relative min-h-screen flex items-center overflow-hidden">
         {/* Parallax BG */}
-        <motion.div
+        <motion.img
+          src={heroImage}
+          alt=""
+          aria-hidden="true"
+          loading="eager"
+          decoding="async"
+          fetchPriority="high"
           style={{
             y: heroY,
-            backgroundImage: "url(/media/photos/hero.webp)",
             willChange: "transform",
           }}
-          className="absolute inset-0 bg-cover bg-center scale-110"
+          className="absolute inset-0 w-full h-full object-cover scale-110"
         />
         {/* Layered overlays */}
         <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A]/95 via-[#0A0A0A]/80 to-[#0A0A0A]/40" />
@@ -260,7 +267,7 @@ export function Home() {
                     <div className="relative h-44 overflow-hidden">
                       <img
                         loading="lazy"
-                        src={service.image}
+                        src={service.thumbnail}
                         alt={service.title}
                         className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-700"
                         style={{ transform: "scale(1)" }}
@@ -472,7 +479,10 @@ export function Home() {
       {/* ── CTA ─────────────────────────────────────── */}
       <section id="contact" className="py-28 bg-[#0A0A0A] relative overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute inset-0 bg-[url('/media/photos/hero.webp')] bg-cover bg-center opacity-5" />
+          <div
+            className="absolute inset-0 bg-cover bg-center opacity-5"
+            style={{ backgroundImage: `url(${heroImage})` }}
+          />
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-[#C4973E]/8 blur-[100px]" />
         </div>
 

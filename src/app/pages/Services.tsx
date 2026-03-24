@@ -1,3 +1,4 @@
+import { type ElementType } from "react";
 import { Link } from "react-router";
 import { motion } from "motion/react";
 import {
@@ -7,19 +8,25 @@ import {
 } from "lucide-react";
 import { services } from "../data/services";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "../components/AnimatedSection";
+import { mediaUrl } from "../data/mediaManifest";
 
-const iconMap: Record<string, React.ElementType> = {
+const iconMap: Record<string, ElementType> = {
   Home: HomeIcon, Building2, ShieldCheck, CalendarCheck, Hotel,
   KeyRound, HardHat, Sparkles, Moon, UtensilsCrossed, Layers, Gem,
 };
 
 export function Services() {
+  const heroImage = mediaUrl("/media/photos/hero.webp");
+
   return (
     <div className="relative bg-white">
       {/* Hero */}
       <section className="relative py-24 md:py-36 bg-[#0A0A0A] overflow-hidden">
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute inset-0 bg-[url('/media/photos/hero.webp')] bg-cover bg-center opacity-8" style={{ opacity: 0.08 }} />
+          <div
+            className="absolute inset-0 bg-cover bg-center opacity-8"
+            style={{ opacity: 0.08, backgroundImage: `url(${heroImage})` }}
+          />
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[300px] rounded-full bg-[#C4973E]/8 blur-[80px]" />
           <div className="absolute left-0 top-0 bottom-0 w-[3px] bg-gradient-to-b from-transparent via-[#C4973E] to-transparent" />
         </div>
@@ -73,7 +80,7 @@ export function Services() {
                       <div className="relative h-52 overflow-hidden">
                         <img
                           loading="lazy"
-                          src={service.image}
+                          src={service.thumbnail}
                           alt={service.title}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                         />

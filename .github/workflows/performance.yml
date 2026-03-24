@@ -1,0 +1,35 @@
+name: Performance Gates
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+
+jobs:
+  perf:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Bundle budget check
+        run: npm run perf:budget
+
+      - name: Lighthouse assertions
+        run: npx @lhci/cli autorun --config=.lighthouserc.json
+

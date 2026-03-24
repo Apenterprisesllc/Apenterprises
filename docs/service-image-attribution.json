@@ -1,0 +1,222 @@
+{
+  "description": "Service landscape image attribution and processing manifest for AP Enterprises.",
+  "generatedOn": "2026-03-24T00:33:01.394Z",
+  "entries": [
+    {
+      "serviceId": "post-construction-cleaning",
+      "platform": "Client Provided",
+      "author": "Client Asset",
+      "sourcePage": null,
+      "sourceDownloadUrl": null,
+      "sourceFile": "public/media/photos/landscape/sources/post-construction-cleaning.png",
+      "generatedAsset": "/media/photos/landscape/post-construction-cleaning-landscape.webp",
+      "generatedAt": "2026-03-24T00:33:01.396Z",
+      "processing": {
+        "width": 2400,
+        "height": 1350,
+        "format": "webp",
+        "fit": "cover",
+        "cropStrategy": "entropy"
+      },
+      "licenseReference": "Client-provided asset. License/usage rights managed by client."
+    },
+    {
+      "serviceId": "commercial-cleaning",
+      "platform": "Client Provided",
+      "author": "Client Asset",
+      "sourcePage": null,
+      "sourceDownloadUrl": null,
+      "sourceFile": "public/media/photos/landscape/sources/commercial-cleaning.png",
+      "generatedAsset": "/media/photos/landscape/commercial-cleaning-landscape.webp",
+      "generatedAt": "2026-03-24T00:33:01.396Z",
+      "processing": {
+        "width": 2400,
+        "height": 1350,
+        "format": "webp",
+        "fit": "cover",
+        "cropStrategy": "entropy"
+      },
+      "licenseReference": "Client-provided asset. License/usage rights managed by client."
+    },
+    {
+      "serviceId": "after-hours-office-cleaning",
+      "platform": "Client Provided",
+      "author": "Client Asset",
+      "sourcePage": null,
+      "sourceDownloadUrl": null,
+      "sourceFile": "public/media/photos/landscape/sources/after-hours-office-cleaning.png",
+      "generatedAsset": "/media/photos/landscape/after-hours-office-cleaning-landscape.webp",
+      "generatedAt": "2026-03-24T00:33:01.396Z",
+      "processing": {
+        "width": 2400,
+        "height": 1350,
+        "format": "webp",
+        "fit": "cover",
+        "cropStrategy": "entropy"
+      },
+      "licenseReference": "Client-provided asset. License/usage rights managed by client."
+    },
+    {
+      "serviceId": "epoxy-floor-services",
+      "platform": "Pexels",
+      "author": "Pixabay",
+      "sourcePage": "https://www.pexels.com/photo/48889/",
+      "sourceDownloadUrl": "https://images.pexels.com/photos/48889/cleaning-washing-cleanup-the-ilo-48889.jpeg?cs=srgb&dl=pexels-pixabay-48889.jpg&fm=jpg",
+      "sourceFile": null,
+      "generatedAsset": "/media/photos/landscape/epoxy-floor-services-landscape.webp",
+      "generatedAt": "2026-03-24T00:33:01.396Z",
+      "processing": {
+        "width": 2400,
+        "height": 1350,
+        "format": "webp",
+        "fit": "cover",
+        "cropStrategy": "entropy"
+      },
+      "licenseReference": "https://www.pexels.com/license/"
+    },
+    {
+      "serviceId": "marble-polishing",
+      "platform": "Client Provided",
+      "author": "Client Asset",
+      "sourcePage": null,
+      "sourceDownloadUrl": null,
+      "sourceFile": "public/media/photos/landscape/sources/marble-polishing.png",
+      "generatedAsset": "/media/photos/landscape/marble-polishing-landscape.webp",
+      "generatedAt": "2026-03-24T00:33:01.396Z",
+      "processing": {
+        "width": 2400,
+        "height": 1350,
+        "format": "webp",
+        "fit": "cover",
+        "cropStrategy": "entropy"
+      },
+      "licenseReference": "Client-provided asset. License/usage rights managed by client."
+    },
+    {
+      "serviceId": "residential-cleaning",
+      "platform": "Pexels",
+      "author": "Liliana Drew",
+      "sourcePage": "https://www.pexels.com/photo/9462143/",
+      "sourceDownloadUrl": "https://images.pexels.com/photos/9462143/pexels-photo-9462143.jpeg?cs=srgb&dl=pexels-liliana-drew-9462143.jpg&fm=jpg",
+      "sourceFile": null,
+      "generatedAsset": "/media/photos/landscape/residential-cleaning-landscape.webp",
+      "generatedAt": "2026-03-24T00:33:01.396Z",
+      "processing": {
+        "width": 2400,
+        "height": 1350,
+        "format": "webp",
+        "fit": "cover",
+        "cropStrategy": "entropy"
+      },
+      "licenseReference": "https://www.pexels.com/license/"
+    },
+    {
+      "serviceId": "deep-cleaning",
+      "platform": "Pexels",
+      "author": "Liliana Drew",
+      "sourcePage": "https://www.pexels.com/photo/9462307/",
+      "sourceDownloadUrl": "https://images.pexels.com/photos/9462307/pexels-photo-9462307.jpeg?cs=srgb&dl=pexels-liliana-drew-9462307.jpg&fm=jpg",
+      "sourceFile": null,
+      "generatedAsset": "/media/photos/landscape/deep-cleaning-landscape.webp",
+      "generatedAt": "2026-03-24T00:33:01.396Z",
+      "processing": {
+        "width": 2400,
+        "height": 1350,
+        "format": "webp",
+        "fit": "cover",
+        "cropStrategy": "entropy"
+      },
+      "licenseReference": "https://www.pexels.com/license/"
+    },
+    {
+      "serviceId": "disinfecting-services",
+      "platform": "Pexels",
+      "author": "Matilda Wormwood",
+      "sourcePage": "https://www.pexels.com/photo/4099481/",
+      "sourceDownloadUrl": "https://images.pexels.com/photos/4099481/pexels-photo-4099481.jpeg?cs=srgb&dl=pexels-matilda-wormwood-4099481.jpg&fm=jpg",
+      "sourceFile": null,
+      "generatedAsset": "/media/photos/landscape/disinfecting-services-landscape.webp",
+      "generatedAt": "2026-03-24T00:33:01.396Z",
+      "processing": {
+        "width": 2400,
+        "height": 1350,
+        "format": "webp",
+        "fit": "cover",
+        "cropStrategy": "entropy"
+      },
+      "licenseReference": "https://www.pexels.com/license/"
+    },
+    {
+      "serviceId": "events-cleaning",
+      "platform": "Pexels",
+      "author": "Triemli",
+      "sourcePage": "https://www.pexels.com/photo/33520761/",
+      "sourceDownloadUrl": "https://images.pexels.com/photos/33520761/pexels-photo-33520761.jpeg?cs=srgb&dl=pexels-triemli-33520761.jpg&fm=jpg",
+      "sourceFile": null,
+      "generatedAsset": "/media/photos/landscape/events-cleaning-landscape.webp",
+      "generatedAt": "2026-03-24T00:33:01.396Z",
+      "processing": {
+        "width": 2400,
+        "height": 1350,
+        "format": "webp",
+        "fit": "cover",
+        "cropStrategy": "entropy"
+      },
+      "licenseReference": "https://www.pexels.com/license/"
+    },
+    {
+      "serviceId": "housekeeping",
+      "platform": "Pexels",
+      "author": "Liliana Drew",
+      "sourcePage": "https://www.pexels.com/photo/9462745/",
+      "sourceDownloadUrl": "https://images.pexels.com/photos/9462745/pexels-photo-9462745.jpeg?cs=srgb&dl=pexels-liliana-drew-9462745.jpg&fm=jpg",
+      "sourceFile": null,
+      "generatedAsset": "/media/photos/landscape/housekeeping-landscape.webp",
+      "generatedAt": "2026-03-24T00:33:01.396Z",
+      "processing": {
+        "width": 2400,
+        "height": 1350,
+        "format": "webp",
+        "fit": "cover",
+        "cropStrategy": "entropy"
+      },
+      "licenseReference": "https://www.pexels.com/license/"
+    },
+    {
+      "serviceId": "real-estate-cleaning",
+      "platform": "Pexels",
+      "author": "Curtis Adams",
+      "sourcePage": "https://www.pexels.com/photo/4832514/",
+      "sourceDownloadUrl": "https://images.pexels.com/photos/4832514/pexels-photo-4832514.jpeg?cs=srgb&dl=pexels-curtis-adams-1694007-4832514.jpg&fm=jpg",
+      "sourceFile": null,
+      "generatedAsset": "/media/photos/landscape/real-estate-cleaning-landscape.webp",
+      "generatedAt": "2026-03-24T00:33:01.396Z",
+      "processing": {
+        "width": 2400,
+        "height": 1350,
+        "format": "webp",
+        "fit": "cover",
+        "cropStrategy": "entropy"
+      },
+      "licenseReference": "https://www.pexels.com/license/"
+    },
+    {
+      "serviceId": "after-hours-restaurant-cleaning",
+      "platform": "Pexels",
+      "author": "Tima Miroshnichenko",
+      "sourcePage": "https://www.pexels.com/photo/6197108/",
+      "sourceDownloadUrl": "https://images.pexels.com/photos/6197108/pexels-photo-6197108.jpeg?cs=srgb&dl=pexels-tima-miroshnichenko-6197108.jpg&fm=jpg",
+      "sourceFile": null,
+      "generatedAsset": "/media/photos/landscape/after-hours-restaurant-cleaning-landscape.webp",
+      "generatedAt": "2026-03-24T00:33:01.396Z",
+      "processing": {
+        "width": 2400,
+        "height": 1350,
+        "format": "webp",
+        "fit": "cover",
+        "cropStrategy": "entropy"
+      },
+      "licenseReference": "https://www.pexels.com/license/"
+    }
+  ]
+}

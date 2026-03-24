@@ -4,12 +4,17 @@ import { motion, AnimatePresence } from "motion/react";
 import { Toaster } from "sonner";
 import { Navbar } from "./Navbar";
 import { Footer } from "./Footer";
+import { scheduleIdleRoutePrefetch } from "../routeModules";
 
 export function Layout() {
   const location = useLocation();
 
   useEffect(() => {
     window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    scheduleIdleRoutePrefetch(location.pathname);
   }, [location.pathname]);
 
   return (

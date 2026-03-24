@@ -1,3 +1,11 @@
+import { mediaUrl, videoVariantBase } from "./mediaManifest";
+
+export interface ServiceVideoSource {
+  src: string;
+  type: "video/mp4";
+  quality: 720 | 1080;
+}
+
 export interface Service {
   id: string;
   title: string;
@@ -5,8 +13,35 @@ export interface Service {
   fullDescription: string;
   features: string[];
   image: string;
+  thumbnail: string;
+  heroImage: string;
+  poster: string;
   icon: string;
   video?: string;
+  videoSources?: ServiceVideoSource[];
+}
+
+function photo(fileName: string): string {
+  return mediaUrl(`/media/photos/${fileName}`);
+}
+
+function landscape(fileName: string): string {
+  return mediaUrl(`/media/photos/landscape/${fileName}`);
+}
+
+function video(fileName: string): string {
+  return mediaUrl(`/media/videos/${fileName}`);
+}
+
+function defaultVideoSources(fileName: string): ServiceVideoSource[] {
+  const original = video(fileName);
+  const basePath = videoVariantBase(`/media/videos/${fileName}`);
+  const lowQuality = mediaUrl(`${basePath}-720.mp4`);
+
+  return [
+    { src: lowQuality, type: "video/mp4", quality: 720 },
+    { src: original, type: "video/mp4", quality: 1080 },
+  ];
 }
 
 export const services: Service[] = [
@@ -25,9 +60,13 @@ export const services: Service[] = [
       "Paint overspray removal",
       "Final deep clean and sanitization",
     ],
-    image: "/media/photos/post-construction-cleaning.webp",
+    image: photo("post-construction-cleaning.webp"),
+    thumbnail: landscape("post-construction-cleaning-landscape.webp"),
+    heroImage: landscape("post-construction-cleaning-landscape.webp"),
+    poster: photo("post-construction-cleaning.webp"),
     icon: "HardHat",
-    video: "/media/videos/post-construction-cleaning.mp4",
+    video: video("post-construction-cleaning.mp4"),
+    videoSources: defaultVideoSources("post-construction-cleaning.mp4"),
   },
   {
     id: "commercial-cleaning",
@@ -44,9 +83,13 @@ export const services: Service[] = [
       "Break room and kitchen cleaning",
       "Window and surface cleaning",
     ],
-    image: "/media/photos/commercial-cleaning.webp",
+    image: photo("commercial-cleaning.webp"),
+    thumbnail: landscape("commercial-cleaning-landscape.webp"),
+    heroImage: landscape("commercial-cleaning-landscape.webp"),
+    poster: photo("commercial-cleaning.webp"),
     icon: "Building2",
-    video: "/media/videos/commercial-cleaning.mp4",
+    video: video("commercial-cleaning.mp4"),
+    videoSources: defaultVideoSources("commercial-cleaning.mp4"),
   },
   {
     id: "after-hours-office-cleaning",
@@ -63,9 +106,13 @@ export const services: Service[] = [
       "Trash removal and recycling",
       "Reliable recurring scheduling",
     ],
-    image: "/media/photos/after-hours-office-cleaning.webp",
+    image: photo("after-hours-office-cleaning.webp"),
+    thumbnail: landscape("after-hours-office-cleaning-landscape.webp"),
+    heroImage: landscape("after-hours-office-cleaning-landscape.webp"),
+    poster: photo("after-hours-office-cleaning.webp"),
     icon: "Moon",
-    video: "/media/videos/after-hours-office-cleaning.mp4",
+    video: video("after-hours-office-cleaning.mp4"),
+    videoSources: defaultVideoSources("after-hours-office-cleaning.mp4"),
   },
   {
     id: "epoxy-floor-services",
@@ -82,9 +129,13 @@ export const services: Service[] = [
       "Slip-resistant finishes available",
       "Quick cure and minimal downtime",
     ],
-    image: "/media/photos/epoxy-floor-services.webp",
+    image: photo("epoxy-floor-services.webp"),
+    thumbnail: landscape("epoxy-floor-services-landscape.webp"),
+    heroImage: landscape("epoxy-floor-services-landscape.webp"),
+    poster: photo("epoxy-floor-services.webp"),
     icon: "Layers",
-    video: "/media/videos/epoxy-floor-services.mp4",
+    video: video("epoxy-floor-services.mp4"),
+    videoSources: defaultVideoSources("epoxy-floor-services.mp4"),
   },
   {
     id: "marble-polishing",
@@ -101,7 +152,10 @@ export const services: Service[] = [
       "Sealing and protective coating",
       "Ongoing maintenance programs",
     ],
-    image: "/media/photos/marble-polishing.webp",
+    image: photo("marble-polishing.webp"),
+    thumbnail: landscape("marble-polishing-landscape.webp"),
+    heroImage: landscape("marble-polishing-landscape.webp"),
+    poster: photo("marble-polishing.webp"),
     icon: "Gem",
   },
   {
@@ -119,9 +173,13 @@ export const services: Service[] = [
       "Kitchen and bathroom deep clean",
       "Dusting, vacuuming, and mopping",
     ],
-    image: "/media/photos/residential-cleaning.webp",
+    image: photo("residential-cleaning.webp"),
+    thumbnail: landscape("residential-cleaning-landscape.webp"),
+    heroImage: landscape("residential-cleaning-landscape.webp"),
+    poster: photo("residential-cleaning.webp"),
     icon: "Home",
-    video: "/media/videos/residential-cleaning.mp4",
+    video: video("residential-cleaning.mp4"),
+    videoSources: defaultVideoSources("residential-cleaning.mp4"),
   },
   {
     id: "deep-cleaning",
@@ -138,9 +196,13 @@ export const services: Service[] = [
       "Ceiling fan and light fixture dusting",
       "Full bathroom and kitchen restoration",
     ],
-    image: "/media/photos/deep-cleaning.webp",
+    image: photo("deep-cleaning.webp"),
+    thumbnail: landscape("deep-cleaning-landscape.webp"),
+    heroImage: landscape("deep-cleaning-landscape.webp"),
+    poster: photo("deep-cleaning.webp"),
     icon: "Sparkles",
-    video: "/media/videos/deep-cleaning.mp4",
+    video: video("deep-cleaning.mp4"),
+    videoSources: defaultVideoSources("deep-cleaning.mp4"),
   },
   {
     id: "disinfecting-services",
@@ -157,9 +219,13 @@ export const services: Service[] = [
       "Certificate of service provided",
       "Safe for children and pets after dry",
     ],
-    image: "/media/photos/disinfecting-services.webp",
+    image: photo("disinfecting-services.webp"),
+    thumbnail: landscape("disinfecting-services-landscape.webp"),
+    heroImage: landscape("disinfecting-services-landscape.webp"),
+    poster: photo("disinfecting-services.webp"),
     icon: "ShieldCheck",
-    video: "/media/videos/disinfecting-services.mp4",
+    video: video("disinfecting-services.mp4"),
+    videoSources: defaultVideoSources("disinfecting-services.mp4"),
   },
   {
     id: "events-cleaning",
@@ -176,9 +242,13 @@ export const services: Service[] = [
       "Trash and recycling management",
       "Rapid-response cleaning crews",
     ],
-    image: "/media/photos/events-cleaning.webp",
+    image: photo("events-cleaning.webp"),
+    thumbnail: landscape("events-cleaning-landscape.webp"),
+    heroImage: landscape("events-cleaning-landscape.webp"),
+    poster: photo("events-cleaning.webp"),
     icon: "CalendarCheck",
-    video: "/media/videos/events-cleaning.mp4",
+    video: video("events-cleaning.mp4"),
+    videoSources: defaultVideoSources("events-cleaning.mp4"),
   },
   {
     id: "housekeeping",
@@ -195,9 +265,13 @@ export const services: Service[] = [
       "Amenity restocking",
       "Flexible scheduling for check-ins",
     ],
-    image: "/media/photos/housekeeping.webp",
+    image: photo("housekeeping.webp"),
+    thumbnail: landscape("housekeeping-landscape.webp"),
+    heroImage: landscape("housekeeping-landscape.webp"),
+    poster: photo("housekeeping.webp"),
     icon: "Hotel",
-    video: "/media/videos/housekeeping.mp4",
+    video: video("housekeeping.mp4"),
+    videoSources: defaultVideoSources("housekeeping.mp4"),
   },
   {
     id: "real-estate-cleaning",
@@ -213,9 +287,13 @@ export const services: Service[] = [
       "Kitchen and bath detailing",
       "Window and surface polishing",
     ],
-    image: "/media/photos/real-estate-cleaning.webp",
+    image: photo("real-estate-cleaning.webp"),
+    thumbnail: landscape("real-estate-cleaning-landscape.webp"),
+    heroImage: landscape("real-estate-cleaning-landscape.webp"),
+    poster: photo("real-estate-cleaning.webp"),
     icon: "KeyRound",
-    video: "/media/videos/real-estate-cleaning.mp4",
+    video: video("real-estate-cleaning.mp4"),
+    videoSources: defaultVideoSources("real-estate-cleaning.mp4"),
   },
   {
     id: "after-hours-restaurant-cleaning",
@@ -232,7 +310,10 @@ export const services: Service[] = [
       "Floor scrubbing and sanitization",
       "Waste management and recycling",
     ],
-    image: "/media/photos/after-hours-restaurant-cleaning.webp",
+    image: photo("after-hours-restaurant-cleaning.webp"),
+    thumbnail: landscape("after-hours-restaurant-cleaning-landscape.webp"),
+    heroImage: landscape("after-hours-restaurant-cleaning-landscape.webp"),
+    poster: photo("after-hours-restaurant-cleaning.webp"),
     icon: "UtensilsCrossed",
   },
 ];

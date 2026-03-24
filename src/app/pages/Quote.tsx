@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, type CSSProperties } from "react";
 import { useSearchParams, Link } from "react-router";
 import { useForm } from "react-hook-form";
 import { motion, AnimatePresence } from "motion/react";
@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import { services } from "../data/services";
 import { AnimatedSection } from "../components/AnimatedSection";
+import { reportQuoteSubmit } from "../performance/rum";
 
 interface QuoteFormData {
   firstName: string;
@@ -22,7 +23,7 @@ interface QuoteFormData {
   message: string;
 }
 
-const selectStyle: React.CSSProperties = {
+const selectStyle: CSSProperties = {
   appearance: "none",
   backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%230A0A0A' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")`,
   backgroundRepeat: "no-repeat",
@@ -50,6 +51,8 @@ export function Quote() {
   }, [preSelectedService, setValue]);
 
   const onSubmit = async (data: QuoteFormData) => {
+    const submitStart = performance.now();
+
     try {
       const res = await fetch("/api/send-quote", {
         method: "POST",
@@ -58,7 +61,9 @@ export function Quote() {
       });
       if (!res.ok) throw new Error("Failed to send");
       setSubmitted(true);
+      reportQuoteSubmit("success", performance.now() - submitStart);
     } catch {
+      reportQuoteSubmit("error", performance.now() - submitStart);
       toast.error("Something went wrong. Please try again or call us directly at (561) 385-1564.");
     }
   };
