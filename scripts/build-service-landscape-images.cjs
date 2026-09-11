@@ -107,6 +107,16 @@ const IMAGE_SPECS = [
     sourcePage: "https://www.pexels.com/photo/6197108/",
     author: "Tima Miroshnichenko",
   },
+  {
+    serviceId: "staffing",
+    outputFile: "staffing-landscape.webp",
+    sourceUrl:
+      "https://images.pexels.com/photos/3769740/pexels-photo-3769740.jpeg?cs=srgb&dl=pexels-olly-3769740.jpg&fm=jpg",
+    sourcePage: "https://www.pexels.com/photo/3769740/",
+    author: "Andrea Piacquadio",
+    // Hand-framed so the server stays inside the ~3:1 band the service hero crops to.
+    preCrop: { left: 0, top: 341, width: 6200, height: 3487 },
+  },
 ];
 
 async function ensureDir(dirPath) {
@@ -140,8 +150,14 @@ async function loadImageBuffer(spec) {
   };
 }
 
-async function processImage(buffer, outputPath) {
-  await sharp(buffer)
+async function processImage(buffer, outputPath, preCrop) {
+  const pipeline = sharp(buffer);
+
+  // Entropy cropping chases detail and happily decapitates people. When a spec
+  // declares preCrop we frame the 16:9 region by hand instead.
+  if (preCrop) pipeline.extract(preCrop);
+
+  await pipeline
     .resize({
       width: 2400,
       height: 1350,
@@ -175,6 +191,7 @@ function buildManifestEntries(specs) {
       processing: {
         width: 2400,
         height: 1350,
+        preCrop: spec.preCrop ?? null,
         format: "webp",
         fit: "cover",
         cropStrategy: "entropy",
@@ -194,7 +211,7 @@ async function main() {
   for (const spec of IMAGE_SPECS) {
     const outputPath = path.join(OUTPUT_DIR, spec.outputFile);
     const { buffer, sourceType } = await loadImageBuffer(spec);
-    await processImage(buffer, outputPath);
+    await processImage(buffer, outputPath, spec.preCrop);
     const { width, height } = await sharp(outputPath).metadata();
     const { size } = await fs.promises.stat(outputPath);
     console.log(

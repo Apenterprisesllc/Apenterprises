@@ -4,8 +4,9 @@ import { services } from "../data/services";
 import logoImg from "@/assets/logo.webp";
 
 export function Footer() {
-  const col1 = services.slice(0, 6);
-  const col2 = services.slice(6);
+  const half = Math.ceil(services.length / 2);
+  const col1 = services.slice(0, half);
+  const col2 = services.slice(half);
 
   return (
     <footer style={{ background: "#080808" }} className="text-white">
@@ -19,7 +20,7 @@ export function Footer() {
               className="h-16 w-auto mb-5"
             />
             <p className="text-white/40 text-[13px] leading-relaxed mb-6" style={{ fontFamily: "Inter, sans-serif" }}>
-              Premium cleaning services for residential, commercial, and specialized environments across South Florida.
+              Premium cleaning and hospitality staffing services for residential, commercial, and specialized environments across South Florida.
             </p>
             <div className="flex flex-col gap-3">
               <a href="tel:+15613851564" className="flex items-center gap-2.5 text-white/50 hover:text-[#C4973E] transition-colors text-[13px] group">

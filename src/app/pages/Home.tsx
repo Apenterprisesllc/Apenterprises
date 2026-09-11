@@ -14,6 +14,7 @@ import {
   UtensilsCrossed,
   Layers,
   Gem,
+  ConciergeBell,
   Leaf,
   Users,
   Clock,
@@ -30,7 +31,7 @@ import { mediaUrl } from "../data/mediaManifest";
 
 const iconMap: Record<string, ElementType> = {
   Home: HomeIcon, Building2, ShieldCheck, CalendarCheck, Hotel,
-  KeyRound, HardHat, Sparkles, Moon, UtensilsCrossed, Layers, Gem,
+  KeyRound, HardHat, Sparkles, Moon, UtensilsCrossed, Layers, Gem, ConciergeBell,
 };
 
 const industries = [
@@ -213,7 +214,7 @@ export function Home() {
             >
               {[
                 { val: "500+", label: "Happy clients" },
-                { val: "12", label: "Services" },
+                { val: String(services.length), label: "Services" },
                 { val: "100%", label: "Satisfaction" },
               ].map((stat, i) => (
                 <div key={i} className="flex items-baseline gap-1.5">
@@ -382,7 +383,7 @@ export function Home() {
               <div className="grid grid-cols-2 gap-4">
                 {[
                   { value: "500+", label: "Happy Clients", sub: "and counting" },
-                  { value: "12", label: "Services Offered", sub: "all environments" },
+                  { value: String(services.length), label: "Services Offered", sub: "all environments" },
                   { value: "100%", label: "Satisfaction Rate", sub: "guaranteed" },
                   { value: "5★", label: "Average Rating", sub: "from our clients" },
                 ].map((stat, i) => (

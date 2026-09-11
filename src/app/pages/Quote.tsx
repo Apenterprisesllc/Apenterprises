@@ -252,7 +252,7 @@ export function Quote() {
                             </select>
                           </div>
                           <div>
-                            <label className="block text-[#0A0A0A]/70 text-[13px] mb-1.5" style={{ fontFamily: "Inter, sans-serif", fontWeight: 500 }}>Cleaning Frequency</label>
+                            <label className="block text-[#0A0A0A]/70 text-[13px] mb-1.5" style={{ fontFamily: "Inter, sans-serif", fontWeight: 500 }}>Frequency</label>
                             <select {...register("frequency")} className={inputClass} style={selectStyle}>
                               <option value="">Select frequency...</option>
                               <option value="One-time">One-time</option>

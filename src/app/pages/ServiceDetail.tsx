@@ -14,6 +14,7 @@ import {
   UtensilsCrossed,
   Layers,
   Gem,
+  ConciergeBell,
   ArrowRight,
   CheckCircle2,
   Phone,
@@ -41,6 +42,7 @@ const iconMap: Record<string, ElementType> = {
   UtensilsCrossed,
   Layers,
   Gem,
+  ConciergeBell,
 };
 
 function VideoLoader({ poster, title }: { poster: string; title: string }) {

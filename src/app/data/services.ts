@@ -316,4 +316,25 @@ export const services: Service[] = [
     poster: photo("after-hours-restaurant-cleaning.webp"),
     icon: "UtensilsCrossed",
   },
+  {
+    id: "staffing",
+    title: "Staffing",
+    shortDescription:
+      "Trained hospitality staff — receptionists, servers, bartenders, hosts and managers — ready for your venue or event.",
+    fullDescription:
+      "Need reliable people on the floor? We supply vetted, trained hospitality professionals for hotels, restaurants, venues and private events. From front-desk receptionists and hosts to servers, bartenders and on-site managers, every team member arrives uniformed, briefed and ready to represent your brand. Available for one-off events, seasonal peaks or ongoing coverage throughout South Florida.",
+    features: [
+      "Receptionists and front-desk staff",
+      "Servers and waitstaff",
+      "Certified bartenders",
+      "Hosts and guest greeters",
+      "On-site event managers",
+      "Vetted, uniformed and event-ready",
+    ],
+    image: photo("staffing.webp"),
+    thumbnail: landscape("staffing-landscape.webp"),
+    heroImage: landscape("staffing-landscape.webp"),
+    poster: photo("staffing.webp"),
+    icon: "ConciergeBell",
+  },
 ];

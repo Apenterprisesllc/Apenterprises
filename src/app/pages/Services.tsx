@@ -2,7 +2,7 @@ import { type ElementType } from "react";
 import { Link } from "react-router";
 import { motion } from "motion/react";
 import {
-  Home as HomeIcon, Building2, ShieldCheck, CalendarCheck,
+  Home as HomeIcon, Building2, ShieldCheck, CalendarCheck, ConciergeBell,
   Hotel, KeyRound, HardHat, Sparkles, Moon, UtensilsCrossed, Layers, Gem,
   ArrowRight, Phone,
 } from "lucide-react";
@@ -12,7 +12,7 @@ import { mediaUrl } from "../data/mediaManifest";
 
 const iconMap: Record<string, ElementType> = {
   Home: HomeIcon, Building2, ShieldCheck, CalendarCheck, Hotel,
-  KeyRound, HardHat, Sparkles, Moon, UtensilsCrossed, Layers, Gem,
+  KeyRound, HardHat, Sparkles, Moon, UtensilsCrossed, Layers, Gem, ConciergeBell,
 };
 
 export function Services() {
@@ -57,7 +57,7 @@ export function Services() {
               Our Services
             </h1>
             <p className="text-white/45 max-w-xl text-[15px] leading-relaxed" style={{ fontFamily: "Inter, sans-serif" }}>
-              Twelve specialized services covering every cleaning need, from residential homes to commercial facilities.
+              {services.length} specialized services covering everything from residential cleaning to commercial facilities and hospitality staffing.
             </p>
           </motion.div>
         </div>
@@ -126,7 +126,7 @@ export function Services() {
         <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-10 text-center">
           <AnimatedSection>
             <h2 className="text-white mb-4" style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(1.8rem, 3vw, 2.5rem)", fontWeight: 700, letterSpacing: "-0.02em" }}>
-              Need a Custom Cleaning Solution?
+              Need a Custom Solution?
             </h2>
             <p className="text-white/45 mb-8 text-[15px]" style={{ fontFamily: "Inter, sans-serif" }}>
               Every space is unique. Let us build a tailored plan that fits your exact needs and budget.
