@@ -1,7 +1,16 @@
 import { Link } from "react-router";
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram, type LucideIcon } from "lucide-react";
 import { services } from "../data/services";
 import logoImg from "@/assets/logo.webp";
+
+// Añadir una red es una entrada más: lucide ya trae Facebook, Linkedin, Youtube.
+const socials: { label: string; href: string; Icon: LucideIcon }[] = [
+  {
+    label: "Instagram",
+    href: "https://www.instagram.com/apenterprisesllc/",
+    Icon: Instagram,
+  },
+];
 
 export function Footer() {
   const half = Math.ceil(services.length / 2);
@@ -35,6 +44,21 @@ export function Footer() {
                 <MapPin className="w-3.5 h-3.5 text-[#C4973E] shrink-0" />
                 South Florida Area
               </div>
+            </div>
+
+            <div className="flex items-center gap-2.5 mt-6">
+              {socials.map(({ label, href, Icon }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`AP Enterprises on ${label}`}
+                  className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/45 hover:text-[#C4973E] hover:border-[#C4973E]/50 hover:-translate-y-px transition-all duration-300"
+                >
+                  <Icon className="w-4 h-4" />
+                </a>
+              ))}
             </div>
           </div>
 

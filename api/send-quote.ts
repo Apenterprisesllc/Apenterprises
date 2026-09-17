@@ -2,6 +2,9 @@ import type { VercelRequest, VercelResponse } from "@vercel/node";
 import { Resend } from "resend";
 import { randomUUID } from "node:crypto";
 
+const INSTAGRAM_URL = "https://www.instagram.com/apenterprisesllc/";
+const INSTAGRAM_HANDLE = "@apenterprisesllc";
+
 let resend: Resend | null = null;
 
 function getResend(): Resend {
@@ -214,10 +217,14 @@ function buildClientHtml(data: QuoteBody): string {
         <tr><td style="background-color:#0A0A0A;padding:28px 40px;border-radius:0 0 12px 12px;" align="center">
           <p style="margin:0 0 4px;font-size:13px;font-weight:600;color:#FFFFFF;">AP Enterprises LLC</p>
           <p style="margin:0 0 12px;font-size:12px;color:#555555;">South Florida's Premium Cleaning Service</p>
-          <p style="margin:0;font-size:11px;color:#3A3A3A;">
+          <p style="margin:0 0 14px;font-size:11px;color:#3A3A3A;">
             <a href="tel:+15613851564" style="color:#C4973E;text-decoration:none;">(561) 385-1564</a>
             &nbsp;&nbsp;·&nbsp;&nbsp;
             <a href="mailto:apenterprisesllc.web@gmail.com" style="color:#C4973E;text-decoration:none;">apenterprisesllc.web@gmail.com</a>
+          </p>
+          <p style="margin:0;font-size:11px;color:#555555;">
+            See our latest work on
+            <a href="${INSTAGRAM_URL}" style="color:#C4973E;text-decoration:none;font-weight:600;">Instagram ${INSTAGRAM_HANDLE}</a>
           </p>
         </td></tr>
 
