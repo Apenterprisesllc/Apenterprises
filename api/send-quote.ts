@@ -65,7 +65,7 @@ function buildInternalHtml(data: QuoteBody): string {
 
         <!-- Logo -->
         <tr><td style="background-color:#111111;padding:28px 40px 0;" align="center">
-          <img src="https://apenterprises-xi.vercel.app/favicon.png" alt="AP Enterprises" width="120" style="display:block;width:120px;height:auto;" />
+          <img src="https://www.apentllc.com/favicon.png" alt="AP Enterprises" width="120" style="display:block;width:120px;height:auto;" />
         </td></tr>
 
         <!-- Header -->
@@ -255,7 +255,8 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     message: body.message || undefined,
   };
 
-  const sender = process.env.EMAIL_FROM || "AP Enterprises <onboarding@resend.dev>";
+  const sender = process.env.EMAIL_FROM || "AP Enterprises <quotes@apentllc.com>";
+  const inbox = process.env.EMAIL_TO || "apenterprisesllc.web@gmail.com";
 
   try {
     const client = getResend();
@@ -263,7 +264,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     // Send internal notification
     const internal = await client.emails.send({
       from: sender,
-      to: "apenterprisesllc.web@gmail.com",
+      to: inbox,
       replyTo: data.email,
       subject: `New Quote Request – ${data.service} | ${data.firstName} ${data.lastName}`,
       html: buildInternalHtml(data),
@@ -278,6 +279,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const confirmation = await client.emails.send({
       from: sender,
       to: data.email,
+      replyTo: inbox,
       subject: `Thank you for your request – AP Enterprises`,
       html: buildClientHtml(data),
     });
