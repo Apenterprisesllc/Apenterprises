@@ -1,0 +1,42 @@
+INSTRUCCIONES PARA CHATGPT
+==========================
+Sube la imagen .jpg que acompana a este archivo, junto con el prompt de abajo.
+
+Reglas que aplican a TODOS los encargos de esta carpeta:
+  - No inventes personas nuevas.
+  - No inventes logos, rotulos ni texto de ningun tipo.
+  - No cambies el color de la ropa de la persona.
+  - No subas la saturacion ni apliques efecto HDR.
+  - Manten el grano y la profundidad de campo del original.
+
+Cuando ChatGPT devuelva la imagen ampliada, guardala en esta misma carpeta
+anadiendo "-wide" al nombre. Por ejemplo:
+  01-commercial-cleaning-almacen-autos-wide.jpg
+
+SERVICIO:   Commercial Cleaning / Epoxy Floor Services
+PRIORIDAD:  ALTA
+ORIGINAL:   igexport-DJKoE4URYL4-5.jpg
+
+--- QUE PASA CON ESTA FOTO -------------------------------------
+
+Operario trapeando el piso epoxico blanco del almacen de autos clasicos, entre un
+Rolls-Royce blanco y un Porsche Carrera GT negro, con los elevadores BendPak al fondo.
+Vertical 1440x1800. La persona ocupa unos 840 px de alto y en 16:9 solo caben 810: es
+probablemente la mejor foto de todo el material y no entra completa por 30 px.
+
+--- PROMPT (copiar desde aqui hasta el final) ------------------
+
+Extiende esta fotografia a formato horizontal 16:9 (1920x1080) usando outpainting.
+
+Amplia hacia arriba y hacia los lados continuando el almacen de autos: la estructura
+metalica del techo con luminarias lineales, las columnas rojas, las filas de autos
+deportivos y clasicos y el piso epoxico blanco de acabado espejo con sus reflejos.
+
+Conserva exactamente: la luz fria y uniforme del almacen, el operario con polo negro
+trapeando con mopa de mango de madera, el Rolls-Royce blanco, el Porsche Carrera GT negro y
+los elevadores BendPak.
+
+El operario debe quedar completo, de la cabeza a los pies, con aire por encima de el.
+
+No anadas personas, no anadas marcas ni logotipos de fabricantes que no esten ya, no anadas
+texto y no alteres los reflejos del piso.

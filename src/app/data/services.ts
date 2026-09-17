@@ -6,6 +6,17 @@ export interface ServiceVideoSource {
   quality: 720 | 1080;
 }
 
+/**
+ * A real job photographed twice from the same camera position. Both frames are
+ * cut with one crop box in scripts/build-instagram-assets.mjs so the wipe in
+ * BeforeAfterSlider stays registered.
+ */
+export interface BeforeAfterPair {
+  before: string;
+  after: string;
+  caption: string;
+}
+
 export interface Service {
   id: string;
   title: string;
@@ -19,6 +30,7 @@ export interface Service {
   icon: string;
   video?: string;
   videoSources?: ServiceVideoSource[];
+  beforeAfter?: BeforeAfterPair[];
 }
 
 function photo(fileName: string): string {
@@ -27,6 +39,14 @@ function photo(fileName: string): string {
 
 function landscape(fileName: string): string {
   return mediaUrl(`/media/photos/landscape/${fileName}`);
+}
+
+function beforeAfterPair(slug: string, caption: string): BeforeAfterPair {
+  return {
+    before: mediaUrl(`/media/photos/before-after/${slug}-before.webp`),
+    after: mediaUrl(`/media/photos/before-after/${slug}-after.webp`),
+    caption,
+  };
 }
 
 function video(fileName: string): string {
@@ -136,6 +156,11 @@ export const services: Service[] = [
     icon: "Layers",
     video: video("epoxy-floor-services.mp4"),
     videoSources: defaultVideoSources("epoxy-floor-services.mp4"),
+    beforeAfter: [
+      beforeAfterPair("epoxy-open-floor", "Bare concrete slab to a poured epoxy finish"),
+      beforeAfterPair("epoxy-glass-doors", "Open floor sealed into a light-reflecting surface"),
+      beforeAfterPair("epoxy-corridor", "Main corridor resurfaced end to end"),
+    ],
   },
   {
     id: "marble-polishing",
@@ -157,6 +182,9 @@ export const services: Service[] = [
     heroImage: landscape("marble-polishing-landscape.webp"),
     poster: photo("marble-polishing.webp"),
     icon: "Gem",
+    beforeAfter: [
+      beforeAfterPair("office-floor-polish", "Dull concrete ground and polished to a mirror finish"),
+    ],
   },
   {
     id: "residential-cleaning",
@@ -315,6 +343,13 @@ export const services: Service[] = [
     heroImage: landscape("after-hours-restaurant-cleaning-landscape.webp"),
     poster: photo("after-hours-restaurant-cleaning.webp"),
     icon: "UtensilsCrossed",
+    beforeAfter: [
+      beforeAfterPair("commercial-kitchen", "A working line kitchen reset to spotless overnight"),
+      beforeAfterPair(
+        "restaurant-tile-floor",
+        "Restaurant tile and grout after an overnight deep scrub",
+      ),
+    ],
   },
   {
     id: "staffing",

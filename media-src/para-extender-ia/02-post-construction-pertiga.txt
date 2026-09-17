@@ -1,0 +1,42 @@
+INSTRUCCIONES PARA CHATGPT
+==========================
+Sube la imagen .jpg que acompana a este archivo, junto con el prompt de abajo.
+
+Reglas que aplican a TODOS los encargos de esta carpeta:
+  - No inventes personas nuevas.
+  - No inventes logos, rotulos ni texto de ningun tipo.
+  - No cambies el color de la ropa de la persona.
+  - No subas la saturacion ni apliques efecto HDR.
+  - Manten el grano y la profundidad de campo del original.
+
+Cuando ChatGPT devuelva la imagen ampliada, guardala en esta misma carpeta
+anadiendo "-wide" al nombre. Por ejemplo:
+  01-commercial-cleaning-almacen-autos-wide.jpg
+
+SERVICIO:   Post-Construction Cleaning
+PRIORIDAD:  ALTA
+ORIGINAL:   igexport-DVUhNy7DWbl-3.jpg
+
+--- QUE PASA CON ESTA FOTO -------------------------------------
+
+Operario lavando con pertiga roja telescopica una ventana del segundo piso de una casa
+blanca recien entregada, con el balcon de vidrio enjabonado. Vertical 1440x1920.
+Aqui la ALTURA es el tema: la foto funciona porque se ve lo alto que llega la pertiga.
+En horizontal eso desaparece por completo.
+
+--- PROMPT (copiar desde aqui hasta el final) ------------------
+
+Extiende esta fotografia a formato horizontal 16:9 (1920x1080) usando outpainting.
+
+Amplia hacia la izquierda y hacia la derecha continuando la fachada de la casa blanca
+moderna: el revestimiento de tablillas blancas, las puertas correderas de aluminio negro,
+el alero, el cielo azul despejado y el cesped con losas de hormigon en el suelo.
+
+Conserva exactamente: la luz de mediodia de Florida con sombras marcadas, el cielo azul
+saturado natural, el operario con uniforme negro sosteniendo la pertiga roja telescopica, el
+balcon de vidrio con agua jabonosa y la manguera roja enrollada en el suelo.
+
+Manten al operario y la pertiga completos y legibles dentro del cuadro.
+
+No anadas personas, no anadas texto ni carteles, no anadas vehiculos y no cambies la
+arquitectura existente.

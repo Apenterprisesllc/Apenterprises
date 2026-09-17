@@ -1,0 +1,48 @@
+INSTRUCCIONES PARA CHATGPT
+==========================
+Sube la imagen .jpg que acompana a este archivo, junto con el prompt de abajo.
+
+Reglas que aplican a TODOS los encargos de esta carpeta:
+  - No inventes personas nuevas.
+  - No inventes logos, rotulos ni texto de ningun tipo.
+  - No cambies el color de la ropa de la persona.
+  - No subas la saturacion ni apliques efecto HDR.
+  - Manten el grano y la profundidad de campo del original.
+
+Cuando ChatGPT devuelva la imagen ampliada, guardala en esta misma carpeta
+anadiendo "-wide" al nombre. Por ejemplo:
+  01-commercial-cleaning-almacen-autos-wide.jpg
+
+SERVICIO:   Commercial Cleaning (cristales)
+PRIORIDAD:  BAJA
+ORIGINAL:   igexport-DZ3aJh2GiG1.jpg
+
+--- QUE PASA CON ESTA FOTO -------------------------------------
+
+Operario con POLO BLANCO y pantalon negro limpiando con aplicador de microfibra azul la
+puerta de vidrio de un edificio comercial. Detras, muro cortina de vidrio espejado que
+refleja el cielo, las palmeras y una camioneta. Jardinera a la izquierda y acera de hormigon.
+Vertical. La verticalidad del muro cortina es parte del contenido: recortada a horizontal se
+convierte en un trozo de fachada anonima.
+
+OJO: en esta foto el polo es BLANCO, no el uniforme negro habitual. El prompt se lo dice dos
+veces a proposito, para que la IA no se lo recoloree.
+
+--- PROMPT (copiar desde aqui hasta el final) ------------------
+
+Extiende esta fotografia a formato horizontal 16:9 (1920x1080) usando outpainting.
+
+Amplia hacia la izquierda y hacia la derecha continuando la fachada del edificio comercial:
+mas modulos del muro cortina de vidrio espejado con su carpinteria de aluminio gris claro,
+el reflejo del cielo azul con nubes y de la vegetacion, la jardinera con plantas bajas y la
+acera de hormigon en la parte inferior.
+
+Conserva exactamente: la luz natural de tarde de Florida, los reflejos del vidrio espejado,
+el operario con POLO BLANCO y pantalon negro, su postura inclinada, el aplicador de
+microfibra azul y la puerta doble de vidrio con tiradores de aluminio.
+
+El polo del operario debe seguir siendo BLANCO. El operario debe quedar completo, de la
+cabeza a los pies.
+
+No anadas personas, no anadas rotulos comerciales ni texto en la fachada y no cambies la
+geometria del edificio.

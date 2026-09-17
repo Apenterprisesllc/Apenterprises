@@ -1,4 +1,4 @@
-const MEDIA_VERSION = "2026-03-23-1";
+const MEDIA_VERSION = "2026-09-16-1";
 
 function appendVersion(path: string): string {
   const separator = path.includes("?") ? "&" : "?";

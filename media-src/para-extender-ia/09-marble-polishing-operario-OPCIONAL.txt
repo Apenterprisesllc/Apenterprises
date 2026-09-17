@@ -1,0 +1,45 @@
+INSTRUCCIONES PARA CHATGPT
+==========================
+Sube la imagen .jpg que acompana a este archivo, junto con el prompt de abajo.
+
+Reglas que aplican a TODOS los encargos de esta carpeta:
+  - No inventes personas nuevas.
+  - No inventes logos, rotulos ni texto de ningun tipo.
+  - No cambies el color de la ropa de la persona.
+  - No subas la saturacion ni apliques efecto HDR.
+  - Manten el grano y la profundidad de campo del original.
+
+Cuando ChatGPT devuelva la imagen ampliada, guardala en esta misma carpeta
+anadiendo "-wide" al nombre. Por ejemplo:
+  01-commercial-cleaning-almacen-autos-wide.jpg
+
+SERVICIO:   Marble Polishing
+PRIORIDAD:  OPCIONAL - ya resuelto
+ORIGINAL:   igexport-DGl6AeVxee9-8.jpg
+
+--- QUE PASA CON ESTA FOTO -------------------------------------
+
+Operario pasando la maquina Turbo Hybrid sobre el piso de piedra del restaurante Alacran,
+con el cubo amarillo y el extractor Clean Dynamix al fondo. Vertical 1440x1800.
+
+YA NO HACE FALTA: la version horizontal de Marble Polishing paso a ser la oficina con piso
+pulido a espejo, y esta foto quedo como poster vertical, que es donde funciona bien. Solo
+tiene sentido extenderla si se quiere volver a poner al operario en la cabecera.
+
+--- PROMPT (copiar desde aqui hasta el final) ------------------
+
+Extiende esta fotografia a formato horizontal 16:9 (1920x1080) usando outpainting.
+
+Manten intacta toda la imagen original y amplia unicamente hacia la izquierda y hacia la
+derecha, continuando el interior del restaurante: el zocalo de listones de madera vertical,
+las mesas de madera con bases negras y el piso de piedra clara humedo con reflejos.
+
+Conserva exactamente: la iluminacion calida ambar del techo, la profundidad de campo, el
+grano de la foto, el operario con uniforme negro y guantes azules, la maquina Turbo Hybrid
+cromada, el cubo amarillo Rubbermaid y el extractor gris Clean Dynamix.
+
+El resultado debe permitir ver al operario de cuerpo completo, de la cabeza a los pies,
+dentro del cuadro horizontal.
+
+No anadas personas, no anadas logos, no anadas texto, no cambies el encuadre de lo que ya
+aparece y no aumentes la saturacion.

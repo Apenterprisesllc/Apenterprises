@@ -24,6 +24,7 @@ import {
 } from "lucide-react";
 import { services } from "../data/services";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "../components/AnimatedSection";
+import { BeforeAfterSlider } from "../components/BeforeAfterSlider";
 
 const ServiceVideoExperience = lazy(() =>
   import("../components/ServiceVideoExperience").then((module) => ({ default: module.ServiceVideoExperience })),
@@ -78,6 +79,7 @@ export function ServiceDetail() {
   const service = services.find((s) => s.id === serviceId);
   const currentIndex = services.findIndex((s) => s.id === serviceId);
   const [videoExperienceRequested, setVideoExperienceRequested] = useState(false);
+  const [activePair, setActivePair] = useState(0);
 
   if (!service) {
     return (
@@ -94,6 +96,12 @@ export function ServiceDetail() {
 
   const Icon = iconMap[service.icon];
   const related = services.filter((_, i) => i !== currentIndex).slice(0, 3);
+
+  // Navigating between services keeps this component mounted, so clamp rather
+  // than trusting the index left over from the previous service.
+  const pairs = service.beforeAfter ?? [];
+  const pairIndex = Math.min(activePair, Math.max(0, pairs.length - 1));
+  const pair = pairs[pairIndex];
 
   return (
     <div className="relative bg-white">
@@ -149,6 +157,63 @@ export function ServiceDetail() {
           </motion.div>
         </div>
       </section>
+
+      {pair && (
+        <section className="relative bg-[#0A0A0A] py-16 md:py-20 overflow-hidden">
+          <div className="absolute top-0 right-0 w-72 h-72 rounded-full bg-[#C4973E]/8 blur-3xl pointer-events-none" />
+          <div className="relative z-10 max-w-5xl mx-auto px-6 lg:px-10">
+            <AnimatedSection>
+              <p
+                className="text-[#C4973E] text-[11px] uppercase tracking-widest mb-2"
+                style={{ fontFamily: "Inter, sans-serif", fontWeight: 600 }}
+              >
+                Real Results
+              </p>
+              <h2
+                className="text-white mb-2"
+                style={{ fontFamily: "Poppins, sans-serif", fontSize: "1.6rem", fontWeight: 700, letterSpacing: "-0.015em" }}
+              >
+                Before &amp; After
+              </h2>
+              <p
+                className="text-white/45 text-[14px] mb-8"
+                style={{ fontFamily: "Inter, sans-serif" }}
+              >
+                Photographed on an actual AP Enterprises job. Drag the handle to compare.
+              </p>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.1}>
+              <BeforeAfterSlider
+                key={`${service.id}-${pairIndex}`}
+                before={pair.before}
+                after={pair.after}
+                caption={pair.caption}
+                alt={service.title}
+              />
+            </AnimatedSection>
+
+            {pairs.length > 1 && (
+              <div className="mt-6 flex items-center gap-2.5">
+                {pairs.map((item, index) => (
+                  <button
+                    key={item.before}
+                    type="button"
+                    onClick={() => setActivePair(index)}
+                    aria-label={item.caption}
+                    aria-current={index === pairIndex}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${
+                      index === pairIndex
+                        ? "w-8 bg-[#C4973E]"
+                        : "w-4 bg-white/25 hover:bg-white/45"
+                    }`}
+                  />
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+      )}
 
       <section className="py-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-10">

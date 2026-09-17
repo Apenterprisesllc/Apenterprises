@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "media:build": "node scripts/optimize-media.mjs && node scripts/generate-video-variants.mjs",
     "media:variants": "node scripts/generate-video-variants.mjs",
-    "media:landscape": "node scripts/build-service-landscape-images.cjs",
+    "media:instagram": "node scripts/build-instagram-assets.mjs",
     "perf:budget": "node scripts/check-performance-budgets.mjs",
     "perf:lighthouse": "npx @lhci/cli autorun --config=.lighthouserc.json",
     "perf:ci": "npm run build && npm run perf:budget"

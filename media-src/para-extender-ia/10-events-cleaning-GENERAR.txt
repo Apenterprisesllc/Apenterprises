@@ -1,0 +1,97 @@
+INSTRUCCIONES PARA CHATGPT
+==========================
+ATENCION: esta NO es una extension como las otras 9. Aqui no hay foto original;
+es una imagen generada de cero. Es la unica del sitio que no corresponde a un
+trabajo real de AP Enterprises. Sustituirla en cuanto el cliente mande una foto
+de evento propia.
+
+SERVICIO:   Events Cleaning
+DESTINO:    public/media/photos/landscape/events-cleaning-landscape.webp
+FORMATO:    16:9 horizontal
+
+--- POR QUE ESTA ESCRITO ASI ------------------------------------
+
+El prompt esta construido para esquivar lo que delata a una imagen generada:
+caras, manos en primer plano, texto, filas largas de objetos identicos, suelos
+espejo, lamparas de arana, simetria perfecta y esa luz dorada uniforme sin
+sombras. A cambio pide lo que las fotos reales si tienen: una sola fuente de luz
+dominante, temperatura de color mezclada, grano de ISO alto, desenfoque de
+movimiento y desorden autentico.
+
+--- PROMPT (copiar desde aqui hasta el final) -------------------
+
+Fotografia documental horizontal 16:9, tomada con camara full frame y objetivo de
+35 mm a f/4, ISO 1600, 1/125 s, camara en mano a la altura del pecho.
+
+Escena: salon de eventos de un hotel de Florida a primera hora de la manana,
+despues de una boda. Una sola operaria de limpieza, de espaldas a la camara,
+vestida con polo negro liso y pantalon negro, esta retirando el mantel arrugado
+de una mesa redonda. Se la ve de cuerpo entero, ligeramente descentrada hacia la
+izquierda. Su cara no es visible en ningun momento.
+
+Alrededor: tres mesas redondas en distinto estado de desmontaje, con manteles
+caidos y servilletas usadas. En el fondo a la derecha, una pila de ocho sillas
+plegables apoyadas contra la pared, no alineadas del todo. En el suelo hay
+confeti, un par de servilletas y una copa vacia junto a la pata de una mesa. Un
+carro de limpieza con una bolsa de basura negra a medio llenar, en el borde
+derecho del encuadre.
+
+Luz: un ventanal alto a la izquierda, fuera de cuadro, entra luz de amanecer fria
+y rasante que dibuja sombras largas sobre el suelo. En el techo quedan encendidas
+unas luces calidas de tungsteno, asi que la imagen tiene dos temperaturas de
+color mezcladas: azulada por la izquierda, ambar en el fondo. Las sombras son
+profundas y algunas zonas quedan casi negras. No hay relleno de luz.
+
+Textura y acabado: grano visible de ISO alto, enfoque en la operaria y en la mesa
+que esta desmontando, el fondo ligeramente desenfocado pero no cremoso. Leve
+desenfoque de movimiento en el mantel que esta levantando. Vineteo suave en las
+esquinas. Balance de blancos ligeramente frio, sin corregir. Suelo de moqueta con
+manchas y marcas de uso, no nuevo.
+
+NO incluyas, bajo ningun concepto:
+- Ningun texto, cartel, letrero, menu, numero de mesa, logotipo ni marca de
+  ningun tipo, ni siquiera borroso o de fondo.
+- Caras visibles, ni de la operaria ni de nadie mas.
+- Manos en primer plano ni dedos en detalle.
+- Mas de una persona.
+- Filas largas de sillas o mesas identicas alineadas en perspectiva.
+- Lamparas de arana, globos, arcos florales ni decoracion de fiesta elaborada.
+- Suelos pulidos tipo espejo ni superficies muy reflectantes.
+- Simetria perfecta ni composicion centrada.
+- Iluminacion dorada uniforme sin sombras, aspecto de render 3D o de foto de
+  catalogo.
+- Nitidez exagerada, HDR, contornos con halo ni colores saturados.
+
+El resultado debe parecer una foto de reportaje tomada deprisa por un fotografo
+real, no una imagen publicitaria.
+
+--- SI VUELVE CON PINTA DE IA -----------------------------------
+
+Corregir con una instruccion corta en vez de reescribir el prompt:
+
+  "Se ve demasiado limpio y ordenado. Anade desgaste real: manchas en la moqueta,
+   una silla mal apoyada, cables pegados al suelo con cinta."
+
+  "La luz es demasiado uniforme. Deja que el lado derecho caiga a sombra casi
+   negra y sube el contraste natural."
+
+  "Se ve un texto/logo en el fondo. Quitalo por completo."
+
+  "Parece un render. Baja la nitidez, sube el grano y deja el fondo menos
+   definido."
+
+  "Devuelvelo en 16:9 exacto, sin recortar a la operaria."
+
+--- DONDE VA -----------------------------------------------------
+
+Guardar el resultado en esta carpeta como:
+  10-events-cleaning-GENERAR-wide.png
+
+Y en scripts/build-instagram-assets.mjs, en la spec de "events-cleaning",
+cambiar el landscape a:
+
+  src: "10-events-cleaning-GENERAR-wide",
+  post: null,
+  note: "IMAGEN GENERADA - reemplazar por foto real de evento",
+
+(sin `crop`, porque ya viene en 16:9). Despues: npm run media:instagram

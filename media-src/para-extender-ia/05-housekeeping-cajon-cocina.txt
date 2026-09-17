@@ -1,0 +1,40 @@
+INSTRUCCIONES PARA CHATGPT
+==========================
+Sube la imagen .jpg que acompana a este archivo, junto con el prompt de abajo.
+
+Reglas que aplican a TODOS los encargos de esta carpeta:
+  - No inventes personas nuevas.
+  - No inventes logos, rotulos ni texto de ningun tipo.
+  - No cambies el color de la ropa de la persona.
+  - No subas la saturacion ni apliques efecto HDR.
+  - Manten el grano y la profundidad de campo del original.
+
+Cuando ChatGPT devuelva la imagen ampliada, guardala en esta misma carpeta
+anadiendo "-wide" al nombre. Por ejemplo:
+  01-commercial-cleaning-almacen-autos-wide.jpg
+
+SERVICIO:   Housekeeping
+PRIORIDAD:  MEDIA
+ORIGINAL:   igexport-DQkeS7NEX2h-2.jpg
+
+--- QUE PASA CON ESTA FOTO -------------------------------------
+
+Personal de AP con polo de la marca limpiando un cajon en la cocina de roble de la misma
+residencia de lujo. Vertical 1440x1920. Mismo problema que la 04: plano cerrado vertical que
+en horizontal pierde todo el contexto.
+
+--- PROMPT (copiar desde aqui hasta el final) ------------------
+
+Extiende esta fotografia a formato horizontal 16:9 (1920x1080) usando outpainting.
+
+Amplia hacia la izquierda y hacia la derecha continuando la cocina de lujo: los frentes de
+roble claro de veta lisa con tiradores largos de acero, la encimera de piedra blanca
+veteada, el salpicadero de piedra y la iluminacion calida bajo los muebles altos.
+
+Conserva exactamente: la luz calida y suave, el tono dorado de la madera de roble, la
+persona con polo negro de AP Enterprises y su postura y gesto.
+
+La persona debe quedar completa y con aire alrededor, sin quedar pegada al borde del cuadro.
+
+No anadas personas, no anadas electrodomesticos nuevos, no anadas texto y no cambies el
+color de la madera.

@@ -1,0 +1,41 @@
+INSTRUCCIONES PARA CHATGPT
+==========================
+Sube la imagen .jpg que acompana a este archivo, junto con el prompt de abajo.
+
+Reglas que aplican a TODOS los encargos de esta carpeta:
+  - No inventes personas nuevas.
+  - No inventes logos, rotulos ni texto de ningun tipo.
+  - No cambies el color de la ropa de la persona.
+  - No subas la saturacion ni apliques efecto HDR.
+  - Manten el grano y la profundidad de campo del original.
+
+Cuando ChatGPT devuelva la imagen ampliada, guardala en esta misma carpeta
+anadiendo "-wide" al nombre. Por ejemplo:
+  01-commercial-cleaning-almacen-autos-wide.jpg
+
+SERVICIO:   After-Hours Restaurant Cleaning
+PRIORIDAD:  BAJA
+ORIGINAL:   igexport-DGl6AeVxee9-7.jpg
+
+--- QUE PASA CON ESTA FOTO -------------------------------------
+
+Mano con guante azul limpiando el interior de una freidora industrial. Vertical, plano de
+detalle muy cerrado. En horizontal se pierde la referencia de que es el objeto: queda una
+mancha metalica.
+
+--- PROMPT (copiar desde aqui hasta el final) ------------------
+
+Extiende esta fotografia a formato horizontal 16:9 (1920x1080) usando outpainting.
+
+Amplia hacia los lados mostrando mas de la cocina industrial alrededor de la freidora:
+superficies de acero inoxidable, la plancha contigua, campana extractora y el piso de
+baldosa de cocina.
+
+Conserva exactamente: la iluminacion de cocina industrial, el reflejo del acero, la mano con
+guante azul de nitrilo y la freidora con su cesta.
+
+El resultado debe dejar claro que se trata de una freidora dentro de una cocina de
+restaurante.
+
+No anadas personas completas, no anadas alimentos, no anadas texto ni marcas de
+electrodomesticos.

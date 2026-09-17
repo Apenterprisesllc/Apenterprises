@@ -27,6 +27,7 @@ import {
 } from "lucide-react";
 import { services } from "../data/services";
 import { AnimatedSection, StaggerContainer, StaggerItem } from "../components/AnimatedSection";
+import { BeforeAfterSlider } from "../components/BeforeAfterSlider";
 import { mediaUrl } from "../data/mediaManifest";
 
 const iconMap: Record<string, ElementType> = {
@@ -65,6 +66,10 @@ export function Home() {
   const heroY = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.6], [1, 0]);
   const heroImage = mediaUrl("/media/photos/hero.webp");
+
+  // The bare-concrete-to-epoxy pair is the most dramatic comparison we have.
+  const featuredService = services.find((service) => service.id === "epoxy-floor-services");
+  const featuredPair = featuredService?.beforeAfter?.[0];
 
   return (
     <div className="relative bg-white overflow-x-hidden">
@@ -311,6 +316,55 @@ export function Home() {
           </AnimatedSection>
         </div>
       </section>
+
+      {/* ── BEFORE & AFTER ──────────────────────────── */}
+      {featuredPair && featuredService && (
+        <section className="py-24 bg-[#F4F7FA]">
+          <div className="max-w-7xl mx-auto px-6 lg:px-10">
+            <div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] gap-12 lg:gap-16 items-center">
+              <AnimatedSection direction="left">
+                <p
+                  className="text-[#C4973E] text-[11px] uppercase tracking-widest mb-3"
+                  style={{ fontFamily: "Inter, sans-serif", fontWeight: 600 }}
+                >
+                  Real Results
+                </p>
+                <h2
+                  className="text-[#0A0A0A] mb-5"
+                  style={{ fontFamily: "Poppins, sans-serif", fontSize: "clamp(1.75rem, 3vw, 2.5rem)", fontWeight: 700, letterSpacing: "-0.02em" }}
+                >
+                  See the difference we make
+                </h2>
+                <p
+                  className="text-[#0A0A0A]/55 leading-relaxed text-[15px] mb-8"
+                  style={{ fontFamily: "Inter, sans-serif" }}
+                >
+                  No stock photos and no renders — every image on this site comes from an
+                  actual AP Enterprises job. Drag the handle to see a warehouse floor go
+                  from bare concrete to a finished epoxy coating.
+                </p>
+                <Link
+                  to={`/services/${featuredService.id}`}
+                  className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#0A0A0A] hover:bg-[#1A1A1A] text-white rounded-xl transition-all duration-300 hover:-translate-y-px shadow-lg shadow-[#0A0A0A]/30"
+                  style={{ fontFamily: "Poppins, sans-serif", fontWeight: 600, fontSize: "0.9rem" }}
+                >
+                  {featuredService.title}
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
+              </AnimatedSection>
+
+              <AnimatedSection direction="right" delay={0.1}>
+                <BeforeAfterSlider
+                  before={featuredPair.before}
+                  after={featuredPair.after}
+                  alt={featuredService.title}
+                  className="shadow-2xl shadow-[#0A0A0A]/20 rounded-xl"
+                />
+              </AnimatedSection>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── WHY CHOOSE US ────────────────────────────── */}
       <section id="why-us" className="py-28 bg-[#0A0A0A] relative overflow-hidden">

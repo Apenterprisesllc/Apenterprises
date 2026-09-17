@@ -1,0 +1,43 @@
+INSTRUCCIONES PARA CHATGPT
+==========================
+Sube la imagen .jpg que acompana a este archivo, junto con el prompt de abajo.
+
+Reglas que aplican a TODOS los encargos de esta carpeta:
+  - No inventes personas nuevas.
+  - No inventes logos, rotulos ni texto de ningun tipo.
+  - No cambies el color de la ropa de la persona.
+  - No subas la saturacion ni apliques efecto HDR.
+  - Manten el grano y la profundidad de campo del original.
+
+Cuando ChatGPT devuelva la imagen ampliada, guardala en esta misma carpeta
+anadiendo "-wide" al nombre. Por ejemplo:
+  01-commercial-cleaning-almacen-autos-wide.jpg
+
+SERVICIO:   Disinfecting Services
+PRIORIDAD:  MEDIA
+ORIGINAL:   igexport-DUMareYjVZX.jpg
+
+--- QUE PASA CON ESTA FOTO -------------------------------------
+
+Operario de espaldas rociando desinfectante sobre el piso de un restaurante, con las sillas
+puestas sobre las mesas y la cocina abierta al fondo. Vertical 1080x1350. Probado: en 16:9
+la cabeza queda fuera y se corta justo por debajo de los hombros. Ademas la marca de agua
+dorada de AP en la parte baja obliga a recortar todavia mas arriba.
+
+--- PROMPT (copiar desde aqui hasta el final) ------------------
+
+Extiende esta fotografia a formato horizontal 16:9 (1920x1080) usando outpainting.
+
+Amplia hacia arriba y hacia los lados continuando el comedor del restaurante: la pared de
+piedra, el revestimiento de azulejo verde azulado brillante, las lamparas colgantes de cobre
+y las filas de mesas de madera con sillas puestas encima.
+
+Conserva exactamente: la luz calida de las lamparas de cobre, el tono dorado del piso de
+microcemento, el operario de espaldas con uniforme negro y guantes azules, el pulverizador
+blanco a presion y la varilla de rociado.
+
+El operario debe quedar completo, de la cabeza a los pies.
+
+Elimina la marca de agua dorada de AP Enterprises de la parte inferior.
+
+No anadas personas, no anadas texto ni carteles y no cambies la distribucion de las mesas.

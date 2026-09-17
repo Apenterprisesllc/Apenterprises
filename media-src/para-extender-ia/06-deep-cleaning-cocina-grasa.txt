@@ -1,0 +1,40 @@
+INSTRUCCIONES PARA CHATGPT
+==========================
+Sube la imagen .jpg que acompana a este archivo, junto con el prompt de abajo.
+
+Reglas que aplican a TODOS los encargos de esta carpeta:
+  - No inventes personas nuevas.
+  - No inventes logos, rotulos ni texto de ningun tipo.
+  - No cambies el color de la ropa de la persona.
+  - No subas la saturacion ni apliques efecto HDR.
+  - Manten el grano y la profundidad de campo del original.
+
+Cuando ChatGPT devuelva la imagen ampliada, guardala en esta misma carpeta
+anadiendo "-wide" al nombre. Por ejemplo:
+  01-commercial-cleaning-almacen-autos-wide.jpg
+
+SERVICIO:   Deep Cleaning
+PRIORIDAD:  MEDIA
+ORIGINAL:   igexport-DVCrWDEDbkW-3.jpg
+
+--- QUE PASA CON ESTA FOTO -------------------------------------
+
+Rasqueta amarilla sobre una cocina de gas con grasa calcinada, mano con guante azul.
+Vertical 1024x1365. Es la mejor foto de suciedad real del material y transmite muy bien el
+servicio, pero en horizontal se queda en una superficie negra sin lectura.
+
+--- PROMPT (copiar desde aqui hasta el final) ------------------
+
+Extiende esta fotografia a formato horizontal 16:9 (1920x1080) usando outpainting.
+
+Amplia hacia los lados mostrando el resto de la cocina de gas y la encimera: los quemadores
+restantes, el borde de la encimera de cuarzo claro moteado y la tabla de cortar blanca del
+fondo.
+
+Conserva exactamente: la luz lateral suave y algo fria, el aspecto real de la grasa
+calcinada sobre el esmalte negro, la mano con guante azul de nitrilo y la rasqueta amarilla.
+
+No limpies ni disimules la suciedad: es el objeto de la fotografia.
+
+No anadas personas, no anadas utensilios nuevos, no anadas texto y no aumentes el brillo de
+la superficie.

@@ -1,258 +1,484 @@
 {
-  "description": "Service landscape image attribution and processing manifest for AP Enterprises.",
-  "generatedOn": "2026-09-11T16:56:19.615Z",
+  "description": "Service image provenance for AP Enterprises. Every asset is cropped from the client's own Instagram photography; no stock and no AI-generated imagery.",
+  "generatedOn": "2026-09-17T00:19:55.822Z",
+  "processing": {
+    "landscape": {
+      "width": 1920,
+      "height": 1080,
+      "quality": 84
+    },
+    "poster": {
+      "width": 1200,
+      "height": 1600,
+      "quality": 80
+    },
+    "beforeAfter": {
+      "width": 1600,
+      "height": 1200,
+      "quality": 82
+    },
+    "fit": "cover",
+    "cropStrategy": "hand-framed"
+  },
   "entries": [
     {
       "serviceId": "post-construction-cleaning",
-      "platform": "Client Provided",
-      "author": "Client Asset",
-      "sourcePage": null,
-      "sourceDownloadUrl": null,
-      "sourceFile": "public/media/photos/landscape/sources/post-construction-cleaning.png",
-      "generatedAsset": "/media/photos/landscape/post-construction-cleaning-landscape.webp",
-      "generatedAt": "2026-09-11T16:56:19.616Z",
-      "processing": {
-        "width": 2400,
-        "height": 1350,
-        "preCrop": null,
-        "format": "webp",
-        "fit": "cover",
-        "cropStrategy": "entropy"
+      "platform": "Client Instagram",
+      "author": "AP Enterprises",
+      "sourcePost": "https://www.instagram.com/p/DVUhNy7DWbl/",
+      "aiGenerated": false,
+      "landscape": {
+        "asset": "/media/photos/landscape/post-construction-cleaning-landscape.webp",
+        "sourceFile": "media-src/para-extender-ia/02-post-construction-pertiga-wide.jpg",
+        "crop": null,
+        "note": "Lavado de cristales en obra recien entregada (extendida a 16:9)"
       },
-      "licenseReference": "Client-provided asset. License/usage rights managed by client."
+      "poster": {
+        "asset": "/media/photos/post-construction-cleaning.webp",
+        "sourceFile": "media-src/instagram/igexport-DVUhNy7DWbl-3.jpg",
+        "crop": null,
+        "note": "Lavado de ventana alta con pertiga"
+      },
+      "licenseReference": "Client-owned photography from the AP Enterprises Instagram account."
     },
     {
       "serviceId": "commercial-cleaning",
-      "platform": "Client Provided",
-      "author": "Client Asset",
-      "sourcePage": null,
-      "sourceDownloadUrl": null,
-      "sourceFile": "public/media/photos/landscape/sources/commercial-cleaning.png",
-      "generatedAsset": "/media/photos/landscape/commercial-cleaning-landscape.webp",
-      "generatedAt": "2026-09-11T16:56:19.616Z",
-      "processing": {
-        "width": 2400,
-        "height": 1350,
-        "preCrop": null,
-        "format": "webp",
-        "fit": "cover",
-        "cropStrategy": "entropy"
+      "platform": "Client Instagram",
+      "author": "AP Enterprises",
+      "sourcePost": "https://www.instagram.com/p/DJKoE4URYL4/",
+      "aiGenerated": false,
+      "landscape": {
+        "asset": "/media/photos/landscape/commercial-cleaning-landscape.webp",
+        "sourceFile": "media-src/para-extender-ia/01-commercial-cleaning-almacen-autos-wide.jpg",
+        "crop": null,
+        "note": "Trapeado de piso epoxico en almacen de autos clasicos (extendida a 16:9)"
       },
-      "licenseReference": "Client-provided asset. License/usage rights managed by client."
+      "poster": {
+        "asset": "/media/photos/commercial-cleaning.webp",
+        "sourceFile": "media-src/instagram/igexport-DJKoE4URYL4-5.jpg",
+        "crop": {
+          "left": 45,
+          "top": 0,
+          "width": 1350,
+          "height": 1800
+        },
+        "note": "Mismo trabajo, encuadre vertical completo"
+      },
+      "licenseReference": "Client-owned photography from the AP Enterprises Instagram account."
     },
     {
       "serviceId": "after-hours-office-cleaning",
-      "platform": "Client Provided",
-      "author": "Client Asset",
-      "sourcePage": null,
-      "sourceDownloadUrl": null,
-      "sourceFile": "public/media/photos/landscape/sources/after-hours-office-cleaning.png",
-      "generatedAsset": "/media/photos/landscape/after-hours-office-cleaning-landscape.webp",
-      "generatedAt": "2026-09-11T16:56:19.616Z",
-      "processing": {
-        "width": 2400,
-        "height": 1350,
-        "preCrop": null,
-        "format": "webp",
-        "fit": "cover",
-        "cropStrategy": "entropy"
+      "platform": "Client Instagram",
+      "author": "AP Enterprises",
+      "sourcePost": "https://www.instagram.com/p/DG3YQcoRTzK/",
+      "aiGenerated": false,
+      "landscape": {
+        "asset": "/media/photos/landscape/after-hours-office-cleaning-landscape.webp",
+        "sourceFile": "media-src/instagram/igexport-DG3YQcoRTzK-5.jpg",
+        "crop": {
+          "left": 0,
+          "top": 500,
+          "width": 1440,
+          "height": 810
+        },
+        "note": "Oficina vacia ya terminada"
       },
-      "licenseReference": "Client-provided asset. License/usage rights managed by client."
+      "poster": {
+        "asset": "/media/photos/after-hours-office-cleaning.webp",
+        "sourceFile": "media-src/instagram/igexport-DG3YQcoRTzK-10.jpg",
+        "crop": {
+          "left": 45,
+          "top": 0,
+          "width": 1349,
+          "height": 1799
+        },
+        "note": "Personal con polo AP limpiando impresora"
+      },
+      "licenseReference": "Client-owned photography from the AP Enterprises Instagram account."
     },
     {
       "serviceId": "epoxy-floor-services",
-      "platform": "Pexels",
-      "author": "Pixabay",
-      "sourcePage": "https://www.pexels.com/photo/48889/",
-      "sourceDownloadUrl": "https://images.pexels.com/photos/48889/cleaning-washing-cleanup-the-ilo-48889.jpeg?cs=srgb&dl=pexels-pixabay-48889.jpg&fm=jpg",
-      "sourceFile": null,
-      "generatedAsset": "/media/photos/landscape/epoxy-floor-services-landscape.webp",
-      "generatedAt": "2026-09-11T16:56:19.616Z",
-      "processing": {
-        "width": 2400,
-        "height": 1350,
-        "preCrop": null,
-        "format": "webp",
-        "fit": "cover",
-        "cropStrategy": "entropy"
+      "platform": "Client Instagram",
+      "author": "AP Enterprises",
+      "sourcePost": "https://www.instagram.com/p/Dby9MRFGnIp/",
+      "aiGenerated": false,
+      "landscape": {
+        "asset": "/media/photos/landscape/epoxy-floor-services-landscape.webp",
+        "sourceFile": "media-src/instagram/igexport-Dby9MRFGnIp-3.jpg",
+        "crop": {
+          "left": 0,
+          "top": 430,
+          "width": 1080,
+          "height": 608
+        },
+        "note": "Piso epoxico terminado (el despues del comparador)"
       },
-      "licenseReference": "https://www.pexels.com/license/"
+      "poster": {
+        "asset": "/media/photos/epoxy-floor-services.webp",
+        "sourceFile": "media-src/instagram/igexport-Dby9MRFGnIp.jpg",
+        "crop": {
+          "left": 34,
+          "top": 0,
+          "width": 1012,
+          "height": 1350
+        },
+        "note": "Piso epoxico terminado, sala con ventanas"
+      },
+      "licenseReference": "Client-owned photography from the AP Enterprises Instagram account."
     },
     {
       "serviceId": "marble-polishing",
-      "platform": "Client Provided",
-      "author": "Client Asset",
-      "sourcePage": null,
-      "sourceDownloadUrl": null,
-      "sourceFile": "public/media/photos/landscape/sources/marble-polishing.png",
-      "generatedAsset": "/media/photos/landscape/marble-polishing-landscape.webp",
-      "generatedAt": "2026-09-11T16:56:19.616Z",
-      "processing": {
-        "width": 2400,
-        "height": 1350,
-        "preCrop": null,
-        "format": "webp",
-        "fit": "cover",
-        "cropStrategy": "entropy"
+      "platform": "Client Instagram",
+      "author": "AP Enterprises",
+      "sourcePost": "https://www.instagram.com/p/DGl6AeVxee9/",
+      "aiGenerated": false,
+      "landscape": {
+        "asset": "/media/photos/landscape/marble-polishing-landscape.webp",
+        "sourceFile": "media-src/para-extender-ia/09-marble-polishing-operario-OPCIONAL-wide.jpg",
+        "crop": null,
+        "note": "Restauracion de piso de piedra con Turbo Hybrid (extendida a 16:9)"
       },
-      "licenseReference": "Client-provided asset. License/usage rights managed by client."
+      "poster": {
+        "asset": "/media/photos/marble-polishing.webp",
+        "sourceFile": "media-src/instagram/igexport-DGl6AeVxee9-8.jpg",
+        "crop": {
+          "left": 45,
+          "top": 0,
+          "width": 1350,
+          "height": 1800
+        },
+        "note": "Operario con Turbo Hybrid restaurando piso de piedra"
+      },
+      "licenseReference": "Client-owned photography from the AP Enterprises Instagram account."
     },
     {
       "serviceId": "residential-cleaning",
-      "platform": "Pexels",
-      "author": "Liliana Drew",
-      "sourcePage": "https://www.pexels.com/photo/9462143/",
-      "sourceDownloadUrl": "https://images.pexels.com/photos/9462143/pexels-photo-9462143.jpeg?cs=srgb&dl=pexels-liliana-drew-9462143.jpg&fm=jpg",
-      "sourceFile": null,
-      "generatedAsset": "/media/photos/landscape/residential-cleaning-landscape.webp",
-      "generatedAt": "2026-09-11T16:56:19.616Z",
-      "processing": {
-        "width": 2400,
-        "height": 1350,
-        "preCrop": null,
-        "format": "webp",
-        "fit": "cover",
-        "cropStrategy": "entropy"
+      "platform": "Client Instagram",
+      "author": "AP Enterprises",
+      "sourcePost": "https://www.instagram.com/p/DQkeS7NEX2h/",
+      "aiGenerated": false,
+      "landscape": {
+        "asset": "/media/photos/landscape/residential-cleaning-landscape.webp",
+        "sourceFile": "media-src/instagram/igexport-DQkeS7NEX2h.jpg",
+        "crop": {
+          "left": 0,
+          "top": 430,
+          "width": 1024,
+          "height": 576
+        },
+        "note": "Dormitorio de lujo terminado"
       },
-      "licenseReference": "https://www.pexels.com/license/"
+      "poster": {
+        "asset": "/media/photos/residential-cleaning.webp",
+        "sourceFile": "media-src/instagram/igexport-DQkeS7NEX2h-4.jpg",
+        "crop": null,
+        "note": "Personal AP en cocina de roble"
+      },
+      "licenseReference": "Client-owned photography from the AP Enterprises Instagram account."
     },
     {
       "serviceId": "deep-cleaning",
-      "platform": "Pexels",
-      "author": "Liliana Drew",
-      "sourcePage": "https://www.pexels.com/photo/9462307/",
-      "sourceDownloadUrl": "https://images.pexels.com/photos/9462307/pexels-photo-9462307.jpeg?cs=srgb&dl=pexels-liliana-drew-9462307.jpg&fm=jpg",
-      "sourceFile": null,
-      "generatedAsset": "/media/photos/landscape/deep-cleaning-landscape.webp",
-      "generatedAt": "2026-09-11T16:56:19.616Z",
-      "processing": {
-        "width": 2400,
-        "height": 1350,
-        "preCrop": null,
-        "format": "webp",
-        "fit": "cover",
-        "cropStrategy": "entropy"
+      "platform": "Client Instagram",
+      "author": "AP Enterprises",
+      "sourcePost": "https://www.instagram.com/p/DVCrWDEDbkW/",
+      "aiGenerated": false,
+      "landscape": {
+        "asset": "/media/photos/landscape/deep-cleaning-landscape.webp",
+        "sourceFile": "media-src/para-extender-ia/06-deep-cleaning-cocina-grasa-wide.jpg",
+        "crop": null,
+        "note": "Cocina de gas con grasa calcinada (extendida a 16:9)"
       },
-      "licenseReference": "https://www.pexels.com/license/"
+      "poster": {
+        "asset": "/media/photos/deep-cleaning.webp",
+        "sourceFile": "media-src/instagram/igexport-DVCrWDEDbkW-3.jpg",
+        "crop": null,
+        "note": "Rasqueta sobre cocina con grasa calcinada"
+      },
+      "licenseReference": "Client-owned photography from the AP Enterprises Instagram account."
     },
     {
       "serviceId": "disinfecting-services",
-      "platform": "Pexels",
-      "author": "Matilda Wormwood",
-      "sourcePage": "https://www.pexels.com/photo/4099481/",
-      "sourceDownloadUrl": "https://images.pexels.com/photos/4099481/pexels-photo-4099481.jpeg?cs=srgb&dl=pexels-matilda-wormwood-4099481.jpg&fm=jpg",
-      "sourceFile": null,
-      "generatedAsset": "/media/photos/landscape/disinfecting-services-landscape.webp",
-      "generatedAt": "2026-09-11T16:56:19.616Z",
-      "processing": {
-        "width": 2400,
-        "height": 1350,
-        "preCrop": null,
-        "format": "webp",
-        "fit": "cover",
-        "cropStrategy": "entropy"
+      "platform": "Client Instagram",
+      "author": "AP Enterprises",
+      "sourcePost": "https://www.instagram.com/p/DUMareYjVZX/",
+      "aiGenerated": false,
+      "landscape": {
+        "asset": "/media/photos/landscape/disinfecting-services-landscape.webp",
+        "sourceFile": "media-src/para-extender-ia/03-disinfecting-rociado-restaurante-wide.jpg",
+        "crop": null,
+        "note": "Rociado de desinfectante con el comedor cerrado (extendida a 16:9)"
       },
-      "licenseReference": "https://www.pexels.com/license/"
+      "poster": {
+        "asset": "/media/photos/disinfecting-services.webp",
+        "sourceFile": "media-src/instagram/igexport-DUMareYjVZX-3.jpg",
+        "crop": {
+          "left": 34,
+          "top": 0,
+          "width": 1012,
+          "height": 1350
+        },
+        "note": "Limpieza de taburetes en barra"
+      },
+      "licenseReference": "Client-owned photography from the AP Enterprises Instagram account."
     },
     {
       "serviceId": "events-cleaning",
-      "platform": "Pexels",
-      "author": "Triemli",
-      "sourcePage": "https://www.pexels.com/photo/33520761/",
-      "sourceDownloadUrl": "https://images.pexels.com/photos/33520761/pexels-photo-33520761.jpeg?cs=srgb&dl=pexels-triemli-33520761.jpg&fm=jpg",
-      "sourceFile": null,
-      "generatedAsset": "/media/photos/landscape/events-cleaning-landscape.webp",
-      "generatedAt": "2026-09-11T16:56:19.616Z",
-      "processing": {
-        "width": 2400,
-        "height": 1350,
-        "preCrop": null,
-        "format": "webp",
-        "fit": "cover",
-        "cropStrategy": "entropy"
+      "platform": "Client Instagram",
+      "author": "AP Enterprises",
+      "sourcePost": null,
+      "aiGenerated": true,
+      "landscape": {
+        "asset": "/media/photos/landscape/events-cleaning-landscape.webp",
+        "sourceFile": "media-src/para-extender-ia/10-events-cleaning-GENERAR-wide.jpg",
+        "crop": null,
+        "note": "IMAGEN GENERADA con IA — reemplazar por foto real de evento"
       },
-      "licenseReference": "https://www.pexels.com/license/"
+      "poster": {
+        "asset": "/media/photos/events-cleaning.webp",
+        "sourceFile": "media-src/instagram/igexport-DGl6AeVxee9-2.jpg",
+        "crop": {
+          "left": 45,
+          "top": 0,
+          "width": 1349,
+          "height": 1799
+        },
+        "note": "Limpieza de silla tapizada"
+      },
+      "licenseReference": "Client-owned photography from the AP Enterprises Instagram account."
     },
     {
       "serviceId": "housekeeping",
-      "platform": "Pexels",
-      "author": "Liliana Drew",
-      "sourcePage": "https://www.pexels.com/photo/9462745/",
-      "sourceDownloadUrl": "https://images.pexels.com/photos/9462745/pexels-photo-9462745.jpeg?cs=srgb&dl=pexels-liliana-drew-9462745.jpg&fm=jpg",
-      "sourceFile": null,
-      "generatedAsset": "/media/photos/landscape/housekeeping-landscape.webp",
-      "generatedAt": "2026-09-11T16:56:19.616Z",
-      "processing": {
-        "width": 2400,
-        "height": 1350,
-        "preCrop": null,
-        "format": "webp",
-        "fit": "cover",
-        "cropStrategy": "entropy"
+      "platform": "Client Instagram",
+      "author": "AP Enterprises",
+      "sourcePost": "https://www.instagram.com/p/DQkeS7NEX2h/",
+      "aiGenerated": false,
+      "landscape": {
+        "asset": "/media/photos/landscape/housekeeping-landscape.webp",
+        "sourceFile": "media-src/para-extender-ia/05-housekeeping-cajon-cocina-wide.jpg",
+        "crop": null,
+        "note": "Personal AP limpiando cajon en residencia de lujo (extendida a 16:9)"
       },
-      "licenseReference": "https://www.pexels.com/license/"
+      "poster": {
+        "asset": "/media/photos/housekeeping.webp",
+        "sourceFile": "media-src/instagram/igexport-DQkeS7NEX2h-2.jpg",
+        "crop": null,
+        "note": "Personal AP limpiando cajon de cocina"
+      },
+      "licenseReference": "Client-owned photography from the AP Enterprises Instagram account."
     },
     {
       "serviceId": "real-estate-cleaning",
-      "platform": "Pexels",
-      "author": "Curtis Adams",
-      "sourcePage": "https://www.pexels.com/photo/4832514/",
-      "sourceDownloadUrl": "https://images.pexels.com/photos/4832514/pexels-photo-4832514.jpeg?cs=srgb&dl=pexels-curtis-adams-1694007-4832514.jpg&fm=jpg",
-      "sourceFile": null,
-      "generatedAsset": "/media/photos/landscape/real-estate-cleaning-landscape.webp",
-      "generatedAt": "2026-09-11T16:56:19.616Z",
-      "processing": {
-        "width": 2400,
-        "height": 1350,
-        "preCrop": null,
-        "format": "webp",
-        "fit": "cover",
-        "cropStrategy": "entropy"
+      "platform": "Client Instagram",
+      "author": "AP Enterprises",
+      "sourcePost": "https://www.instagram.com/p/DaLk0swGqLT/",
+      "aiGenerated": false,
+      "landscape": {
+        "asset": "/media/photos/landscape/real-estate-cleaning-landscape.webp",
+        "sourceFile": "media-src/instagram/igexport-DaLk0swGqLT.jpg",
+        "crop": {
+          "left": 0,
+          "top": 270,
+          "width": 1086,
+          "height": 611
+        },
+        "note": "Residencia de lujo lista para entrega"
       },
-      "licenseReference": "https://www.pexels.com/license/"
+      "poster": {
+        "asset": "/media/photos/real-estate-cleaning.webp",
+        "sourceFile": "media-src/instagram/igexport-DaLk0swGqLT-3.jpg",
+        "crop": null,
+        "note": "Corredizas y patio exterior"
+      },
+      "licenseReference": "Client-owned photography from the AP Enterprises Instagram account."
     },
     {
       "serviceId": "after-hours-restaurant-cleaning",
-      "platform": "Pexels",
-      "author": "Tima Miroshnichenko",
-      "sourcePage": "https://www.pexels.com/photo/6197108/",
-      "sourceDownloadUrl": "https://images.pexels.com/photos/6197108/pexels-photo-6197108.jpeg?cs=srgb&dl=pexels-tima-miroshnichenko-6197108.jpg&fm=jpg",
-      "sourceFile": null,
-      "generatedAsset": "/media/photos/landscape/after-hours-restaurant-cleaning-landscape.webp",
-      "generatedAt": "2026-09-11T16:56:19.616Z",
-      "processing": {
-        "width": 2400,
-        "height": 1350,
-        "preCrop": null,
-        "format": "webp",
-        "fit": "cover",
-        "cropStrategy": "entropy"
+      "platform": "Client Instagram",
+      "author": "AP Enterprises",
+      "sourcePost": "https://www.instagram.com/p/DGl6AeVxee9/",
+      "aiGenerated": false,
+      "landscape": {
+        "asset": "/media/photos/landscape/after-hours-restaurant-cleaning-landscape.webp",
+        "sourceFile": "media-src/instagram/igexport-DGl6AeVxee9-5.jpg",
+        "crop": {
+          "left": 0,
+          "top": 560,
+          "width": 1440,
+          "height": 810
+        },
+        "note": "Maquina extractora en el comedor fuera de horario"
       },
-      "licenseReference": "https://www.pexels.com/license/"
+      "poster": {
+        "asset": "/media/photos/after-hours-restaurant-cleaning.webp",
+        "sourceFile": "media-src/instagram/igexport-DGl6AeVxee9-7.jpg",
+        "crop": {
+          "left": 45,
+          "top": 0,
+          "width": 1349,
+          "height": 1799
+        },
+        "note": "Limpieza de freidora"
+      },
+      "licenseReference": "Client-owned photography from the AP Enterprises Instagram account."
     },
     {
       "serviceId": "staffing",
-      "platform": "Pexels",
-      "author": "Andrea Piacquadio",
-      "sourcePage": "https://www.pexels.com/photo/3769740/",
-      "sourceDownloadUrl": "https://images.pexels.com/photos/3769740/pexels-photo-3769740.jpeg?cs=srgb&dl=pexels-olly-3769740.jpg&fm=jpg",
-      "sourceFile": null,
-      "generatedAsset": "/media/photos/landscape/staffing-landscape.webp",
-      "generatedAt": "2026-09-11T16:56:19.616Z",
-      "processing": {
-        "width": 2400,
-        "height": 1350,
-        "preCrop": {
+      "platform": "Client Instagram",
+      "author": "AP Enterprises",
+      "sourcePost": "https://www.instagram.com/p/C-sUzTMpzMQ/",
+      "aiGenerated": false,
+      "landscape": {
+        "asset": "/media/photos/landscape/staffing-landscape.webp",
+        "sourceFile": "media-src/instagram/igexport-C-sUzTMpzMQ.jpg",
+        "crop": {
           "left": 0,
-          "top": 341,
-          "width": 6200,
-          "height": 3487
+          "top": 140,
+          "width": 1440,
+          "height": 810
         },
-        "format": "webp",
-        "fit": "cover",
-        "cropStrategy": "entropy"
+        "note": "Equipo AP completo, la unica foto horizontal nativa del material"
       },
-      "licenseReference": "https://www.pexels.com/license/"
+      "poster": {
+        "asset": "/media/photos/staffing.webp",
+        "sourceFile": "media-src/instagram/igexport-DZTkTZrDSND-2.jpg",
+        "crop": null,
+        "note": "Flota rotulada con los servicios"
+      },
+      "licenseReference": "Client-owned photography from the AP Enterprises Instagram account."
+    }
+  ],
+  "beforeAfterPairs": [
+    {
+      "slug": "epoxy-open-floor",
+      "serviceId": "epoxy-floor-services",
+      "platform": "Client Instagram",
+      "author": "AP Enterprises",
+      "sourcePost": "https://www.instagram.com/p/Dby9MRFGnIp/",
+      "caption": "Bare concrete slab to a poured epoxy finish",
+      "before": {
+        "asset": "/media/photos/before-after/epoxy-open-floor-before.webp",
+        "sourceFile": "media-src/instagram/igexport-Dby9MRFGnIp-2.jpg"
+      },
+      "after": {
+        "asset": "/media/photos/before-after/epoxy-open-floor-after.webp",
+        "sourceFile": "media-src/instagram/igexport-Dby9MRFGnIp.jpg"
+      },
+      "crop": {
+        "left": 0,
+        "top": 320,
+        "width": 1080,
+        "height": 810
+      }
+    },
+    {
+      "slug": "epoxy-glass-doors",
+      "serviceId": "epoxy-floor-services",
+      "platform": "Client Instagram",
+      "author": "AP Enterprises",
+      "sourcePost": "https://www.instagram.com/p/Dby9MRFGnIp/",
+      "caption": "Open floor sealed into a light-reflecting surface",
+      "before": {
+        "asset": "/media/photos/before-after/epoxy-glass-doors-before.webp",
+        "sourceFile": "media-src/instagram/igexport-Dby9MRFGnIp-4.jpg"
+      },
+      "after": {
+        "asset": "/media/photos/before-after/epoxy-glass-doors-after.webp",
+        "sourceFile": "media-src/instagram/igexport-Dby9MRFGnIp-3.jpg"
+      },
+      "crop": {
+        "left": 0,
+        "top": 320,
+        "width": 1080,
+        "height": 810
+      }
+    },
+    {
+      "slug": "epoxy-corridor",
+      "serviceId": "epoxy-floor-services",
+      "platform": "Client Instagram",
+      "author": "AP Enterprises",
+      "sourcePost": "https://www.instagram.com/p/Dby9MRFGnIp/",
+      "caption": "Main corridor resurfaced end to end",
+      "before": {
+        "asset": "/media/photos/before-after/epoxy-corridor-before.webp",
+        "sourceFile": "media-src/instagram/igexport-Dby9MRFGnIp-6.jpg"
+      },
+      "after": {
+        "asset": "/media/photos/before-after/epoxy-corridor-after.webp",
+        "sourceFile": "media-src/instagram/igexport-Dby9MRFGnIp-5.jpg"
+      },
+      "crop": {
+        "left": 0,
+        "top": 320,
+        "width": 1080,
+        "height": 810
+      }
+    },
+    {
+      "slug": "commercial-kitchen",
+      "serviceId": "after-hours-restaurant-cleaning",
+      "platform": "Client Instagram",
+      "author": "AP Enterprises",
+      "sourcePost": "https://www.instagram.com/p/DcZxBxNDfiJ/",
+      "caption": "A working line kitchen reset to spotless overnight",
+      "before": {
+        "asset": "/media/photos/before-after/commercial-kitchen-before.webp",
+        "sourceFile": "media-src/instagram/igexport-DcZxBxNDfiJ-2.jpg"
+      },
+      "after": {
+        "asset": "/media/photos/before-after/commercial-kitchen-after.webp",
+        "sourceFile": "media-src/instagram/igexport-DcZxBxNDfiJ.jpg"
+      },
+      "crop": {
+        "left": 84,
+        "top": 0,
+        "width": 918,
+        "height": 690
+      }
+    },
+    {
+      "slug": "office-floor-polish",
+      "serviceId": "marble-polishing",
+      "platform": "Client Instagram",
+      "author": "AP Enterprises",
+      "sourcePost": "https://www.instagram.com/p/DT83x22jbD4/",
+      "caption": "Dull concrete ground and polished to a mirror finish",
+      "before": {
+        "asset": "/media/photos/before-after/office-floor-polish-before.webp",
+        "sourceFile": "media-src/instagram/igexport-DT83x22jbD4-2.jpg"
+      },
+      "after": {
+        "asset": "/media/photos/before-after/office-floor-polish-after.webp",
+        "sourceFile": "media-src/instagram/igexport-DT83x22jbD4.jpg"
+      },
+      "crop": {
+        "left": 0,
+        "top": 400,
+        "width": 1080,
+        "height": 810
+      }
+    },
+    {
+      "slug": "restaurant-tile-floor",
+      "serviceId": "after-hours-restaurant-cleaning",
+      "platform": "Client Instagram",
+      "author": "AP Enterprises",
+      "sourcePost": "https://www.instagram.com/p/DXmSKWXjQX7/",
+      "caption": "Restaurant tile and grout after an overnight deep scrub",
+      "before": {
+        "asset": "/media/photos/before-after/restaurant-tile-floor-before.webp",
+        "sourceFile": "media-src/instagram/igexport-DXmSKWXjQX7-2.jpg"
+      },
+      "after": {
+        "asset": "/media/photos/before-after/restaurant-tile-floor-after.webp",
+        "sourceFile": "media-src/instagram/igexport-DXmSKWXjQX7.jpg"
+      },
+      "crop": {
+        "left": 0,
+        "top": 250,
+        "width": 1080,
+        "height": 810
+      }
     }
   ]
 }
