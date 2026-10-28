@@ -31,7 +31,7 @@ Usar para la acción principal de cada sección.
               text-white border border-white/15
               rounded-xl transition-all duration-300 backdrop-blur-sm">
   <Phone className="w-4 h-4 text-[#C4973E]" />
-  (561) 385-1564
+  (561) 723-3021
 </a>
 ```
 

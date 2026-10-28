@@ -281,12 +281,12 @@ export function ServiceDetail() {
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </Link>
                       <a
-                        href="tel:+15613851564"
+                        href="tel:+15617233021"
                         className="flex items-center gap-2 px-6 py-2.5 bg-white/8 hover:bg-white/14 text-white border border-white/15 rounded-xl text-[14px] transition-all duration-300"
                         style={{ fontFamily: "Inter, sans-serif", fontWeight: 500 }}
                       >
                         <Phone className="w-3.5 h-3.5 text-[#C4973E]" />
-                        (561) 385-1564
+                        (561) 723-3021
                       </a>
                     </div>
                   </div>
@@ -301,7 +301,7 @@ export function ServiceDetail() {
                     Contact Us
                   </p>
                   <div className="flex flex-col gap-4 mb-5">
-                    <a href="tel:+15613851564" className="flex items-center gap-3 group">
+                    <a href="tel:+15617233021" className="flex items-center gap-3 group">
                       <div className="w-9 h-9 rounded-xl bg-[#0A0A0A] flex items-center justify-center shrink-0">
                         <Phone className="w-4 h-4 text-[#C4973E]" />
                       </div>
@@ -310,7 +310,7 @@ export function ServiceDetail() {
                           Phone
                         </p>
                         <p className="text-[#0A0A0A]/80 text-[13px] group-hover:text-[#C4973E] transition-colors" style={{ fontFamily: "Inter, sans-serif" }}>
-                          (561) 385-1564
+                          (561) 723-3021
                         </p>
                       </div>
                     </a>

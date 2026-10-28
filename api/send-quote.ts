@@ -124,7 +124,7 @@ function buildInternalHtml(data: QuoteBody): string {
         <!-- Footer -->
         <tr><td style="background-color:#0A0A0A;padding:24px 40px;border-top:1px solid #1E1E1E;border-radius:0 0 12px 12px;" align="center">
           <p style="margin:0 0 4px;font-size:12px;font-weight:600;color:#555555;">AP Enterprises LLC</p>
-          <p style="margin:0;font-size:11px;color:#3A3A3A;">South Florida's Premium Cleaning Service &nbsp;·&nbsp; (561) 385-1564</p>
+          <p style="margin:0;font-size:11px;color:#3A3A3A;">South Florida's Premium Cleaning Service &nbsp;·&nbsp; (561) 723-3021</p>
         </td></tr>
 
       </table>
@@ -204,9 +204,9 @@ function buildClientHtml(data: QuoteBody): string {
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
             <tr><td align="center" style="padding:4px 0 0;">
               <p style="margin:0 0 16px;font-size:14px;color:#777777;">Need immediate assistance?</p>
-              <a href="tel:+15613851564"
+              <a href="tel:+15617233021"
                 style="display:inline-block;padding:14px 40px;background:linear-gradient(135deg,#C4973E,#A67C2E);color:#FFFFFF;font-size:14px;font-weight:600;text-decoration:none;border-radius:8px;letter-spacing:0.02em;">
-                Call (561) 385-1564
+                Call (561) 723-3021
               </a>
             </td></tr>
           </table>
@@ -218,7 +218,7 @@ function buildClientHtml(data: QuoteBody): string {
           <p style="margin:0 0 4px;font-size:13px;font-weight:600;color:#FFFFFF;">AP Enterprises LLC</p>
           <p style="margin:0 0 12px;font-size:12px;color:#555555;">South Florida's Premium Cleaning Service</p>
           <p style="margin:0 0 14px;font-size:11px;color:#3A3A3A;">
-            <a href="tel:+15613851564" style="color:#C4973E;text-decoration:none;">(561) 385-1564</a>
+            <a href="tel:+15617233021" style="color:#C4973E;text-decoration:none;">(561) 723-3021</a>
             &nbsp;&nbsp;·&nbsp;&nbsp;
             <a href="mailto:apenterprisesllc.web@gmail.com" style="color:#C4973E;text-decoration:none;">apenterprisesllc.web@gmail.com</a>
           </p>

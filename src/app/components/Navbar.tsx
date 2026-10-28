@@ -164,12 +164,12 @@ export function Navbar() {
           {/* Right side */}
           <div className="hidden lg:flex items-center gap-3">
             <a
-              href="tel:+15613851564"
+              href="tel:+15617233021"
               className="flex items-center gap-2 text-white/60 hover:text-white text-[13px] transition-colors"
               style={{ fontFamily: "Inter, sans-serif" }}
             >
               <Phone className="w-3.5 h-3.5 text-[#C4973E]" />
-              (561) 385-1564
+              (561) 723-3021
             </a>
             <Link
               to="/quote"
@@ -222,8 +222,8 @@ export function Navbar() {
                 </Link>
               ))}
               <div className="h-px bg-white/10 my-2" />
-              <a href="tel:+15613851564" className="flex items-center gap-2 px-3 py-2.5 text-white/70 text-sm">
-                <Phone className="w-4 h-4 text-[#C4973E]" /> (561) 385-1564
+              <a href="tel:+15617233021" className="flex items-center gap-2 px-3 py-2.5 text-white/70 text-sm">
+                <Phone className="w-4 h-4 text-[#C4973E]" /> (561) 723-3021
               </a>
               <Link to="/quote" onTouchStart={() => prefetchByPath("/quote")} className="mt-1 px-4 py-3 bg-gradient-to-r from-[#C4973E] to-[#A67C2E] text-white text-sm rounded-xl text-center" style={{ fontFamily: "Poppins, sans-serif", fontWeight: 600 }}>
                 Get a Free Quote

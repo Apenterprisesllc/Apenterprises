@@ -201,12 +201,12 @@ export function Home() {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
-                href="tel:+15613851564"
+                href="tel:+15617233021"
                 className="flex items-center gap-2 px-7 py-3.5 bg-white/8 hover:bg-white/14 text-white border border-white/15 rounded-xl transition-all duration-300 backdrop-blur-sm"
                 style={{ fontFamily: "Inter, sans-serif", fontWeight: 500, fontSize: "0.9rem" }}
               >
                 <Phone className="w-4 h-4 text-[#C4973E]" />
-                (561) 385-1564
+                (561) 723-3021
               </a>
             </motion.div>
 
@@ -567,12 +567,12 @@ export function Home() {
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <a
-                href="tel:+15613851564"
+                href="tel:+15617233021"
                 className="flex items-center gap-2 px-8 py-4 bg-white/8 hover:bg-white/14 text-white border border-white/15 rounded-xl transition-all duration-300 backdrop-blur-sm"
                 style={{ fontFamily: "Inter, sans-serif", fontWeight: 500 }}
               >
                 <Phone className="w-4 h-4 text-[#C4973E]" />
-                (561) 385-1564
+                (561) 723-3021
               </a>
             </div>
 
